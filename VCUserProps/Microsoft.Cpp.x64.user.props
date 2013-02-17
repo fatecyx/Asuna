@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ExecutablePath>E:\Compiler\VC11\x86_amd64;E:\Microsoft SDKs\Windows\v7.0\Bin\x64;$(VCInstallDir)bin\x86_amd64;$(VCInstallDir)bin;$(WindowsSDK_ExecutablePath_x86);$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(MSBuildToolsPath32);$(FxCopDir);$(PATH)</ExecutablePath>
+    <IncludePath>E:\MyLib\MyLibrary\;E:\MyLib\MyLibrary\Include;E:\MyLib\MyLibrary\Source;E:\MyLib\MyLibrary\Class;E:\MYLIB;E:\Windows Kits\8.0\Include\shared;E:\Windows Kits\8.0\Include\km;E:\Windows Kits\8.0\Include\um;E:\WINDDK\7600.16385.1\INC\API;E:\WINDDK\7600.16385.1\INC\CRT;E:\WINDDK\7600.16385.1\INC\DDK;E:\WINDDK\7600.16385.1\INC\MFC42;E:\WINDDK\7600.16385.1\INC\ATL71;E:\WINDDK\7600.16385.1\INC\API\CRT\STL60;E:\Library\DXSDK\Include;E:\Library\dx9c\Include;E:\Library\DXSDK\Samples\C++\DXUT\Core;E:\Library\DXSDK\Samples\C++\DXUT\Optional;E:\LIBRARY\WTL\INCLUDE;E:\LIBRARY;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\MyLib\MyLibrary\Library64;E:\WinDDK\7600.16385.1\lib\win7\amd64;E:\WinDDK\7600.16385.1\lib\Mfc\amd64;E:\WINDDK\7600.16385.1\LIB\CRT\amd64;E:\WINDDK\7600.16385.1\LIB\ATL\amd64;E:\Library\DXSDK\Lib\x64;E:\Microsoft SDKs\Windows\v7.0\Lib\x64;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+    <EmbedManifest>false</EmbedManifest>
+    <OutDir>$(SolutionDir)\$(Configuration)\$(Platform)</OutDir>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>USE_NT_VER=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level4</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>FastCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(TargetName)$(TargetExt)</OutputFile>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <RandomizedBaseAddress />
+      <DataExecutionPrevention />
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

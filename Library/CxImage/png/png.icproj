@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="png"
+	ProjectGUID="{8070EF92-99D6-4CF7-8E20-95C73F17727B}"
+	VCNestedProjectGUID="{C4EF6A96-87BB-41A3-A28D-6E25EB1D5227}"
+	VCNestedProjectFileName="png.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+				FloatingPointModel="1000"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

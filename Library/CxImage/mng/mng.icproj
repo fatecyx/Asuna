@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="mng"
+	ProjectGUID="{29823EA1-8664-4526-A4A9-8C7B64603133}"
+	VCNestedProjectGUID="{2E0B21F7-B157-44F8-9879-3447E3616562}"
+	VCNestedProjectFileName="mng.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+				FloatingPointModel="1000"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ExecutablePath>E:\Compiler\VC11;E:\Microsoft SDKs\Windows\v7.0\Bin;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>E:\MyLib\MyLibrary\;E:\MyLib\MyLibrary\Include;E:\MyLib\MyLibrary\Source;E:\MyLib\MyLibrary\Class;E:\MYLIB;C:\Program Files (x86)\Intel\Composer XE 2013\compiler\include;E:\Windows Kits\8.0\Include\shared;E:\Windows Kits\8.0\Include\km;E:\Windows Kits\8.0\Include\um;E:\WINDDK\7600.16385.1\INC\API;E:\WINDDK\7600.16385.1\INC\CRT;E:\WINDDK\7600.16385.1\INC\DDK;E:\WINDDK\7600.16385.1\INC\MFC42;E:\WINDDK\7600.16385.1\INC\ATL71;E:\WINDDK\7600.16385.1\INC\API\CRT\STL60;E:\Library\DXSDK\Include;E:\Library\dx9c\Include;E:\Library\DXSDK\Samples\C++\DXUT\Core;E:\Library\DXSDK\Samples\C++\DXUT\Optional;E:\LIBRARY\WTL\INCLUDE;E:\LIBRARY;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\MyLib\MyLibrary\Library;E:\WINDDK\7600.16385.1\LIB\WXP\I386;E:\WinDDK\7600.16385.1\lib\Mfc\i386;E:\WINDDK\2600\LIB\WXP\I386;E:\WINDDK\7600.16385.1\LIB\CRT\I386;E:\WINDDK\7600.16385.1\LIB\ATL\I386;E:\Library\DXSDK\Lib\x86;E:\Microsoft SDKs\Windows\v7.0\Lib;E:\MYLIB\BASS;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+    <EmbedManifest>false</EmbedManifest>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <ExceptionHandling>false</ExceptionHandling>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <WarningLevel>Level4</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>USE_NT_VER=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <CallingConvention>FastCall</CallingConvention>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>MyLib_NT.lib;undoc_ntdll.lib;undoc_k32.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DataExecutionPrevention />
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <RandomizedBaseAddress />
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

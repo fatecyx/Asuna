@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="tiff"
+	ProjectGUID="{8778CA71-643D-42CD-B9C0-CD13AE1ECF48}"
+	VCNestedProjectGUID="{175807D7-A3F5-4011-888B-C362F16DAB16}"
+	VCNestedProjectFileName="Tiff.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+				FloatingPointModel="1000"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

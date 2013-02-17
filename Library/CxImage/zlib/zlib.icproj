@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="zlib"
+	ProjectGUID="{7AF14FE9-8FD4-43F6-BEB3-4A785212A86C}"
+	VCNestedProjectGUID="{E02C5D4C-CA13-401F-8C07-F3F471C6FCEE}"
+	VCNestedProjectFileName="zlib.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+				FloatingPointModel="1000"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

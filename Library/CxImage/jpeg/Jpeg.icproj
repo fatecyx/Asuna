@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="jpeg"
+	ProjectGUID="{8EE144AB-2531-4EA2-8F97-7B8597AB899F}"
+	VCNestedProjectGUID="{FA533708-A01D-407D-AC86-5D112AFAABB4}"
+	VCNestedProjectFileName="Jpeg.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+				FloatingPointModel="1000"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>
