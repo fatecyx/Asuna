@@ -1,0 +1,3 @@
+EXPORTS
+	GetStockObject = GDI32.GetStockObject
+	GdiSetBatchLimit = GDI32.GdiSetBatchLimit

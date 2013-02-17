@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="aiyoku"
+	ProjectGUID="{7985CCDD-C21B-4422-A2F6-517879976DFB}"
+	VCNestedProjectGUID="{EA7424AF-DD39-4446-8486-C7C7A97C01FF}"
+	VCNestedProjectFileName="aiyoku.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

@@ -1,0 +1,4 @@
+EXPORTS
+    CoUninitialize   = ole32.CoUninitialize
+    CoCreateInstance = ole32.CoCreateInstance
+    CoInitialize     = ole32.CoInitialize

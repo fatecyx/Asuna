@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{EAF909A5-FA59-4C3D-9431-0FCC20D5BCF9}") = "War3", "War3.icproj", "{58556C66-2F73-4CF3-A9A9-79D77C32D108}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58556C66-2F73-4CF3-A9A9-79D77C32D108}.Release|Win32.ActiveCfg = Release|Win32
+		{58556C66-2F73-4CF3-A9A9-79D77C32D108}.Release|Win32.Build.0 = Release|Win32
+		{B60CBD51-83D4-4BA2-867C-0B732126D8BD}.Release|Win32.Build.0 = Release|Win32
+		{B60CBD51-83D4-4BA2-867C-0B732126D8BD}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

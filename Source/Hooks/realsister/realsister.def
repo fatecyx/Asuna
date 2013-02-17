@@ -1,0 +1,13 @@
+EXPORTS
+    V2Link              @1
+    V2Unlink            @2
+    GetModuleInstance   @3
+
+    GetErrorInfo = OLEAUT32.GetErrorInfo
+    SysAllocStringLen = OLEAUT32.SysAllocStringLen
+    SysFreeString = OLEAUT32.SysFreeString
+    SysReAllocStringLen = OLEAUT32.SysReAllocStringLen
+    SysStringLen = OLEAUT32.SysStringLen
+    VariantChangeTypeEx = OLEAUT32.VariantChangeTypeEx
+    VariantClear = OLEAUT32.VariantClear
+    VariantCopyInd = OLEAUT32.VariantCopyInd

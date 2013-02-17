@@ -1,0 +1,2 @@
+EXPORTS
+    GetSystemMetrics = USER32.GetSystemMetrics

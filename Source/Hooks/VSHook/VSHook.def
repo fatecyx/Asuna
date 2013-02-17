@@ -1,0 +1,2 @@
+EXPORTS
+	PathFileExistsA = SHLWAPI.PathFileExistsA

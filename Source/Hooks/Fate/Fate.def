@@ -1,0 +1,9 @@
+EXPORTS
+	GetPluginInfo
+	IsSupported
+	GetArchiveInfo
+	GetFile
+;	UCADecode
+;	UCAFree
+;	UCIDecode
+;	UCIFree

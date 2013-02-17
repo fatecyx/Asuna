@@ -1,0 +1,5 @@
+EXPORTS
+	VirtualAlloc        = Kernel32.VirtualAlloc
+	VirtualFree        = Kernel32.VirtualFree
+	LoadLibraryA     = Kernel32.LoadLibraryA
+	GetProcAddress = MyGetProcAddress

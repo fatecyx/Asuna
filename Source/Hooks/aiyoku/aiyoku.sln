@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{EAF909A5-FA59-4C3D-9431-0FCC20D5BCF9}") = "aiyoku", "aiyoku.icproj", "{7985CCDD-C21B-4422-A2F6-517879976DFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7985CCDD-C21B-4422-A2F6-517879976DFB}.Release|Win32.ActiveCfg = Release|Win32
+		{7985CCDD-C21B-4422-A2F6-517879976DFB}.Release|Win32.Build.0 = Release|Win32
+		{EA7424AF-DD39-4446-8486-C7C7A97C01FF}.Release|Win32.Build.0 = Release|Win32
+		{EA7424AF-DD39-4446-8486-C7C7A97C01FF}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

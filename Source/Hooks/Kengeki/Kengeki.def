@@ -1,0 +1,2 @@
+EXPORTS
+    GetFileTitleA = COMDLG32.GetFileTitleA

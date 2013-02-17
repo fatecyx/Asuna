@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{EAF909A5-FA59-4C3D-9431-0FCC20D5BCF9}") = "realsister", "realsister.icproj", "{1CA1F679-3EE7-415E-B1E7-E796F1341C89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		fate_ha|Win32 = fate_ha|Win32
+		fate_stay_night|Win32 = fate_stay_night|Win32
+		gstring|Win32 = gstring|Win32
+		natsuzora|Win32 = natsuzora|Win32
+		realsister|Win32 = realsister|Win32
+		tenshin|Win32 = tenshin|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.fate_ha|Win32.ActiveCfg = fate_ha|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.fate_ha|Win32.Build.0 = fate_ha|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.fate_stay_night|Win32.ActiveCfg = fate_stay_night|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.fate_stay_night|Win32.Build.0 = fate_stay_night|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.gstring|Win32.ActiveCfg = gstring|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.gstring|Win32.Build.0 = gstring|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.natsuzora|Win32.ActiveCfg = natsuzora|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.natsuzora|Win32.Build.0 = natsuzora|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.realsister|Win32.ActiveCfg = real_sister|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.realsister|Win32.Build.0 = real_sister|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.tenshin|Win32.ActiveCfg = tenshin|Win32
+		{1CA1F679-3EE7-415E-B1E7-E796F1341C89}.tenshin|Win32.Build.0 = tenshin|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.tenshin|Win32.Build.0 = tenshin|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.tenshin|Win32.ActiveCfg = tenshin|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.realsister|Win32.Build.0 = real_sister|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.realsister|Win32.ActiveCfg = real_sister|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.natsuzora|Win32.Build.0 = natsuzora|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.natsuzora|Win32.ActiveCfg = natsuzora|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.gstring|Win32.Build.0 = gstring|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.gstring|Win32.ActiveCfg = gstring|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.fate_stay_night|Win32.Build.0 = fate_stay_night|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.fate_stay_night|Win32.ActiveCfg = fate_stay_night|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.fate_ha|Win32.Build.0 = fate_ha|Win32
+		{700566AE-03BD-42D8-A301-2D020005F9DA}.fate_ha|Win32.ActiveCfg = fate_ha|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

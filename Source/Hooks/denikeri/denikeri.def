@@ -1,0 +1,2 @@
+EXPORTS
+    GetSaveFileNameA = comdlg32.GetSaveFileNameA

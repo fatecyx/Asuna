@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="War3"
+	ProjectGUID="{58556C66-2F73-4CF3-A9A9-79D77C32D108}"
+	VCNestedProjectGUID="{B60CBD51-83D4-4BA2-867C-0B732126D8BD}"
+	VCNestedProjectFileName="War3.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

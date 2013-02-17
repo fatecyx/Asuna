@@ -1,0 +1,7 @@
+EXPORTS
+    GetModuleHandleExA = KERNEL32.GetModuleHandleExA @1
+	GetProcAddress     = MyGetProcAddress
+    LoadLibraryA = KERNEL32.LoadLibraryA
+    VirtualAlloc = KERNEL32.VirtualAlloc
+    VirtualFree  = KERNEL32.VirtualFree
+    VirtualProtect = KERNEL32.VirtualProtect

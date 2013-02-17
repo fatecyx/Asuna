@@ -1,0 +1,2 @@
+EXPORTS
+	ShellExecuteA = Shell32.ShellExecuteA

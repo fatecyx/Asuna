@@ -1,0 +1,2 @@
+EXPORTS
+	Direct3DCreate8 = MyDirect3DCreate8

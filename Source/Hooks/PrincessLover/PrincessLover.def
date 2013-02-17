@@ -1,0 +1,2 @@
+EXPORTS
+    Sleep = KERNEL32.Sleep

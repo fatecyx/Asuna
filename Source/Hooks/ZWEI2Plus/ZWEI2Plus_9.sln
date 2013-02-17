@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZWEI2Plus", "ZWEI2Plus.vcproj", "{0E786B9E-4387-42F2-ABC0-94E15676CCD9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Trainer", "Trainer\Trainer.vcproj", "{B63ED6EA-1108-40D6-B9E5-548CE8CCBAF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E786B9E-4387-42F2-ABC0-94E15676CCD9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0E786B9E-4387-42F2-ABC0-94E15676CCD9}.Debug|Win32.Build.0 = Debug|Win32
+		{0E786B9E-4387-42F2-ABC0-94E15676CCD9}.Release|Win32.ActiveCfg = Release|Win32
+		{0E786B9E-4387-42F2-ABC0-94E15676CCD9}.Release|Win32.Build.0 = Release|Win32
+		{B63ED6EA-1108-40D6-B9E5-548CE8CCBAF1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B63ED6EA-1108-40D6-B9E5-548CE8CCBAF1}.Debug|Win32.Build.0 = Debug|Win32
+		{B63ED6EA-1108-40D6-B9E5-548CE8CCBAF1}.Release|Win32.ActiveCfg = Release|Win32
+		{B63ED6EA-1108-40D6-B9E5-548CE8CCBAF1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

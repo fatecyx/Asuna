@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{EAF909A5-FA59-4C3D-9431-0FCC20D5BCF9}") = "eden", "eden.icproj", "{572F1986-81FF-4662-9C2C-89708CCD172D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		eden_upx|Win32 = eden_upx|Win32
+		eden|Win32 = eden|Win32
+		ef_fd_upx|Win32 = ef_fd_upx|Win32
+		ef_fd|Win32 = ef_fd|Win32
+		ef_first_Release|Win32 = ef_first_Release|Win32
+		ef_first_upx|Win32 = ef_first_upx|Win32
+		ef_latter_Release|Win32 = ef_latter_Release|Win32
+		ef_latter_upx|Win32 = ef_latter_upx|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.eden_upx|Win32.ActiveCfg = eden_upx|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.eden_upx|Win32.Build.0 = eden_upx|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.eden|Win32.ActiveCfg = eden|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.eden|Win32.Build.0 = eden|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_fd_upx|Win32.ActiveCfg = ef_fd_upx|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_fd_upx|Win32.Build.0 = ef_fd_upx|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_fd|Win32.ActiveCfg = ef_fd|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_fd|Win32.Build.0 = ef_fd|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_first_Release|Win32.ActiveCfg = ef_first_Release|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_first_Release|Win32.Build.0 = ef_first_Release|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_first_upx|Win32.ActiveCfg = ef_first_upx|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_first_upx|Win32.Build.0 = ef_first_upx|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_latter_Release|Win32.ActiveCfg = ef_latter_Release|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_latter_Release|Win32.Build.0 = ef_latter_Release|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_latter_upx|Win32.ActiveCfg = ef_latter_upx|Win32
+		{572F1986-81FF-4662-9C2C-89708CCD172D}.ef_latter_upx|Win32.Build.0 = ef_latter_upx|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_latter_upx|Win32.Build.0 = ef_latter_upx|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_latter_upx|Win32.ActiveCfg = ef_latter_upx|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_latter_Release|Win32.Build.0 = ef_latter_Release|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_latter_Release|Win32.ActiveCfg = ef_latter_Release|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_first_upx|Win32.Build.0 = ef_first_upx|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_first_upx|Win32.ActiveCfg = ef_first_upx|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_first_Release|Win32.Build.0 = ef_first_Release|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_first_Release|Win32.ActiveCfg = ef_first_Release|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_fd|Win32.Build.0 = ef_fd|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_fd|Win32.ActiveCfg = ef_fd|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_fd_upx|Win32.Build.0 = ef_fd_upx|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.ef_fd_upx|Win32.ActiveCfg = ef_fd_upx|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.eden|Win32.Build.0 = eden|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.eden|Win32.ActiveCfg = eden|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.eden_upx|Win32.Build.0 = eden_upx|Win32
+		{C1B98C85-0A96-434A-A53A-3405B480D985}.eden_upx|Win32.ActiveCfg = eden_upx|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

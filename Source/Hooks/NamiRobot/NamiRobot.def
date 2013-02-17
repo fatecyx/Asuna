@@ -1,0 +1,5 @@
+EXPORTS
+	LoadLibraryA = KERNEL32.LoadLibraryA
+	GetProcAddress = MyGetProcAddress
+	VirtualAlloc = KERNEL32.VirtualAlloc
+	VirtualFree  = KERNEL32.VirtualFree

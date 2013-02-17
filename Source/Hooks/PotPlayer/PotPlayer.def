@@ -1,0 +1,7 @@
+EXPORTS
+	ICOpen = MSVFW32.ICOpen
+	ICSendMessage = MSVFW32.ICSendMessage
+	ICGetInfo = MSVFW32.ICGetInfo
+	ICInfo = MSVFW32.ICInfo
+	ICCompress = MSVFW32.ICCompress
+	ICClose = MSVFW32.ICClose

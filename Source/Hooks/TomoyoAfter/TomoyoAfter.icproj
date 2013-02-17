@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="TomoyoAfter"
+	ProjectGUID="{E567791B-754D-4B72-8CD8-FDD2E05DE725}"
+	VCNestedProjectGUID="{54A2CCD9-BD46-4EA1-852C-B73783D44B9E}"
+	VCNestedProjectFileName="TomoyoAfter.vcproj">
+	<Configurations>
+		<Configuration
+			Name="lbex_upx|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="1"/>
+		</Configuration>
+		<Configuration
+			Name="Release_upx|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="1"/>
+		</Configuration>
+		<Configuration
+			Name="clannadfv_upx|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="1"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

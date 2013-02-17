@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="PrincessLover"
+	ProjectGUID="{315E37E3-7D6A-4BCB-B669-4E831F0DF9F0}"
+	VCNestedProjectGUID="{ADA03189-98BF-48E9-8B67-AAF1089F19FF}"
+	VCNestedProjectFileName="PrincessLover.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="GeneralTool"
+				ProfileGuidedOptimization="0"
+			/>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+				OptimizeForWindowsApplication="true"
+				C99Support="false"
+				Cpp0xSupport="false"
+			/>
+		</Configuration>
+		<Configuration
+			Name="LocaleEmulator|Win32"
+			>
+			<Tool
+				Name="GeneralTool"
+				InterproceduralOptimization="true"
+			/>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

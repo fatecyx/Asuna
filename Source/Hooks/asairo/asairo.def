@@ -1,0 +1,4 @@
+EXPORTS
+    RegOpenKeyExA  = ADVAPI32.RegOpenKeyExA
+    RegCloseKey    = ADVAPI32.RegCloseKey
+    RegSetValueExA = ADVAPI32.RegSetValueExA

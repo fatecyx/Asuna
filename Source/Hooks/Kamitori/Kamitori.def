@@ -1,0 +1,2 @@
+EXPORTS
+    SHGetSpecialFolderPathA = MySHGetSpecialFolderPathA

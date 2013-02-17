@@ -1,0 +1,10 @@
+EXPORTS
+    V2Link
+    V2Unlink
+    GetModuleInstance
+    GetFileVersionInfoA     = VERSION.GetFileVersionInfoA
+    GetFileVersionInfoSizeA = VERSION.GetFileVersionInfoSizeA
+    VerQueryValueA          = VERSION.VerQueryValueA
+    IsSupported             = ucxdec.IsSupported
+    GetPluginInfo           = ucxdec.GetPluginInfo
+    GetPicture              = ucxdec.GetPicture

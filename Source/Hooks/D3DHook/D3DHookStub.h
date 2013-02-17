@@ -1,0 +1,1 @@
+HWND (WINAPI *StubGetForegroundWindow)();

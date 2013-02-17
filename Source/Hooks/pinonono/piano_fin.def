@@ -1,0 +1,3 @@
+EXPORTS
+    GetModuleHandleExA = KERNEL32.GetModuleHandleExA @1
+    GetProcAddress   = MyGetProcAddress

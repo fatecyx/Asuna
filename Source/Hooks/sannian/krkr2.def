@@ -1,0 +1,2 @@
+EXPORTS
+    GradientFill = MSIMG32.GradientFill

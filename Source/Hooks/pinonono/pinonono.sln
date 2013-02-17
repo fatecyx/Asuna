@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{EAF909A5-FA59-4C3D-9431-0FCC20D5BCF9}") = "pinonono", "pinonono.icproj", "{C2788B33-6368-449B-B2FE-BC2A40FF91A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release_fin|Win32 = Release_fin|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2788B33-6368-449B-B2FE-BC2A40FF91A6}.Release_fin|Win32.ActiveCfg = Release_fin|Win32
+		{C2788B33-6368-449B-B2FE-BC2A40FF91A6}.Release_fin|Win32.Build.0 = Release_fin|Win32
+		{C2788B33-6368-449B-B2FE-BC2A40FF91A6}.Release|Win32.ActiveCfg = Release|Win32
+		{C2788B33-6368-449B-B2FE-BC2A40FF91A6}.Release|Win32.Build.0 = Release|Win32
+		{379E0E04-72B6-4A06-9EF3-A870DBE7E9B2}.Release|Win32.Build.0 = Release|Win32
+		{379E0E04-72B6-4A06-9EF3-A870DBE7E9B2}.Release|Win32.ActiveCfg = Release|Win32
+		{379E0E04-72B6-4A06-9EF3-A870DBE7E9B2}.Release_fin|Win32.Build.0 = Release_fin|Win32
+		{379E0E04-72B6-4A06-9EF3-A870DBE7E9B2}.Release_fin|Win32.ActiveCfg = Release_fin|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

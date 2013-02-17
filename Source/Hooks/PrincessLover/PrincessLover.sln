@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrincessLover", "PrincessLover.vcproj", "{ADA03189-98BF-48E9-8B67-AAF1089F19FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		LocaleEmulator|Win32 = LocaleEmulator|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADA03189-98BF-48E9-8B67-AAF1089F19FF}.LocaleEmulator|Win32.ActiveCfg = LocaleEmulator|Win32
+		{ADA03189-98BF-48E9-8B67-AAF1089F19FF}.LocaleEmulator|Win32.Build.0 = LocaleEmulator|Win32
+		{ADA03189-98BF-48E9-8B67-AAF1089F19FF}.Release|Win32.ActiveCfg = Release|Win32
+		{ADA03189-98BF-48E9-8B67-AAF1089F19FF}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
