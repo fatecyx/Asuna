@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "convenience", "convenience.vcxproj", "{56881815-5F21-442D-8C73-881B62BDB425}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "apihook", "apihook\apihook.vcxproj", "{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "startuphook", "..\..\startuphook\startuphook.vcxproj", "{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Purify|Win32 = Purify|Win32
+		Purify|x64 = Purify|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56881815-5F21-442D-8C73-881B62BDB425}.Debug|Win32.ActiveCfg = Debug|Win32
+		{56881815-5F21-442D-8C73-881B62BDB425}.Debug|Win32.Build.0 = Debug|Win32
+		{56881815-5F21-442D-8C73-881B62BDB425}.Debug|x64.ActiveCfg = Debug|Win32
+		{56881815-5F21-442D-8C73-881B62BDB425}.Purify|Win32.ActiveCfg = Release|Win32
+		{56881815-5F21-442D-8C73-881B62BDB425}.Purify|Win32.Build.0 = Release|Win32
+		{56881815-5F21-442D-8C73-881B62BDB425}.Purify|x64.ActiveCfg = Release|Win32
+		{56881815-5F21-442D-8C73-881B62BDB425}.Release|Win32.ActiveCfg = Release|Win32
+		{56881815-5F21-442D-8C73-881B62BDB425}.Release|Win32.Build.0 = Release|Win32
+		{56881815-5F21-442D-8C73-881B62BDB425}.Release|x64.ActiveCfg = Release|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Debug|Win32.Build.0 = Debug|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Debug|x64.ActiveCfg = Debug|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Purify|Win32.ActiveCfg = Release|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Purify|Win32.Build.0 = Release|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Purify|x64.ActiveCfg = Release|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Release|Win32.ActiveCfg = Release|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Release|Win32.Build.0 = Release|Win32
+		{5E6C86ED-E1C8-458E-83C1-1622DA355BF2}.Release|x64.ActiveCfg = Release|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Debug|Win32.Build.0 = Debug|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Debug|x64.ActiveCfg = Debug|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Purify|Win32.ActiveCfg = Release|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Purify|Win32.Build.0 = Release|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Purify|x64.ActiveCfg = Release|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Release|Win32.ActiveCfg = Release|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Release|Win32.Build.0 = Release|Win32
+		{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}.Release|x64.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

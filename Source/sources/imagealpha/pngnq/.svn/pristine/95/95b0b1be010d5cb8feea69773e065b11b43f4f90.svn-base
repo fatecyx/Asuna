@@ -1,0 +1,23 @@
+INSTALLATION INSTRUCTIONS:
+This should work on most UNIX style systems:
+
+tar -xzvf pngnq-1.1.tar.gz
+cd pngnq-1.1
+./configure
+make
+sudo make install
+
+
+NOTES:
+There may be warnings about strings being too long. Unless you have a really ancient 
+compiler these can be safely ignored. If you really don't like warnings add --std=c99 
+to the CFLAGS or get rid of --pedantic.
+
+If you successfully build this on a system other than those listed below please 
+tell me. Also tell me if it does not work. 
+
+ 
+Cheers,
+	Stuart Coyle
+	stuart@cybertherial.com
+

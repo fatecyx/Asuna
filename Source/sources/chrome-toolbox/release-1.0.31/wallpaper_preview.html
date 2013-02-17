@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title></title>
+<style type="text/css">
+body {
+  background-color: #f0f0f0;
+  overflow: hidden;
+  font-size: 12px;
+}
+#top {
+  height: 20px;
+  margin-bottom: 5px;
+}
+#previewArea {
+  background-color: #004e98;
+  overflow: hidden;
+  -webkit-box-shadow: #333 1px 1px 5px 0.9px;
+}
+#btnArea {
+  height: 20px;
+  margin-top: 5px;
+  margin-right: 10px;
+  text-align: right;
+}
+</style>
+
+</head>
+<body>
+<div id="top">
+  <span id="position">Position:</span>
+  <label><input id="tile" value="tile" checked="true" type="radio"name="mode">
+    <span id="tileText">Tile</span>
+  </label>
+  <label><input id="center" value="center" type="radio" name="mode">
+    <span id="centerText">center</span>
+  </label>
+  <label><input id="stretch" value="stretch" type="radio"name="mode">
+    <span id="stretchText">stretch</span>
+  </label>
+</div>
+<div id="previewArea"></div>
+<div id="btnArea">
+  <button id="apply">Apply</button>
+  <button id="restore">Restore</button>
+  <button id="close">Close</button>
+</div>
+<script type="text/javascript" src="wallpaper_preview.js"></script>
+</body>
+</html>

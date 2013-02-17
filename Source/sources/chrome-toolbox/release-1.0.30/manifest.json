@@ -1,0 +1,36 @@
+{
+  "version": "1.0.30",
+  "name": "__MSG_name__",
+  "description": "__MSG_description__",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "ftp://*/*", "file:///*"],
+      "js": ["floating_bar.js"],
+      "css": ["style.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["http://*/*", "https://*/*", "ftp://*/*", "file:///*"],
+      "js": ["form.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_icon": "images/icon_19.png",
+    "default_title": "__MSG_default_title__",
+    "popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/icon_16.png",
+    "19": "images/icon_19.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+  "plugins": [
+    { "path": "plugin/convenience.dll"}
+  ],
+  "default_locale": "en",
+  "options_page": "options.html",
+  "background_page": "background.html",
+  "permissions": ["tabs", "chrome://favicon/", "bookmarks", "http://*/*", "https://*/*", "contextMenus"]
+}

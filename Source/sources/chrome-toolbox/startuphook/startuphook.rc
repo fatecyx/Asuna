@@ -1,0 +1,146 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR ACCELERATORS
+BEGIN
+    VK_BACK,        33000,                  VIRTKEY, NOINVERT
+    VK_LEFT,        33000,                  VIRTKEY, ALT, NOINVERT
+    VK_BACK,        33001,                  VIRTKEY, SHIFT, NOINVERT
+    VK_RIGHT,       33001,                  VIRTKEY, ALT, NOINVERT
+    "R",            33002,                  VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          33002,                  VIRTKEY, NOINVERT
+    VK_HOME,        33003,                  VIRTKEY, ALT, NOINVERT
+    VK_ESCAPE,      33006,                  VIRTKEY, NOINVERT
+    "R",            33007,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    VK_F5,          33007,                  VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          33007,                  VIRTKEY, SHIFT, NOINVERT
+    "N",            34000,                  VIRTKEY, CONTROL, NOINVERT
+    "N",            34001,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "W",            34012,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "T",            34014,                  VIRTKEY, CONTROL, NOINVERT
+    VK_F4,          34015,                  VIRTKEY, NOINVERT
+    VK_F4,          34015,                  VIRTKEY, CONTROL, NOINVERT
+    "W",            34015,                  VIRTKEY, CONTROL, NOINVERT
+    VK_F2,          34016,                  VIRTKEY, NOINVERT
+    VK_NEXT,        34016,                  VIRTKEY, CONTROL, NOINVERT
+    VK_TAB,         34016,                  VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          34017,                  VIRTKEY, NOINVERT
+    VK_PRIOR,       34017,                  VIRTKEY, CONTROL, NOINVERT
+    VK_TAB,         34017,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "1",            34018,                  VIRTKEY, CONTROL, NOINVERT
+    "2",            34019,                  VIRTKEY, CONTROL, NOINVERT
+    "3",            34020,                  VIRTKEY, CONTROL, NOINVERT
+    "4",            34021,                  VIRTKEY, CONTROL, NOINVERT
+    "5",            34022,                  VIRTKEY, CONTROL, NOINVERT
+    "6",            34023,                  VIRTKEY, CONTROL, NOINVERT
+    "7",            34024,                  VIRTKEY, CONTROL, NOINVERT
+    "8",            34025,                  VIRTKEY, CONTROL, NOINVERT
+    "9",            34026,                  VIRTKEY, CONTROL, NOINVERT
+    "T",            34028,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "Z",            34028,                  VIRTKEY, ALT, NOINVERT
+    VK_F11,         34030,                  VIRTKEY, NOINVERT
+    "D",            35000,                  VIRTKEY, CONTROL, NOINVERT
+    "D",            35001,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "U",            35002,                  VIRTKEY, CONTROL, NOINVERT
+    "P",            35003,                  VIRTKEY, CONTROL, NOINVERT
+    "S",            35004,                  VIRTKEY, CONTROL, NOINVERT
+    "F",            37000,                  VIRTKEY, CONTROL, NOINVERT
+    "G",            37001,                  VIRTKEY, CONTROL, NOINVERT
+    VK_F3,          37001,                  VIRTKEY, NOINVERT
+    "G",            37002,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    VK_F3,          37002,                  VIRTKEY, SHIFT, NOINVERT
+    VK_ADD,         38001,                  VIRTKEY, CONTROL, NOINVERT
+    VK_OEM_PLUS,    38001,                  VIRTKEY, CONTROL, NOINVERT
+    VK_OEM_PLUS,    38001,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    VK_NUMPAD0,     38002,                  VIRTKEY, CONTROL, NOINVERT
+    VK_OEM_MINUS,   38003,                  VIRTKEY, CONTROL, NOINVERT
+    VK_OEM_MINUS,   38003,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    VK_SUBTRACT,    38003,                  VIRTKEY, CONTROL, NOINVERT
+    "T",            39000,                  VIRTKEY, SHIFT, ALT, NOINVERT
+    "D",            39001,                  VIRTKEY, ALT, NOINVERT
+    "L",            39001,                  VIRTKEY, CONTROL, NOINVERT
+    "E",            39002,                  VIRTKEY, CONTROL, NOINVERT
+    "K",            39002,                  VIRTKEY, CONTROL, NOINVERT
+    VK_F10,         39003,                  VIRTKEY, NOINVERT
+    VK_MENU,        39003,                  VIRTKEY, NOINVERT
+    VK_F6,          39004,                  VIRTKEY, NOINVERT
+    VK_F6,          39005,                  VIRTKEY, SHIFT, NOINVERT
+    "B",            39006,                  VIRTKEY, SHIFT, ALT, NOINVERT
+    "O",            40000,                  VIRTKEY, CONTROL, NOINVERT
+    "I",            40003,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "J",            40004,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    VK_ESCAPE,      40005,                  VIRTKEY, SHIFT, NOINVERT
+    "B",            40009,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "H",            40010,                  VIRTKEY, CONTROL, NOINVERT
+    "J",            40012,                  VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      40013,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "E",            39001,                  VIRTKEY, ALT, NOINVERT
+    "F",            40021,                  VIRTKEY, ALT, NOINVERT
+    "A",            40023,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "C",            40025,                  VIRTKEY, SHIFT, CONTROL, NOINVERT
+END
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

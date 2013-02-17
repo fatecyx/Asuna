@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="startuphook"
+	ProjectGUID="{B1C9EC8B-E266-4689-9A9A-EC6B8978EB33}"
+	VCNestedProjectGUID="{3C4F2997-E6EC-46A5-ACD2-8117DCDCB01A}"
+	VCNestedProjectFileName="startuphook.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

@@ -1,0 +1,675 @@
+{
+   "address_bar_shortcuts": {
+      "message": "Адресная строка"
+   },
+   "apply": {
+      "message": "Применить"
+   },
+   "bookmark_all_tabs": {
+      "message": "Сохранить все открытые страницы в новой папке как закладки"
+   },
+   "bookmark_all_tabs_short": {
+      "message": "Закладки для всех вкладок..."
+   },
+   "bookmark_current_page": {
+      "message": "Сохранение текущей страницы как закладки"
+   },
+   "bookmark_current_page_short": {
+      "message": "Закладка этой странице..."
+   },
+   "bookmark_tip": {
+      "message": "Вы можете использовать следующие комбинации клавиш, чтобы открыть все ссылки в указанной папке из Менеджера закладок одновременно. Каждая ссылка будет открыта в своей собственной вкладке."
+   },
+   "bookmark_tip2": {
+      "message": "Переопределение клавиш"
+   },
+   "bookmark_tip3": {
+      "message": "Щелкните значок папки, чтобы выбрать папку"
+   },
+   "bookmarks_bar_always_show": {
+      "message": "Включение и выключение панели закладок"
+   },
+   "bookmarks_bar_always_show_short": {
+      "message": "Переключение отображения панели закладок"
+   },
+   "boss_key": {
+      "message": "Кнопка Босс"
+   },
+   "browser360_key": {
+      "message": "360 Safe Browser"
+   },
+   "browser_mute": {
+      "message": "Отключение звука в обозревателе"
+   },
+   "browser_toolbar": {
+      "message": "Устанавка фокуса на панель инструментов браузера. Используйте стрелки вправо и влево на клавиатуре для перемещения между различными кнопками на панели инструментов. Нажмите Shift + F10, чтобы открыть любое связанное контекстное меню (например, на кнопку Назад, чтобы открыть историю посещенных страниц). Нажмите Esc для перемещения фокуса обратно на страницу"
+   },
+   "browser_toolbar_short": {
+      "message": "Установить фокус на панель инструментов"
+   },
+   "center_text": {
+      "message": "Центр"
+   },
+   "clear_browsing_data": {
+      "message": "Открытие диалога Удаления данных о посещении страниц"
+   },
+   "clear_browsing_data_short": {
+      "message": "Удаление данных о посещениях..."
+   },
+   "close": {
+      "message": "Закрыть"
+   },
+   "close_tab": {
+      "message": "Закрытие текущей вкладки или всплывающего окна"
+   },
+   "close_tab_short": {
+      "message": "Закрыть вкладку"
+   },
+   "close_window": {
+      "message": "Закрытие текущего окна"
+   },
+   "close_window_short": {
+      "message": "Закрыть окно"
+   },
+   "context_menu": {
+      "message": "Выводит любое связанное контекстное меню"
+   },
+   "context_menu_short": {
+      "message": "Открыть контекстное меню"
+   },
+   "copy": {
+      "message": "Копирование выделенного содержимого в буфер обмена"
+   },
+   "copy_short": {
+      "message": "Копировать"
+   },
+   "cut": {
+      "message": "Удаление выделенного содержимого и копирование его в буфер обмена"
+   },
+   "cut_short": {
+      "message": "Вырезать"
+   },
+   "default_title": {
+      "message": "Панель инструментов Chrome"
+   },
+   "delete_form": {
+      "message": "Удалить форму данных"
+   },
+   "description": {
+      "message": "Инструмент быстрого доступа, который позволяет Вам разместить избранные команды браузера в ниспадающем меню, сохранять неотправленные данные форм, увеличивать изображения, просматривать видео в отдельном окне и задавать ярлыки для открытия всех ссылок в любой папке закладок."
+   },
+   "description_linux_and_mac": {
+      "message": "Инструмент быстрого доступа, который позволяет Вам сохранить неотправленные данные форм и увеличивать изображения."
+   },
+   "dev_tools": {
+      "message": "Открытие Инструментов разработчика"
+   },
+   "dev_tools_short": {
+      "message": "Инструменты разработчика"
+   },
+   "disclaimer": {
+      "message": "Отказ: расширения сторонних разработчиков не поддерживаются Google. Google не несет никакой ответственности в отношении установки и использования этих расширений."
+   },
+   "edit_find": {
+      "message": "Открытие панели поиска"
+   },
+   "edit_find_next": {
+      "message": "Поиск следующего вхождения текста, введенного в строке поиска."
+   },
+   "edit_find_next_short": {
+      "message": "Найти следующее"
+   },
+   "edit_find_previous": {
+      "message": "Поиск предыдущего вхождения текста, введенного в строке поиска."
+   },
+   "edit_find_previous_short": {
+      "message": "Найти предыдущее"
+   },
+   "edit_find_short": {
+      "message": "Поиск..."
+   },
+   "edit_search_web": {
+      "message": "Поместите '?' в адресную строку. Введите искомое выражение после вопросительного знака, чтобы выполнять поиск с помощью поисковой системы по умолчанию"
+   },
+   "edit_search_web_short": {
+      "message": "Поиск в Интернете..."
+   },
+   "enter_fullscreen": {
+      "message": "Открытие страницы в полноэкранном режиме"
+   },
+   "enter_fullscreen_short": {
+      "message": "Полный экран"
+   },
+   "fill_form": {
+      "message": "Заполнить форму"
+   },
+   "fill_form_content": {
+      "message": "Содержание"
+   },
+   "fill_form_date": {
+      "message": "Дата"
+   },
+   "fill_form_delete": {
+      "message": "Удалить"
+   },
+   "fill_form_field": {
+      "message": "Поле"
+   },
+   "fill_form_shortcuts": {
+      "message": "Заполнить форму"
+   },
+   "fill_form_title": {
+      "message": "Название"
+   },
+   "fill_form_type": {
+      "message": "Тип"
+   },
+   "fill_form_url": {
+      "message": "URL"
+   },
+   "fill_form_view": {
+      "message": "Вид"
+   },
+   "fill_from_delete_all": {
+      "message": "Удалить всё"
+   },
+   "firefox_key": {
+      "message": "Firefox"
+   },
+   "form_close": {
+      "message": "Закрыть"
+   },
+   "google_chrome_feature_shortcuts": {
+      "message": "Специальные возможности Chrome"
+   },
+   "goto_bottom": {
+      "message": "Переход вниз страницы"
+   },
+   "goto_bottom_short": {
+      "message": "Перейти вниз"
+   },
+   "goto_top": {
+      "message": "Переход наверх страницы"
+   },
+   "goto_top_short": {
+      "message": "Перейти вверх"
+   },
+   "help": {
+      "message": "Открытие Центра справки в новой вкладке"
+   },
+   "help_short": {
+      "message": "Справка"
+   },
+   "history_back": {
+      "message": "Переход на предыдущую страницу в истории просмотров для вкладки"
+   },
+   "history_back_short": {
+      "message": "Назад"
+   },
+   "history_forward": {
+      "message": "Переход на следующую страницу в истории просмотров для вкладки"
+   },
+   "history_forward_short": {
+      "message": "Вперед"
+   },
+   "history_home": {
+      "message": "Открытие Вашей главной страницы в текущем окне"
+   },
+   "history_home_short": {
+      "message": "Главная"
+   },
+   "history_menu": {
+      "message": "Открытие сраницы истории"
+   },
+   "history_menu_short": {
+      "message": "История"
+   },
+   "ie6_key": {
+      "message": "IE6"
+   },
+   "ie7_key": {
+      "message": "IE7"
+   },
+   "ie8_key": {
+      "message": "IE8"
+   },
+   "item_close_chrome_prompt": {
+      "message": "Подтверждение пред закрытием нескольких вкладок"
+   },
+   "item_close_last_tab": {
+      "message": "Не закрывать текущее окно обозревателя при закрытии последней вкладки, создать новую вкладку."
+   },
+   "item_double_click_close_tab": {
+      "message": "Двойной щелчок по вкладке закрывает её"
+   },
+   "item_image_bar": {
+      "message": "При наведении указателя мыши на изображение, показывать  плавающую панель инструментов изображений (лупа, просмотр оригинала, установка обоев)"
+   },
+   "item_image_bar_not_windows": {
+      "message": "При наведении указателя мыши на изображение, показывать  плавающую панель инструментов изображений (лупа, просмотр оригинала)"
+   },
+   "item_mouse_wheel_switch_tab": {
+      "message": "Переместите мышь на панель вкладок, чтобы перейти на вкладки"
+
+   },
+   "item_open_in_before": {
+      "message": "Открыть в передней вкладке"
+   },
+   "item_open_in_behind": {
+      "message": "Открыть в фоновой вкладке"
+   },
+   "item_open_in_new_tab": {
+      "message": "При щелчке по ссылке всегда открывать новую вкладку"
+   },
+   "item_video_bar": {
+      "message": "При наведении указателя мыши на видео, показывать плавающую панель инструментов видео (просмотр видео в отдельном окне)"
+   },
+   "last_tab": {
+      "message": "Переключение на последнюю вкладку"
+   },
+   "last_tab_short": {
+      "message": "Выбрать последнюю вкладку"
+   },
+   "magnifier": {
+      "message": "Лупа"
+   },
+   "maxthon_key": {
+      "message": "Maxthon"
+   },
+   "more": {
+      "message": "ещё"
+   },
+   "mute_all_tabs": {
+      "message": "Отключить звук на всех вкладках"
+   },
+   "mute_browser": {
+      "message": "Отключить звук в обозревателе"
+   },
+   "mute_shortcuts": {
+      "message": "Отключить звук в обозревателе"
+   },
+   "name": {
+      "message": "Панель инструментов Chrome (от Google)"
+   },
+   "new_incognito_window": {
+      "message": "Открытие нового окна в режиме инкогнито"
+   },
+   "new_incognito_window_short": {
+      "message": "Новое окно в режиме инкогнито"
+   },
+   "new_tab": {
+      "message": "Открытие новой вкладки"
+   },
+   "new_tab_short": {
+      "message": "Новая вкладка"
+   },
+   "new_window": {
+      "message": "Открытие нового окна"
+   },
+   "new_window_short": {
+      "message": "Новое окно"
+   },
+   "next_tab": {
+      "message": "Переключение на следующую вкладку"
+   },
+   "next_tab_short": {
+      "message": "Выбрать следующую вкладку"
+   },
+   "np_message_1000": {
+      "message": "Кнопка Босс зарегистрирована для другого приложения, пожалуйста, переопределить её"
+   },
+   "np_message_1001": {
+      "message": "Повех всех окон"
+   },
+   "np_message_1002": {
+      "message": "Google Chrome"
+   },
+   "np_message_1003": {
+      "message": "Вы хотите закрыть все вкладки?"
+   },
+   "np_message_1004": {
+      "message": "Ok"
+   },
+   "np_message_1005": {
+      "message": "Отмена"
+   },
+   "np_message_1006": {
+      "message": "Не предупреждать при закрытии нескольких вкладок"
+   },
+   "open_file": {
+      "message": "Открытие файла с Вашего компьютера в Google Chrome"
+   },
+   "open_file_short": {
+      "message": "Открытие файла..."
+   },
+   "open_location": {
+      "message": "Выделение URL"
+   },
+   "open_location_short": {
+      "message": "Открытие местоположения..."
+   },
+   "opera_key": {
+      "message": "Opera"
+   },
+   "option": {
+      "message": "Параметры"
+   },
+   "option_title": {
+      "message": "Параметры панели инструментов Chrome"
+   },
+   "other_shortcuts": {
+      "message": "Другие ярлыки"
+   },
+   "paste": {
+      "message": "Вставка содержимого буфера обмена"
+   },
+   "paste_match_style": {
+      "message": "Вставка содержимого буфера обмена без форматирования"
+   },
+   "paste_match_style_short": {
+      "message": "Вставить и использовать стиль"
+   },
+   "paste_short": {
+      "message": "Вставить"
+   },
+   "position": {
+      "message": "Позиция:"
+   },
+   "prev_tab": {
+      "message": "Переключение на предыдущую вкладку"
+   },
+   "prev_tab_short": {
+      "message": "Выбрать предыдущую вкладку"
+   },
+   "print": {
+      "message": "Печатать текущую страницу"
+   },
+   "print_short": {
+      "message": "Печать..."
+   },
+   "privacy_policy": {
+      "message": "Политика конфиденциальности"
+   },
+   "privacy_policy_link": {
+      "message": "http://www.google.com/intl/ru/privacy.html"
+   },
+   "quick_launch_1": {
+      "message": "Быстрый запуск 1"
+   },
+   "quick_launch_2": {
+      "message": "Быстрый запуск 2"
+   },
+   "quick_launch_3": {
+      "message": "Быстрый запуск 3"
+   },
+   "quick_launch_4": {
+      "message": "Быстрый запуск 4"
+   },
+   "quick_launch_5": {
+      "message": "Быстрый запуск 5"
+   },
+   "quick_launch_6": {
+      "message": "Быстрый запуск 6"
+   },
+   "quick_launch_7": {
+      "message": "Быстрый запуск 7"
+   },
+   "quick_launch_8": {
+      "message": "Быстрый запуск 8"
+   },
+   "quick_launch_9": {
+      "message": "Быстрый запуск 9"
+   },
+   "quick_launch_close": {
+      "message": "Закрыть"
+   },
+   "quick_launch_manage_bookmark": {
+      "message": "Перейти в менеджер закладок"
+   },
+   "quick_launch_reset": {
+      "message": "Сброс"
+   },
+   "quick_launch_select_folder": {
+      "message": "Ok"
+   },
+   "quick_launch_shortcuts": {
+      "message": "Быстрый запуск"
+   },
+   "recommended_download_helper": {
+      "message": "Помощник загрузки"
+   },
+   "recommended_download_helper_desc": {
+      "message": "Интеграция загрузчика"
+   },
+   "recommended_drag_and_go": {
+      "message": "Drag and Go"
+   },
+   "recommended_drag_and_go_desc": {
+      "message": "Жесты мыши (для ссылок и текстов)"
+   },
+   "recommended_from_google": {
+      "message": "Вы можете также попробовать эти расширения от Google"
+   },
+   "recommended_from_third_party": {
+      "message": "Вы можете также попробовать эти расширения от сторонних разработчиков"
+   },
+   "recommended_google_translate": {
+      "message": "Переводчик Google"
+   },
+   "recommended_google_translate_desc": {
+      "message": "Перевод веб-страниц"
+   },
+   "recommended_proxy_switch": {
+      "message": "Proxy Switchy!"
+   },
+   "recommended_proxy_switch_desc": {
+      "message": "Менеджер Proxy"
+   },
+   "recommended_screen_capture": {
+      "message": "Screen Capture"
+   },
+   "recommended_screen_capture_desc": {
+      "message": "Захват веб-страниц"
+   },
+   "recommended_smooth_gestures": {
+      "message": "Smooth Gestures"
+   },
+   "recommended_smooth_gestures_desc": {
+      "message": "Жесты мыши (другие)"
+   },
+   "recommended_tab_menu": {
+      "message": "Tab Menu"
+   },
+   "recommended_tab_menu_desc": {
+      "message": "Менеджер вкладок"
+   },
+   "refresh_all_tabs": {
+      "message": "Обновить все вкладки"
+   },
+   "reload_ignoring_cache_menu": {
+      "message": "Перезагрузка текущей страницы, игнорируя кэшированное содержимое"
+   },
+   "reload_ignoring_cache_menu_short": {
+      "message": "Принудительно перезагрузить эту страницу"
+   },
+   "reload_menu": {
+      "message": "Перезагрузить текущую страницу"
+   },
+   "reload_menu_short": {
+      "message": "Перезагрузить эту страницу"
+   },
+   "reopen_closed_tab": {
+      "message": "Открытие последней закрытой вкладки"
+   },
+   "reopen_closed_tab_short": {
+      "message": "Открыть закрытую вкладку"
+   },
+   "restore": {
+      "message": "Восстановить"
+   },
+   "safari_key": {
+      "message": "Safari"
+   },
+   "save_and_close": {
+      "message": "Сохранить & Закрыть"
+   },
+   "save_form": {
+      "message": "Сохранить данные формы"
+   },
+   "save_page": {
+      "message": "Сохранение текущей страницы"
+   },
+   "save_page_short": {
+      "message": "Сохранить страницу как..."
+   },
+   "scroll_down": {
+      "message": "Прокручивание вниз текущий страницы"
+   },
+   "scroll_down_short": {
+      "message": "Прокрутить вниз"
+   },
+   "set_wallpaper": {
+      "message": "Установить обои"
+   },
+   "shortcut_add_to_menu": {
+      "message": "Добавить в ниспадающее меню"
+   },
+   "shortcut_chrome_key": {
+      "message": "Chrome"
+   },
+   "shortcut_compare": {
+      "message": "Сравнивнить ярлыки с другими обозревателями"
+   },
+   "shortcut_please_input": {
+      "message": "Введите ярлык"
+   },
+   "shortcut_redefine": {
+      "message": "Переназначить"
+   },
+   "show_downloads": {
+      "message": "Открытие страницы Загрузки"
+   },
+   "show_downloads_short": {
+      "message": "Загрузки"
+   },
+   "sogou_key": {
+      "message": "Sogou Browser"
+   },
+   "stop_menu": {
+      "message": "Останавка загрузки текущей страницы"
+   },
+   "stop_menu_short": {
+      "message": "Стоп"
+   },
+   "stretch_text": {
+      "message": "Растягивать"
+   },
+   "switch_tab": {
+      "message": "Переключение на вкладку, заданную номером позиции на панели вкладок"
+   },
+   "switch_tab_short": {
+      "message": "Выбрать вкладку"
+   },
+   "tab_and_window_shortcuts": {
+      "message": "Вкладка и окно"
+   },
+   "tab_fill_form": {
+      "message": "Данные формы"
+   },
+   "tab_fill_form_description": {
+      "message": "Вы можете использовать \"Сохранить данные формы\" в раскрывающемся меню, чтобы сохранить неотправленные формы данных и избежать потери данных, вызванной окончанием сессии или параметром страницы не кешировать. Данные формы сохраняются по URL, который включает данные из всех форм на веб-странице за исключением пароля или номера кредитной карты. Используйте \"Заполнить форму\" или его ярлык, чтобы восстановить данные формы."
+   },
+   "tab_general": {
+      "message": "Общие"
+   },
+   "tab_quick_launch": {
+      "message": "Быстрый запуск"
+   },
+   "tab_recommended": {
+      "message": "Рекомендации"
+   },
+   "tab_shortcut": {
+      "message": "Ярлыки & Меню"
+   },
+   "tab_shortcut_description": {
+      "message": "Вы можете пересмотреть сочетания клавиш Chrome для различных функций и сравнить их с ярлыками других браузеров. Вы можете добавить Ваших избранные функции в ниспадающее меню быстрого доступа этого расширения, а также организовать их порядок в этом меню. Вы можете также задать ярлыки для кнопки Босс, Быстрый запуск, Заполнения форм и Отключения звука на всех вкладках."
+   },
+   "task_manager": {
+      "message": "Открытие менеджера задач"
+   },
+   "task_manager_short": {
+      "message": "Менеджер задач"
+   },
+   "terms_of_service": {
+      "message": "Условия предоставления услуг"
+   },
+   "terms_of_service_link": {
+      "message": "https://chrome.google.com/extensions/intl/ru/gallery_tos.html"
+   },
+   "text_bigger": {
+      "message": "Увеличение всего на странице"
+   },
+   "text_bigger_short": {
+      "message": "Увеличить"
+   },
+   "text_default": {
+      "message": " Возвращение страницы к нормальному размеру"
+   },
+   "text_default_short": {
+      "message": "Фактический размер"
+   },
+   "text_shortcuts": {
+      "message": "Текст"
+   },
+   "text_smaller": {
+      "message": "Уменьшение всего на странице"
+   },
+   "text_smaller_short": {
+      "message": "Уменьшить"
+   },
+   "tile_text": {
+      "message": "Плитка"
+   },
+   "tip_failed": {
+      "message": "Вы выбрали 10 ярлыков. Снимите выбор с нескольких ярлыков и попробуйте снова."
+   },
+   "tip_failed2": {
+      "message": "Выберите папку."
+   },
+   "tip_failed3": {
+      "message": "Этот ярлык используется другим действием."
+   },
+   "tip_failed4": {
+      "message": "Недопустимый ярлык."
+   },
+   "tip_succeed": {
+      "message": "Параметры сохранены."
+   },
+   "title_floating_bar": {
+      "message": "Плавающая панель инструментов"
+   },
+   "title_tab": {
+      "message": "Вкладка"
+   },
+   "tt_key": {
+      "message": "TT Browser"
+   },
+   "unmute_all_tabs": {
+      "message": "Включить звук на всех страницах"
+   },
+   "video_standalone": {
+      "message": "Автономное видео"
+   },
+   "view_original_image": {
+      "message": "Показ оригинала изображения"
+   },
+   "view_source": {
+      "message": "Открытие исходного кода текущей страницы"
+   },
+   "view_source_short": {
+      "message": "Просмотр кода страницы"
+   },
+   "webpage_shortcuts": {
+      "message": "Веб-страница"
+   }
+}

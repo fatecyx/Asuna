@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="qtaacenc"
+	ProjectGUID="{4698D761-4E22-432A-BC5B-0572D5C6B207}"
+	VCNestedProjectGUID="{278B9332-5774-474D-B27C-D1FC46191973}"
+	VCNestedProjectFileName="qtaacenc.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

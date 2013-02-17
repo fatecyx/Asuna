@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{56881815-5F21-442D-8C73-881B62BDB425}</ProjectGuid>
+    <RootNamespace>npConvenience</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50522.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetExt>.dll</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;NPCONVENIENCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdiplus.lib;comctl32.lib;psapi.lib;version.lib;dwmapi.lib;uxtheme.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>convenience.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>dwmapi.dll;uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;NPCONVENIENCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>stdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdiplus.lib;comctl32.lib;psapi.lib;version.lib;dwmapi.lib;uxtheme.lib;undoc_ntdll.lib;undoc_k32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>convenience.def</ModuleDefinitionFile>
+      <DelayLoadDLLs>dwmapi.dll;uxtheme.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>MyLib_NT.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include=".\background_plugin.cc" />
+    <ClCompile Include=".\background_script_object.cc" />
+    <ClCompile Include=".\browser_mute_plugin.cc" />
+    <ClCompile Include=".\browser_mute_script_object.cc" />
+    <ClCompile Include=".\client_process_functions.cc" />
+    <ClCompile Include=".\convenience_plugin.cc" />
+    <ClCompile Include=".\convenience_script_object.cc" />
+    <ClCompile Include=".\dll_entry.cc" />
+    <ClCompile Include=".\log.cc" />
+    <ClCompile Include=".\ncbutton.cc" />
+    <ClCompile Include=".\npn_entry.cc" />
+    <ClCompile Include=".\npp_entry.cc" />
+    <ClCompile Include=".\plugin_base.cc" />
+    <ClCompile Include=".\plugin_factory.cc" />
+    <ClCompile Include=".\script_object_base.cc" />
+    <ClCompile Include=".\script_object_factory.cc" />
+    <ClCompile Include=".\utils.cc" />
+    <ClCompile Include=".\video_alone_plugin.cc" />
+    <ClCompile Include=".\video_alone_script_object.cc" />
+    <ClCompile Include=".\video_window.cc" />
+    <ClCompile Include=".\video_window_manager.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".\convenience.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include=".\background_plugin.h" />
+    <ClInclude Include=".\background_script_object.h" />
+    <ClInclude Include=".\browser_mute_plugin.h" />
+    <ClInclude Include=".\browser_mute_script_object.h" />
+    <ClInclude Include=".\client_process_functions.h" />
+    <ClInclude Include=".\convenience_plugin.h" />
+    <ClInclude Include=".\convenience_script_object.h" />
+    <ClInclude Include=".\log.h" />
+    <ClInclude Include=".\ncbutton.h" />
+    <ClInclude Include=".\plugin_base.h" />
+    <ClInclude Include=".\plugin_factory.h" />
+    <ClInclude Include=".\resource.h" />
+    <ClInclude Include=".\script_object_base.h" />
+    <ClInclude Include=".\script_object_factory.h" />
+    <ClInclude Include=".\stdafx.h" />
+    <ClInclude Include=".\utils.h" />
+    <ClInclude Include=".\video_alone_plugin.h" />
+    <ClInclude Include=".\video_alone_script_object.h" />
+    <ClInclude Include=".\video_window.h" />
+    <ClInclude Include=".\video_window_manager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\convenience.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

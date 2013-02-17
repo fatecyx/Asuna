@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title></title>
+  <link href="options.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="convenience_util.js"></script>
+  <script type="text/javascript" src="key_util.js"></script>
+  <script type="text/javascript" src="database_operator.js"></script>
+  <script type="text/javascript" src="fill_form.js"></script>
+  <script type="text/javascript" src="quick_launch.js"></script>
+  <script type="text/javascript" src="shortcut.js"></script>
+  <script type="text/javascript" src="options.js"></script>
+
+</head>
+<body onload="init();">
+  <div class="contentBox">
+   <div id="header">
+     <h1 id="optionTitle"></h1>
+   </div>
+   <div id="description"></div>
+   <div id="nav">
+     <ul>
+       <li id="mGeneral" class="choose"></li>
+       <li id="mFillForm"></li>
+       <li id="mQuicklyVisit" name="isWindowsOnly"></li>
+       <li id="mShortcut" name="isWindowsOnly"></li>
+       <li id="mRecommended"></li>
+     </ul>
+     <div class="clear"></div>
+   </div>
+   <div id="main">
+
+    <div id="generalTab">
+       <div class="innerBox">
+         <div class="itemTitle" id="title_floatingBar"></div>
+         <div class="item">
+           <label><input type="checkbox" id="imageBar" checked="true">
+             <span id="item_imageBar"></span>
+           </label>
+         </div>
+         <div class="item" name="isWindowsOnly">
+           <label><input type="checkbox" id="videoBar" checked="true">
+             <span id="item_videoBar"></span>
+           </label>
+         </div>
+         <div class="itemTitle" id="title_tab"></div>
+         <div class="item" name="isWindowsOnly">
+           <label><input type="checkbox" id="closeLastTab" checked="true">
+             <span id="item_closeLastTab"></span>
+           </label>
+         </div>
+         <div class="item">
+           <label><input type="checkbox" id="openInNewTab" checked="true">
+             <span id="item_openInNewTab"></span>
+           </label>
+            <div class="openInNewTabs">
+             <input type="radio"  id="openInBefore">
+             <span id="item_openInBefore"></span>
+             <input type="radio"  id="openInBehind">
+             <span id="item_openInBehind"></span>
+            </div>
+         </div>
+         <div class="item" name="isWindowsOnly">
+           <label><input type="checkbox" id="dbclickCloseTab" checked="true">
+             <span id="item_dbClickCloseTab"></span>
+           </label>
+         </div>
+         <div class="item" name="isWindowsOnly">
+           <label><input type="checkbox" id="closeChromePrompt" checked="true">
+             <span id="item_closeChromePrompt"></span>
+           </label>
+         </div>
+         <div class="item" name="isWindowsOnly">
+         <label><input type="checkbox" id="mouseWheelSwitchTab">
+             <span id="item_mouseWheelSwitchTab"></span>
+         </label>
+         </div>
+         <div class="item" name="isWindowsOnly">
+         <label><input type="checkbox" id="pressEnterOpenNewTab">
+             <span id="item_pressEnterOpenNewTab"></span>
+         </label>
+         </div>
+         <div class="itemTitle" id="title_contextMenu" name="isWindowsOnly"></div>
+         <div class="item" name="isWindowsOnly">
+           <label><input type="checkbox" id="enableContextMenu" checked="true">
+             <span id="item_enableContextMenu"></span>
+           </label>
+         </div>
+      </div>
+     </div>
+
+    <div id="fillFormTab">
+     <div class="navTip">
+      <span id="fillForm_tip"></span>
+     </div>
+     <div class="innerBox">
+      <div class="box">
+       <div class="fillForm_header">
+         <table border="0" id="fillForm_table" cellspacing="0" cellpadding="0">
+          <tr style="line-height:24px">         
+            <th><div class="fillForm_url" id="fillForm_address"></div></th>
+            <th><div class="fillForm_title" id="fillForm_title"></div></th>
+            <th><div class="fillForm_date" id="fillForm_date"></div></th>
+            <th><div class="fillForm_operate"> </div></th>
+          </tr>
+         </table>
+       </div>
+       <div class="fillForm_record" id="allFormInfo">
+       </div>
+     </div>
+     <div class="form_delete">
+       <a href="javascript:void(0)" id="form_deleteAll">
+         <img src="images/del.png" style="position: relative; top:2px;" alt="">
+         <span id="fillFrom_delAll"></span>
+       </a>
+     </div>
+     <div id="formContent">
+      <div id='divTitle'></div>
+      <div id='divURL'></div>
+      <div id="divFromInfoTable"></div> 
+      <div style="float: right; margin: 10px 20px 0 0;">
+        <div class="button1"><div class="button2">  
+        <div class="button3">&nbsp;</div>
+        <div class="button4"  id="form_close" 
+            onclick="$('formContent').style.display = 'none'">
+        </div>
+        </div></div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div id="quicklyVisitTab" name="isWindowsOnly">
+    <div class="navTip">
+      <span id="bookmark_tip"></span>
+
+    </div>
+    <div class="innerBox">
+    <div id="openBookmark">
+    </div>
+    <div style="margin-left: 158px;"><a href="javascript:void(0)" id="gotoShortcutTab"></a></div>
+    <div id="bookmarkBox">
+      <div class="bookmarkInnerBox">
+        <div id="bookmarkTree"></div>
+        <div id="bookmarkList"></div>
+        <div class="clear"></div>
+      </div>
+      <div id="bookmarkMenuDiv">
+        <a href="javascript:void(0)" style='float:left; line-height: 26px;' onclick="openBookmarkTab()" id="quick_launch_manage_bookmark"></a>
+        <input type="hidden" id="openHitKey">
+        <button id="quick_launch_selected_folder" onclick="setSelectedBookmarkFolder()"></button>
+        <button id="quick_launch_close" onclick="closeBox('bookmarkBox')"></button>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div id="shortcutTab" name="isWindowsOnly">
+      <div class="navTip">
+      <span id="shortcut_tip"></span>
+      </div>
+      <div class="innerBox">
+      <div style='margin-bottom:10px;'>
+        <label>
+          <input type="checkbox" id="isCompare">
+          <span class="font_blue" id="shortcut_compare"></span>
+        </label>
+      </div>
+      <div id="shortcutTable"></div>
+     </div>
+    </div>
+
+    <div id="recommendedTab">
+       <div class="recommendedInnerBox">
+         <div class="recommendedTitle">
+           <div class="more">
+             <a href="https://chrome.google.com/extensions/featured/by_google" target="_blank" id="more"></a></div>
+           <div id="recommended_fromGoogle"></div>
+         </div>
+         <div id="googleExtensionsRecommended"></div>
+        <div class="recommendedTitle">
+           <div class="more"><a href="https://chrome.google.com/extensions" target="_blank" id="more2"></a></div>
+           <div id="recommended_fromThird"></div>
+         </div>
+         <div id="thirdPartyExtensionsRecommended"></div>
+         <div class="disclaimer" id="disclaimer"></div>
+         
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="footer">&copy;2010 Google -
+    <a href="https://chrome.google.com/extensions/intl/en/gallery_tos.html" id="termsOfService"></a> -
+    <a href="http://www.google.com/intl/en/privacy.html" id="privacyPolicy"></a></div>
+</body>
+</html>

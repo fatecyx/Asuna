@@ -1,0 +1,3 @@
+@Set Path=E:\Compiler\VC10;%PATH%
+@Set LIB=E:\Library\dx9c\Lib\x86;E:\WinDDK\7600.16385.1\lib\Mfc\i386;E:\WinDDK\7600.16385.1\lib\wxp\i386;E:\WinDDK\2600\lib\wxp\i386;E:\WINDDK\7600.16385.1\LIB\CRT\I386;E:\WINDDK\7600.16385.1\LIB\WXP\I386;E:\WINDDK\7600.16385.1\LIB\ATL\I386;E:\VC6\VC7\Lib;E:\Intel\Compiler\11.1\067\Lib\ia32;
+@Set INCLUDE=E:\MyLib\include;E:\WinDDK\7600.16385.1\inc\api\crt\stl70;E:\WinDDK\7600.16385.1\inc\api;E:\WinDDK\7600.16385.1\inc\crt;E:\WinDDK\7600.16385.1\inc\mfc42;E:\WinDDK\7600.16385.1\inc\ddk;E:\WinDDK\7600.16385.1\inc\atl71;E:\Library\dx9c\Include;E:\Intel\Compiler\11.1\067\Include;E:\Microsoft SDKs\Windows\v7.0\Include;

@@ -1,0 +1,1055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Headers\QTSDK">
+      <UniqueIdentifier>{9eef2575-4132-4f9a-98b5-e82dfee3d458}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CodecConfigs.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="metadata.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="qtaacenc.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="QTAACEncoder.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="QTMP4Transcoder.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CodecConfigs.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="QTAACEncoder.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AE.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AEDataModel.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AEHelpers.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AEInteraction.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AEMach.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AEObjects.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AEPackObject.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AERegistry.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AEUserTermTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AIFF.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Aliases.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Appearance.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AppleDiskPartitions.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AppleEvents.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AppleHelp.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AppleScript.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AppleTalk.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ApplicationServices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ASDebugging.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ASRegistry.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AssertMacros.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ATS.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ATSFont.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ATSLayoutTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ATSTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ATSUnicode.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ATSUnicodeDirectAccess.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ATSUnicodeFlattening.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AvailabilityMacros.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\AVLTree.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Balloons.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Carbon.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CarbonCore.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CarbonEvents.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CarbonEventsCore.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CarbonSound.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFArray.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFBag.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFBase.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFBinaryHeap.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFBitVector.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFBundle.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFCharacterSet.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFData.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFDate.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFDictionary.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFMachPort.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFMessagePort.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFNetwork.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFNotificationCenter.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFNumber.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFPlugIn.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFPlugInCOM.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFPreferences.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFPropertyList.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFRunLoop.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFSet.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFSocket.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFStream.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFString.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFStringEncodingExt.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFTimeZone.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFTree.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFURL.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFURLAccess.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFUUID.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFXMLNode.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CFXMLParser.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGAffineTransform.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGBase.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGBitmapContext.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGColorSpace.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGContext.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGDataConsumer.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGDataProvider.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGDirectDisplay.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGDirectPalette.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGError.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGFont.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGGeometry.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGImage.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGPattern.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGPDFContext.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGPDFDocument.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGRemoteOperation.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CGWindowLevel.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CMApplication.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CMCalibrator.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CMDeviceIntegration.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CMICCProfile.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CMMComponent.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CMScriptingPlugin.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CMTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CodeFragments.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Collections.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ColorPicker.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ColorSync.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CommonPanels.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Components.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ConditionalMacros.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ControlDefinitions.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ControlManagerComponent.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Controls.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CoreAudioTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CoreFoundation.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CoreGraphics.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CoreServices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CoreVideo.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CursorDevices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVBase.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVBuffer.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVDirect3DBuffer.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVDirect3DBufferPool.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVDirect3DTexture.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVDirect3DTextureCache.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVHostTime.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVImageBuffer.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVPixelBuffer.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVPixelBufferPool.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVPixelFormatDescription.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\CVReturn.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\DateTimeUtils.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Debugging.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\DeviceControl.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Devices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Dialogs.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Dictionary.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\DigitalHubRegistry.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Displays.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Drag.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\DrawSprocket.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\DriverServices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\DriverSynchronization.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Editions.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Endian.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Events.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\fenv.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Files.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\FindByContent.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Finder.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\FinderRegistry.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\FixMath.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Folders.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\FontPanel.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Fonts.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\FontSync.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\fp.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Gestalt.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\GXFonts.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\GXMath.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\GXTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Help.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HFSVolumes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HIMovieView.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HIObject.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HIServices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HIShape.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HITextUtils.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HIToolbar.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HIToolbox.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HIView.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\HTMLRendering.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\IBCarbonRuntime.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ICAApplication.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ICACamera.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ICADevice.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Icons.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\IconStorage.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ImageCapture.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ImageCodec.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ImageCompression.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\InternetConfig.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\IntlResources.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\IsochronousDataHandler.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\JavaApplet.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\JavaControl.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\JavaEmbedding.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Keyboards.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Keychain.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\KeychainCore.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\KeychainHI.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\LangAnalysis.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\LanguageAnalysis.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\LaunchServices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ListManagerComponent.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Lists.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\LowMem.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MacApplication.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MacErrors.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MacHelp.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MachineExceptions.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MacLocales.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MacMemory.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MacTextEditor.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MacTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MacWindows.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Math64.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MediaHandlers.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Menus.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MixedMode.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Movies.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MoviesFormat.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Multiprocessing.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\MultiprocessingInfo.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\NameRegistry.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Navigation.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\NavigationServices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Notification.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\NSL.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\NSLCore.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\NumberFormatting.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OpenScripting.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OpenTransport.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OpenTransportProtocol.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OpenTransportProviders.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OSA.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OSAComp.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OSAGeneric.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OSServices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OSUtils.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\OT.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Packages.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Palettes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Patches.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PEFBinaryFormat.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PictUtils.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PLStringFuncs.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMApplication.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMCore.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMDefinitions.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMErrors.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMIOModule.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMPluginHeader.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMPrinterBrowsers.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMPrinterModule.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMPrintingDialogExtensions.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMRaster.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMTemplate.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PMTicket.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Power.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Print.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\PrintCore.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Printing.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Processes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3D.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DCamera.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DCustomElements.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DDrawContext.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DErrors.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DGeometry.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DGroup.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DIO.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DLight.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DMath.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DOld.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DPick.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DRenderer.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DSet.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DShader.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DStorage.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DString.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DStyle.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DTransform.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DView.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QD3DViewer.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QDOffscreen.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QDPictToCGContext.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QTLoadLibraryUtils.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QTML.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QTSMovie.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QTStreamingComponents.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Quickdraw.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QuickdrawText.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QuickTime.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QuickTimeComponents.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QuickTimeErrors.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QuickTimeMusic.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QuickTimeStreaming.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QuickTimeVR.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\QuickTimeVRFormat.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\RAVE.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ResourceForkComponent.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Resources.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Retrace.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ROMDefs.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ScalerStreamTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Scrap.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Script.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SCSI.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SecurityCore.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SecurityHI.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SegLoad.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SFNTLayoutTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SFNTTypes.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Slots.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Sound.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SpeechRecognition.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SpeechSynthesis.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\StandardFile.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Streaming.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\StringCompare.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Strings.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\SystemSound.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TargetConditionals.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TextCommon.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TextEdit.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TextEncodingConverter.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TextEncodingPlugin.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TextServices.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TextUtils.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Threads.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Timer.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\ToolUtils.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Translation.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TranslationExtensions.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Traps.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TSMTE.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\TypeSelect.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\UnicodeConverter.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\UnicodeUtilities.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\URLAccess.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\UTCUtils.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\vBasicOps.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\vBigNum.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\vBLAS.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\vDSP.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\vecLib.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\vectorOps.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\vfp.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\Video.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\WebServicesCore.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CIncludes\WSMethodInvocation.h">
+      <Filter>Headers\QTSDK</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{278B9332-5774-474D-B27C-D1FC46191973}</ProjectGuid>
+    <RootNamespace>qtaacenc</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <TargetName>$(ProjectName)2</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/nodefaultlib:libcmt %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>CVClient.lib;qtmlClient.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>.\CIncludes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CVClient.lib;qtmlClient.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <OutputFile>G:\x\$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CodecConfigs.cpp" />
+    <ClCompile Include="metadata.cpp" />
+    <ClCompile Include="qtaacenc.cpp" />
+    <ClCompile Include="QTAACEncoder.cpp" />
+    <ClCompile Include="QTMP4Transcoder.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CodecConfigs.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="QTAACEncoder.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="CIncludes\AE.h" />
+    <ClInclude Include="CIncludes\AEDataModel.h" />
+    <ClInclude Include="CIncludes\AEHelpers.h" />
+    <ClInclude Include="CIncludes\AEInteraction.h" />
+    <ClInclude Include="CIncludes\AEMach.h" />
+    <ClInclude Include="CIncludes\AEObjects.h" />
+    <ClInclude Include="CIncludes\AEPackObject.h" />
+    <ClInclude Include="CIncludes\AERegistry.h" />
+    <ClInclude Include="CIncludes\AEUserTermTypes.h" />
+    <ClInclude Include="CIncludes\AIFF.h" />
+    <ClInclude Include="CIncludes\Aliases.h" />
+    <ClInclude Include="CIncludes\Appearance.h" />
+    <ClInclude Include="CIncludes\AppleDiskPartitions.h" />
+    <ClInclude Include="CIncludes\AppleEvents.h" />
+    <ClInclude Include="CIncludes\AppleHelp.h" />
+    <ClInclude Include="CIncludes\AppleScript.h" />
+    <ClInclude Include="CIncludes\AppleTalk.h" />
+    <ClInclude Include="CIncludes\ApplicationServices.h" />
+    <ClInclude Include="CIncludes\ASDebugging.h" />
+    <ClInclude Include="CIncludes\ASRegistry.h" />
+    <ClInclude Include="CIncludes\AssertMacros.h" />
+    <ClInclude Include="CIncludes\ATS.h" />
+    <ClInclude Include="CIncludes\ATSFont.h" />
+    <ClInclude Include="CIncludes\ATSLayoutTypes.h" />
+    <ClInclude Include="CIncludes\ATSTypes.h" />
+    <ClInclude Include="CIncludes\ATSUnicode.h" />
+    <ClInclude Include="CIncludes\ATSUnicodeDirectAccess.h" />
+    <ClInclude Include="CIncludes\ATSUnicodeFlattening.h" />
+    <ClInclude Include="CIncludes\AvailabilityMacros.h" />
+    <ClInclude Include="CIncludes\AVLTree.h" />
+    <ClInclude Include="CIncludes\Balloons.h" />
+    <ClInclude Include="CIncludes\Carbon.h" />
+    <ClInclude Include="CIncludes\CarbonCore.h" />
+    <ClInclude Include="CIncludes\CarbonEvents.h" />
+    <ClInclude Include="CIncludes\CarbonEventsCore.h" />
+    <ClInclude Include="CIncludes\CarbonSound.h" />
+    <ClInclude Include="CIncludes\CFArray.h" />
+    <ClInclude Include="CIncludes\CFBag.h" />
+    <ClInclude Include="CIncludes\CFBase.h" />
+    <ClInclude Include="CIncludes\CFBinaryHeap.h" />
+    <ClInclude Include="CIncludes\CFBitVector.h" />
+    <ClInclude Include="CIncludes\CFBundle.h" />
+    <ClInclude Include="CIncludes\CFCharacterSet.h" />
+    <ClInclude Include="CIncludes\CFData.h" />
+    <ClInclude Include="CIncludes\CFDate.h" />
+    <ClInclude Include="CIncludes\CFDictionary.h" />
+    <ClInclude Include="CIncludes\CFMachPort.h" />
+    <ClInclude Include="CIncludes\CFMessagePort.h" />
+    <ClInclude Include="CIncludes\CFNetwork.h" />
+    <ClInclude Include="CIncludes\CFNotificationCenter.h" />
+    <ClInclude Include="CIncludes\CFNumber.h" />
+    <ClInclude Include="CIncludes\CFPlugIn.h" />
+    <ClInclude Include="CIncludes\CFPlugInCOM.h" />
+    <ClInclude Include="CIncludes\CFPreferences.h" />
+    <ClInclude Include="CIncludes\CFPropertyList.h" />
+    <ClInclude Include="CIncludes\CFRunLoop.h" />
+    <ClInclude Include="CIncludes\CFSet.h" />
+    <ClInclude Include="CIncludes\CFSocket.h" />
+    <ClInclude Include="CIncludes\CFStream.h" />
+    <ClInclude Include="CIncludes\CFString.h" />
+    <ClInclude Include="CIncludes\CFStringEncodingExt.h" />
+    <ClInclude Include="CIncludes\CFTimeZone.h" />
+    <ClInclude Include="CIncludes\CFTree.h" />
+    <ClInclude Include="CIncludes\CFURL.h" />
+    <ClInclude Include="CIncludes\CFURLAccess.h" />
+    <ClInclude Include="CIncludes\CFUUID.h" />
+    <ClInclude Include="CIncludes\CFXMLNode.h" />
+    <ClInclude Include="CIncludes\CFXMLParser.h" />
+    <ClInclude Include="CIncludes\CGAffineTransform.h" />
+    <ClInclude Include="CIncludes\CGBase.h" />
+    <ClInclude Include="CIncludes\CGBitmapContext.h" />
+    <ClInclude Include="CIncludes\CGColorSpace.h" />
+    <ClInclude Include="CIncludes\CGContext.h" />
+    <ClInclude Include="CIncludes\CGDataConsumer.h" />
+    <ClInclude Include="CIncludes\CGDataProvider.h" />
+    <ClInclude Include="CIncludes\CGDirectDisplay.h" />
+    <ClInclude Include="CIncludes\CGDirectPalette.h" />
+    <ClInclude Include="CIncludes\CGError.h" />
+    <ClInclude Include="CIncludes\CGFont.h" />
+    <ClInclude Include="CIncludes\CGGeometry.h" />
+    <ClInclude Include="CIncludes\CGImage.h" />
+    <ClInclude Include="CIncludes\CGPattern.h" />
+    <ClInclude Include="CIncludes\CGPDFContext.h" />
+    <ClInclude Include="CIncludes\CGPDFDocument.h" />
+    <ClInclude Include="CIncludes\CGRemoteOperation.h" />
+    <ClInclude Include="CIncludes\CGWindowLevel.h" />
+    <ClInclude Include="CIncludes\CMApplication.h" />
+    <ClInclude Include="CIncludes\CMCalibrator.h" />
+    <ClInclude Include="CIncludes\CMDeviceIntegration.h" />
+    <ClInclude Include="CIncludes\CMICCProfile.h" />
+    <ClInclude Include="CIncludes\CMMComponent.h" />
+    <ClInclude Include="CIncludes\CMScriptingPlugin.h" />
+    <ClInclude Include="CIncludes\CMTypes.h" />
+    <ClInclude Include="CIncludes\CodeFragments.h" />
+    <ClInclude Include="CIncludes\Collections.h" />
+    <ClInclude Include="CIncludes\ColorPicker.h" />
+    <ClInclude Include="CIncludes\ColorSync.h" />
+    <ClInclude Include="CIncludes\CommonPanels.h" />
+    <ClInclude Include="CIncludes\Components.h" />
+    <ClInclude Include="CIncludes\ConditionalMacros.h" />
+    <ClInclude Include="CIncludes\ControlDefinitions.h" />
+    <ClInclude Include="CIncludes\ControlManagerComponent.h" />
+    <ClInclude Include="CIncludes\Controls.h" />
+    <ClInclude Include="CIncludes\CoreAudioTypes.h" />
+    <ClInclude Include="CIncludes\CoreFoundation.h" />
+    <ClInclude Include="CIncludes\CoreGraphics.h" />
+    <ClInclude Include="CIncludes\CoreServices.h" />
+    <ClInclude Include="CIncludes\CoreVideo.h" />
+    <ClInclude Include="CIncludes\CursorDevices.h" />
+    <ClInclude Include="CIncludes\CVBase.h" />
+    <ClInclude Include="CIncludes\CVBuffer.h" />
+    <ClInclude Include="CIncludes\CVDirect3DBuffer.h" />
+    <ClInclude Include="CIncludes\CVDirect3DBufferPool.h" />
+    <ClInclude Include="CIncludes\CVDirect3DTexture.h" />
+    <ClInclude Include="CIncludes\CVDirect3DTextureCache.h" />
+    <ClInclude Include="CIncludes\CVHostTime.h" />
+    <ClInclude Include="CIncludes\CVImageBuffer.h" />
+    <ClInclude Include="CIncludes\CVPixelBuffer.h" />
+    <ClInclude Include="CIncludes\CVPixelBufferPool.h" />
+    <ClInclude Include="CIncludes\CVPixelFormatDescription.h" />
+    <ClInclude Include="CIncludes\CVReturn.h" />
+    <ClInclude Include="CIncludes\DateTimeUtils.h" />
+    <ClInclude Include="CIncludes\Debugging.h" />
+    <ClInclude Include="CIncludes\DeviceControl.h" />
+    <ClInclude Include="CIncludes\Devices.h" />
+    <ClInclude Include="CIncludes\Dialogs.h" />
+    <ClInclude Include="CIncludes\Dictionary.h" />
+    <ClInclude Include="CIncludes\DigitalHubRegistry.h" />
+    <ClInclude Include="CIncludes\Displays.h" />
+    <ClInclude Include="CIncludes\Drag.h" />
+    <ClInclude Include="CIncludes\DrawSprocket.h" />
+    <ClInclude Include="CIncludes\DriverServices.h" />
+    <ClInclude Include="CIncludes\DriverSynchronization.h" />
+    <ClInclude Include="CIncludes\Editions.h" />
+    <ClInclude Include="CIncludes\Endian.h" />
+    <ClInclude Include="CIncludes\Events.h" />
+    <ClInclude Include="CIncludes\fenv.h" />
+    <ClInclude Include="CIncludes\Files.h" />
+    <ClInclude Include="CIncludes\FindByContent.h" />
+    <ClInclude Include="CIncludes\Finder.h" />
+    <ClInclude Include="CIncludes\FinderRegistry.h" />
+    <ClInclude Include="CIncludes\FixMath.h" />
+    <ClInclude Include="CIncludes\Folders.h" />
+    <ClInclude Include="CIncludes\FontPanel.h" />
+    <ClInclude Include="CIncludes\Fonts.h" />
+    <ClInclude Include="CIncludes\FontSync.h" />
+    <ClInclude Include="CIncludes\fp.h" />
+    <ClInclude Include="CIncludes\Gestalt.h" />
+    <ClInclude Include="CIncludes\GXFonts.h" />
+    <ClInclude Include="CIncludes\GXMath.h" />
+    <ClInclude Include="CIncludes\GXTypes.h" />
+    <ClInclude Include="CIncludes\Help.h" />
+    <ClInclude Include="CIncludes\HFSVolumes.h" />
+    <ClInclude Include="CIncludes\HIMovieView.h" />
+    <ClInclude Include="CIncludes\HIObject.h" />
+    <ClInclude Include="CIncludes\HIServices.h" />
+    <ClInclude Include="CIncludes\HIShape.h" />
+    <ClInclude Include="CIncludes\HITextUtils.h" />
+    <ClInclude Include="CIncludes\HIToolbar.h" />
+    <ClInclude Include="CIncludes\HIToolbox.h" />
+    <ClInclude Include="CIncludes\HIView.h" />
+    <ClInclude Include="CIncludes\HTMLRendering.h" />
+    <ClInclude Include="CIncludes\IBCarbonRuntime.h" />
+    <ClInclude Include="CIncludes\ICAApplication.h" />
+    <ClInclude Include="CIncludes\ICACamera.h" />
+    <ClInclude Include="CIncludes\ICADevice.h" />
+    <ClInclude Include="CIncludes\Icons.h" />
+    <ClInclude Include="CIncludes\IconStorage.h" />
+    <ClInclude Include="CIncludes\ImageCapture.h" />
+    <ClInclude Include="CIncludes\ImageCodec.h" />
+    <ClInclude Include="CIncludes\ImageCompression.h" />
+    <ClInclude Include="CIncludes\InternetConfig.h" />
+    <ClInclude Include="CIncludes\IntlResources.h" />
+    <ClInclude Include="CIncludes\IsochronousDataHandler.h" />
+    <ClInclude Include="CIncludes\JavaApplet.h" />
+    <ClInclude Include="CIncludes\JavaControl.h" />
+    <ClInclude Include="CIncludes\JavaEmbedding.h" />
+    <ClInclude Include="CIncludes\Keyboards.h" />
+    <ClInclude Include="CIncludes\Keychain.h" />
+    <ClInclude Include="CIncludes\KeychainCore.h" />
+    <ClInclude Include="CIncludes\KeychainHI.h" />
+    <ClInclude Include="CIncludes\LangAnalysis.h" />
+    <ClInclude Include="CIncludes\LanguageAnalysis.h" />
+    <ClInclude Include="CIncludes\LaunchServices.h" />
+    <ClInclude Include="CIncludes\ListManagerComponent.h" />
+    <ClInclude Include="CIncludes\Lists.h" />
+    <ClInclude Include="CIncludes\LowMem.h" />
+    <ClInclude Include="CIncludes\MacApplication.h" />
+    <ClInclude Include="CIncludes\MacErrors.h" />
+    <ClInclude Include="CIncludes\MacHelp.h" />
+    <ClInclude Include="CIncludes\MachineExceptions.h" />
+    <ClInclude Include="CIncludes\MacLocales.h" />
+    <ClInclude Include="CIncludes\MacMemory.h" />
+    <ClInclude Include="CIncludes\MacTextEditor.h" />
+    <ClInclude Include="CIncludes\MacTypes.h" />
+    <ClInclude Include="CIncludes\MacWindows.h" />
+    <ClInclude Include="CIncludes\Math64.h" />
+    <ClInclude Include="CIncludes\MediaHandlers.h" />
+    <ClInclude Include="CIncludes\Menus.h" />
+    <ClInclude Include="CIncludes\MixedMode.h" />
+    <ClInclude Include="CIncludes\Movies.h" />
+    <ClInclude Include="CIncludes\MoviesFormat.h" />
+    <ClInclude Include="CIncludes\Multiprocessing.h" />
+    <ClInclude Include="CIncludes\MultiprocessingInfo.h" />
+    <ClInclude Include="CIncludes\NameRegistry.h" />
+    <ClInclude Include="CIncludes\Navigation.h" />
+    <ClInclude Include="CIncludes\NavigationServices.h" />
+    <ClInclude Include="CIncludes\Notification.h" />
+    <ClInclude Include="CIncludes\NSL.h" />
+    <ClInclude Include="CIncludes\NSLCore.h" />
+    <ClInclude Include="CIncludes\NumberFormatting.h" />
+    <ClInclude Include="CIncludes\OpenScripting.h" />
+    <ClInclude Include="CIncludes\OpenTransport.h" />
+    <ClInclude Include="CIncludes\OpenTransportProtocol.h" />
+    <ClInclude Include="CIncludes\OpenTransportProviders.h" />
+    <ClInclude Include="CIncludes\OSA.h" />
+    <ClInclude Include="CIncludes\OSAComp.h" />
+    <ClInclude Include="CIncludes\OSAGeneric.h" />
+    <ClInclude Include="CIncludes\OSServices.h" />
+    <ClInclude Include="CIncludes\OSUtils.h" />
+    <ClInclude Include="CIncludes\OT.h" />
+    <ClInclude Include="CIncludes\Packages.h" />
+    <ClInclude Include="CIncludes\Palettes.h" />
+    <ClInclude Include="CIncludes\Patches.h" />
+    <ClInclude Include="CIncludes\PEFBinaryFormat.h" />
+    <ClInclude Include="CIncludes\PictUtils.h" />
+    <ClInclude Include="CIncludes\PLStringFuncs.h" />
+    <ClInclude Include="CIncludes\PMApplication.h" />
+    <ClInclude Include="CIncludes\PMCore.h" />
+    <ClInclude Include="CIncludes\PMDefinitions.h" />
+    <ClInclude Include="CIncludes\PMErrors.h" />
+    <ClInclude Include="CIncludes\PMIOModule.h" />
+    <ClInclude Include="CIncludes\PMPluginHeader.h" />
+    <ClInclude Include="CIncludes\PMPrinterBrowsers.h" />
+    <ClInclude Include="CIncludes\PMPrinterModule.h" />
+    <ClInclude Include="CIncludes\PMPrintingDialogExtensions.h" />
+    <ClInclude Include="CIncludes\PMRaster.h" />
+    <ClInclude Include="CIncludes\PMTemplate.h" />
+    <ClInclude Include="CIncludes\PMTicket.h" />
+    <ClInclude Include="CIncludes\Power.h" />
+    <ClInclude Include="CIncludes\Print.h" />
+    <ClInclude Include="CIncludes\PrintCore.h" />
+    <ClInclude Include="CIncludes\Printing.h" />
+    <ClInclude Include="CIncludes\Processes.h" />
+    <ClInclude Include="CIncludes\QD.h" />
+    <ClInclude Include="CIncludes\QD3D.h" />
+    <ClInclude Include="CIncludes\QD3DCamera.h" />
+    <ClInclude Include="CIncludes\QD3DCustomElements.h" />
+    <ClInclude Include="CIncludes\QD3DDrawContext.h" />
+    <ClInclude Include="CIncludes\QD3DErrors.h" />
+    <ClInclude Include="CIncludes\QD3DGeometry.h" />
+    <ClInclude Include="CIncludes\QD3DGroup.h" />
+    <ClInclude Include="CIncludes\QD3DIO.h" />
+    <ClInclude Include="CIncludes\QD3DLight.h" />
+    <ClInclude Include="CIncludes\QD3DMath.h" />
+    <ClInclude Include="CIncludes\QD3DOld.h" />
+    <ClInclude Include="CIncludes\QD3DPick.h" />
+    <ClInclude Include="CIncludes\QD3DRenderer.h" />
+    <ClInclude Include="CIncludes\QD3DSet.h" />
+    <ClInclude Include="CIncludes\QD3DShader.h" />
+    <ClInclude Include="CIncludes\QD3DStorage.h" />
+    <ClInclude Include="CIncludes\QD3DString.h" />
+    <ClInclude Include="CIncludes\QD3DStyle.h" />
+    <ClInclude Include="CIncludes\QD3DTransform.h" />
+    <ClInclude Include="CIncludes\QD3DView.h" />
+    <ClInclude Include="CIncludes\QD3DViewer.h" />
+    <ClInclude Include="CIncludes\QDOffscreen.h" />
+    <ClInclude Include="CIncludes\QDPictToCGContext.h" />
+    <ClInclude Include="CIncludes\QTLoadLibraryUtils.h" />
+    <ClInclude Include="CIncludes\QTML.h" />
+    <ClInclude Include="CIncludes\QTSMovie.h" />
+    <ClInclude Include="CIncludes\QTStreamingComponents.h" />
+    <ClInclude Include="CIncludes\Quickdraw.h" />
+    <ClInclude Include="CIncludes\QuickdrawText.h" />
+    <ClInclude Include="CIncludes\QuickTime.h" />
+    <ClInclude Include="CIncludes\QuickTimeComponents.h" />
+    <ClInclude Include="CIncludes\QuickTimeErrors.h" />
+    <ClInclude Include="CIncludes\QuickTimeMusic.h" />
+    <ClInclude Include="CIncludes\QuickTimeStreaming.h" />
+    <ClInclude Include="CIncludes\QuickTimeVR.h" />
+    <ClInclude Include="CIncludes\QuickTimeVRFormat.h" />
+    <ClInclude Include="CIncludes\RAVE.h" />
+    <ClInclude Include="CIncludes\ResourceForkComponent.h" />
+    <ClInclude Include="CIncludes\Resources.h" />
+    <ClInclude Include="CIncludes\Retrace.h" />
+    <ClInclude Include="CIncludes\ROMDefs.h" />
+    <ClInclude Include="CIncludes\ScalerStreamTypes.h" />
+    <ClInclude Include="CIncludes\Scrap.h" />
+    <ClInclude Include="CIncludes\Script.h" />
+    <ClInclude Include="CIncludes\SCSI.h" />
+    <ClInclude Include="CIncludes\SecurityCore.h" />
+    <ClInclude Include="CIncludes\SecurityHI.h" />
+    <ClInclude Include="CIncludes\SegLoad.h" />
+    <ClInclude Include="CIncludes\SFNTLayoutTypes.h" />
+    <ClInclude Include="CIncludes\SFNTTypes.h" />
+    <ClInclude Include="CIncludes\Slots.h" />
+    <ClInclude Include="CIncludes\Sound.h" />
+    <ClInclude Include="CIncludes\SpeechRecognition.h" />
+    <ClInclude Include="CIncludes\SpeechSynthesis.h" />
+    <ClInclude Include="CIncludes\StandardFile.h" />
+    <ClInclude Include="CIncludes\Streaming.h" />
+    <ClInclude Include="CIncludes\StringCompare.h" />
+    <ClInclude Include="CIncludes\Strings.h" />
+    <ClInclude Include="CIncludes\SystemSound.h" />
+    <ClInclude Include="CIncludes\TargetConditionals.h" />
+    <ClInclude Include="CIncludes\TextCommon.h" />
+    <ClInclude Include="CIncludes\TextEdit.h" />
+    <ClInclude Include="CIncludes\TextEncodingConverter.h" />
+    <ClInclude Include="CIncludes\TextEncodingPlugin.h" />
+    <ClInclude Include="CIncludes\TextServices.h" />
+    <ClInclude Include="CIncludes\TextUtils.h" />
+    <ClInclude Include="CIncludes\Threads.h" />
+    <ClInclude Include="CIncludes\Timer.h" />
+    <ClInclude Include="CIncludes\ToolUtils.h" />
+    <ClInclude Include="CIncludes\Translation.h" />
+    <ClInclude Include="CIncludes\TranslationExtensions.h" />
+    <ClInclude Include="CIncludes\Traps.h" />
+    <ClInclude Include="CIncludes\TSMTE.h" />
+    <ClInclude Include="CIncludes\TypeSelect.h" />
+    <ClInclude Include="CIncludes\UnicodeConverter.h" />
+    <ClInclude Include="CIncludes\UnicodeUtilities.h" />
+    <ClInclude Include="CIncludes\URLAccess.h" />
+    <ClInclude Include="CIncludes\UTCUtils.h" />
+    <ClInclude Include="CIncludes\vBasicOps.h" />
+    <ClInclude Include="CIncludes\vBigNum.h" />
+    <ClInclude Include="CIncludes\vBLAS.h" />
+    <ClInclude Include="CIncludes\vDSP.h" />
+    <ClInclude Include="CIncludes\vecLib.h" />
+    <ClInclude Include="CIncludes\vectorOps.h" />
+    <ClInclude Include="CIncludes\vfp.h" />
+    <ClInclude Include="CIncludes\Video.h" />
+    <ClInclude Include="CIncludes\WebServicesCore.h" />
+    <ClInclude Include="CIncludes\WSMethodInvocation.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

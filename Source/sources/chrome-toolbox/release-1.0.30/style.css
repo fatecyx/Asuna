@@ -1,0 +1,43 @@
+#media_floatingBar {
+  position: absolute;
+  z-index:9999;
+  clear: both;
+}
+
+#media_floatingBar a {
+  background-position: 0 0;
+  float: left;
+  width: 24px;
+  height: 22px;
+  margin-right:5px !important;
+}
+
+#media_floatingBar a:hover {
+  background-position: 49px 0;
+}
+
+#media_floatingBar a:active {
+  background-position: 24px 0;
+}
+
+#media_magnifier_mask {
+  position: absolute;
+  z-index: 99999;
+}
+
+#media_magnifier {
+  -webkit-border-radius:125px;
+  border: 2px #333333 solid;
+  position:fixed ;
+  position: absolute;
+  z-index: 10000;
+}
+
+.media_video{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+}

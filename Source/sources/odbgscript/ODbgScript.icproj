@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="ODbgScript"
+	ProjectGUID="{221CE044-5566-4AF9-ACF1-00CF8D1B8E12}"
+	VCNestedProjectGUID="{E70561A4-6B5D-4044-99AE-91BAE1975AB6}"
+	VCNestedProjectFileName="ODbgScript.vcproj">
+	<Configurations>
+		<Configuration
+			Name="ReleaseWDK|Win32">
+			<Tool
+				Name="GeneralTool"
+				InterproceduralOptimization="true"/>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				EnableEnhancedInstructionSet="1001"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

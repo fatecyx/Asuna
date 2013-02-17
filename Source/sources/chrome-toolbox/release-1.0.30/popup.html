@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title>
+<style type="text/css">
+  body {
+    width: 280px;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    padding: 5px 3px;
+    font-family: arial, sans-serif;
+  }
+  #hit {
+    display: none;
+  }
+  .disable {
+    color: #bbbbbb;
+    cursor: default;
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  li{
+    padding: 0 5px 0 23px;
+    margin: 0;
+    list-style: none;
+    line-height: 25px;
+    text-align: left;
+    border: 1px #ffffff solid;
+    height: 22px;
+    clear: both;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  li:hover {
+    border-radius: 3px 3px;
+	background: -webkit-gradient(linear, left top, left bottom,
+		color-stop(0, #fff),  color-stop(0.4, hsl(215, 67%, 97%)), color-stop(0.41, hsl(213, 48%, 95%)));
+	border: solid 1px #c5cdd3;
+  }
+
+  #quicklyCommand li div {
+    cursor: pointer;
+  }
+
+  .disable:hover {
+    border: 1px #ffffff solid;
+    background: #ffffff;
+  }
+
+  .left {
+    float: left;
+    overflow: hidden;
+  }
+  .left img {
+    position: absolute;
+    margin-top: 3px;
+    left: 10px;
+  }
+  .right {
+    color: #a1a192;
+    float: right;
+  }
+
+  .separator {
+    border-top: 1px solid #dddddd;
+    height: 0px;
+    margin: 3px 2px;
+  }
+
+  #muteName {
+    padding-left: 25px;
+    margin-left: -25px;
+  }
+
+
+</style>
+<script type="text/javascript" src="convenience_util.js"></script>
+<script type="text/javascript" src="database_operator.js"></script>
+<script type="text/javascript" src="fill_form.js"></script>
+<script type="text/javascript" src="key_util.js"></script>
+
+</head>
+<body>
+<div class="extensionFun">
+  <ul>
+    <li id="btnFillForm" class="disable">
+      <div class="left"><span id="tFillForm"></span></div>
+      <div class="right" id="fillFormShortcut" name="isWindowsOnly"></div>
+    </li>
+    <li id="btnSaveForm" class="disable">
+      <div class="left"> <span id="tSaveForm"></span></div>
+      <div class="right" id="saveFormShortcut" name="isWindowsOnly"></div>
+    </li>
+    <li id="btnDeleteForm" class="disable">
+      <div class="left"><span id="tDeleteForm"></span></div>
+    </li>
+  </ul>
+</div>
+<div class="separator"></div>
+<div class="extensionFun">
+ <ul>
+   <li id="btnMute" name="isWindowsOnly">
+     <div class="left" id="muteName"></div>
+     <div class="right" id="muteShortcut"></div>
+   </li>
+   <li id="btnRefreshAll">
+     <div class="left" id="refreshAllName"></div>
+     <div class="right" id="refreshAllShortcut"></div>
+   </li>
+ </ul>
+</div>
+<div class="separator"  name="isWindowsOnly"></div>
+<div id="quicklyMenu"  name="isWindowsOnly">
+
+</div>
+<div class="separator"></div>
+<div>
+  <ul>
+    <li id="optionPage"><div class="left" id="optionText"></div> </li>
+  </ul>
+</div>
+
+
+<script type="text/javascript">
+  var bg = chrome.extension.getBackgroundPage();
+  var fillForm = new FillForm();
+  
+  function setMuteMenu() {
+    var muteMenuId = 60;
+    var item = key_util.getCustomShortcutItemById(
+            bg.custom_shortcut_list, muteMenuId);
+    var muteMenu = $('btnMute');
+    var muteName = $('muteName');
+    var muteShortcut = $('muteShortcut');
+    
+    var muteAvailable = bg.checkMuteAvailable();
+    if (muteAvailable == 1) {
+      muteMenu.style.display = 'block';
+    } else if (muteAvailable == 2) {
+      muteMenu.style.display = 'none';
+    }
+    
+    var name = eval(localStorage['browserMute'])?
+        'unmute_all_tabs' : 'mute_all_tabs';
+    var imageUrl = eval(localStorage['browserMute'])?
+        'images/mute_19.png' : 'images/speaker_19.png';
+    i18nReplace('muteName', name);
+    muteName.style.background = 'url(' + imageUrl + ') no-repeat 4px 5px';
+    muteShortcut.innerText = key_util.keyCodeToShowName(item.shortcut);
+    muteMenu.onclick = function() {
+      bg.browserMute();
+      name = eval(localStorage['browserMute'])?
+        'unmute_all_tabs' : 'mute_all_tabs';
+      imageUrl = eval(localStorage['browserMute'])?
+        'images/mute_19.png' : 'images/speaker_19.png';
+      i18nReplace('muteName', name);
+      muteName.style.background = 'url(' + imageUrl + ') no-repeat 4px 5px';
+    }
+  }
+
+  function setFreshAllMenu() {
+    var refreshAllMenuId = 61;
+    var item = key_util.getCustomShortcutItemById(
+            bg.custom_shortcut_list, refreshAllMenuId);
+    var refreshMenu = $('btnRefreshAll');
+    var refreshAllName = $('refreshAllName');
+    var refreshAllShortcut = $('refreshAllShortcut');
+    refreshAllName.innerText = chrome.i18n.getMessage('refresh_all_tabs');
+    refreshAllShortcut.innerText = key_util.keyCodeToShowName(item.shortcut);
+    refreshMenu.onclick = function() {
+      bg.refreshAllTabs();
+      window.close();
+    }
+  }
+
+  function init() {
+    i18nReplace('tFillForm', 'fill_form');
+    i18nReplace('tSaveForm', 'save_form');
+    i18nReplace('tDeleteForm', 'delete_form');
+    i18nReplace('optionText', 'option');
+    $('optionPage').onclick = function() {
+      var url = chrome.extension.getURL('options.html');
+      chrome.tabs.create({url: url });
+      window.close();
+    };
+    setPopupMenuStatus();
+    setFreshAllMenu();
+    if (isWindowsPlatform()) {
+      setMuteMenu();
+      createQuicklyVisitItem();
+    } else {
+      setWindowOnlyElement();
+    }
+  }
+  function i18nReplace(id, messageName) {
+    $(id).innerText = chrome.i18n.getMessage(messageName);
+  }
+
+  var openBookmark = function() {
+    document.body.style.backgroundColor = '#ff0000';
+  }
+
+  function setPopupMenuStatus() {
+    var fillFormMenu = [
+      {menuId: 49, name: 'fillFormShortcut'},
+      {menuId: 50, name: 'saveFormShortcut'}
+    ];
+
+    for (var i = 0; i < fillFormMenu.length; i++) {
+      var id = fillFormMenu[i].menuId;
+      var element = $(fillFormMenu[i].name);
+      (function(element, id) {
+        var item = key_util.getCustomShortcutItemById(
+            bg.custom_shortcut_list, id);
+        element.innerText = key_util.keyCodeToShowName(item.shortcut);
+      })(element, id);
+    }
+
+    chrome.tabs.getSelected(null, function(tab) {
+      chrome.tabs.sendRequest(tab.id, {msg: 'checkForm'}, function(response) {
+        if (response.msg == 'existForm') {
+          $('btnSaveForm').className = 'menu';
+          $('btnSaveForm').addEventListener('click', function() {
+            chrome.tabs.executeScript(null, {
+                code: 'sendFormData("' + escape(tab.url) + '","' +
+                      escape(tab.title) + '")'});
+            window.close();
+          }, false);
+        }
+      });
+
+      fillForm.selectByUrl(tab.url, function(tx, results) {
+        if (results.rows.length > 0) {
+          var formInfo = results.rows.item(0).formInfo;
+          var id = results.rows.item(0).id;
+          $('btnFillForm').className = 'menu';
+          $('btnFillForm').addEventListener('click',
+              function(){
+            chrome.tabs.executeScript(null,
+                {code: 'fillForm(' + formInfo + ')' });
+            window.close();
+          }, false);
+          $('btnDeleteForm').className = 'menu';
+          $('btnDeleteForm').addEventListener('click',
+              function() {
+            fillForm.deleteById(id);
+            window.setTimeout(function() {
+              window.close();
+            }, 100)
+          }, false);
+        }
+      });
+    });
+  }
+
+  function createQuicklyVisitItem() {
+    var quickAccessMenu = localStorage['quicklyVisitMenu'] || '';
+    var items = quickAccessMenu.split(',');
+    var ul = document.createElement('ul');
+    ul.id = 'quicklyCommand';
+    for (var i = 0; i < items.length; i++) {
+      var item = key_util.function_table[items[i]];
+      var id = item.id;
+      var name = chrome.i18n.getMessage(item.function_name);
+      var showKey = ''
+      var virtualKey = '';
+      if (item.chrome_virtual_key) {
+        virtualKey = item.chrome_virtual_key;
+      }
+      if (key_util.custom_shortcut_id_list.indexOf(item.id) > -1) {
+        item = key_util.getCustomShortcutItemById(bg.custom_shortcut_list, id);
+        virtualKey = item.shortcut;
+      }
+      virtualKey = virtualKey.indexOf(',') < 0 ?
+           virtualKey : virtualKey.substring(0, virtualKey.indexOf(','));
+      showKey = key_util.keyCodeToShowName(virtualKey);
+      var li = document.createElement('li');
+      li.value = id;
+      li.innerHTML = '<div class="left">' + name +
+          '</div><div class="right">' + showKey + '</div>';
+      (function(virtualKey) {
+        li.addEventListener('click', function() {
+          bg.plugin.triggerChromeShortcuts(virtualKey);
+          window.close();
+        }, false);
+      })(virtualKey);
+      ul.appendChild(li);
+    }
+    $('quicklyMenu').appendChild(ul);
+  }
+
+  function setWindowOnlyElement() {
+    var elements = document.getElementsByName('isWindowsOnly');
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].style.display = 'none';
+    }
+  }
+  init();
+
+</script>
+</body>
+</html>
