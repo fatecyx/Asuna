@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<str>
+	<Configure1>
+		<BackUp>0</BackUp>
+		<Subdir>1</Subdir>
+		<Case_Sensitive>0</Case_Sensitive>
+		<MutilReplace>1</MutilReplace>
+		<Force_ReadOnly>0</Force_ReadOnly>
+		<ReplaceType>1</ReplaceType>
+	</Configure1>
+	<Configure2>
+		<Language>Chinese_Simplified</Language>
+		<SelectFileExt>*.txt;*.htm;*.c;*.sc</SelectFileExt>
+		<DefaultFileExt>*.txt;*.htm;*.c;*.cpp;*.h;*.hpp;*.pas;*.dpr;*.bpr;*.asp;*.php;*.cgi;*.ini;*.bat;*.inc;*.java;*.py;*.dfm;*.js;*.sql;*.sc</DefaultFileExt>
+		<itsSelf>0</itsSelf>
+		<OutPutDir></OutPutDir>
+		<Extract_File_Source_Add>1</Extract_File_Source_Add>
+		<Extract_Add_Empty_Row>0</Extract_Add_Empty_Row>
+		<Extract_Include_Start>1</Extract_Include_Start>
+		<Extract_Include_End>1</Extract_Include_End>
+	</Configure2>
+	<History>
+		<Target>453A5C4465736B746F705C536F757263655C457874726163746F72735C65665C7363725F73635C;1</Target>
+		<NormalReplaceMemo1>814097BA81400D0A8356834983930D0AA844A8440D0A8347838A834A0D0A8369836383810D0A88EE814097740D0A967B959492B70D0A95BA8E6D82600D0A95BA8E6D82610D0A95BA8E6D82620D0A905E814096E90D0A8389839483420D0A</NormalReplaceMemo1>
+		<NormalReplaceMemo2>A1A1C1C1A1A10D0ACAABA1A1D2F40D0AA1AAA1AA0D0AB0ACC0F2BFA80D0ACFC4A1A1C4BF0D0AB5BEA1A1D2B60D0AB1BEB2BFB3A40D0ACABFB1F8A3C10D0ACABFB1F8A3C20D0ACABFB1F8A3C30D0AD5E6A1A1D2B90D0AC0ADA1A1CEAC0D0A</NormalReplaceMemo2>
+		<CharacterReplaceMemo1></CharacterReplaceMemo1>
+		<CharacterReplaceMemo2></CharacterReplaceMemo2>
+		<CharacterReplaceMemo3></CharacterReplaceMemo3>
+		<RegexReplaceMemo1></RegexReplaceMemo1>
+		<RegexReplaceMemo2></RegexReplaceMemo2>
+	</History>
+	<MultiReplace>
+		<RepacleRulesFile>E:\Desktop\Source\Extractors\ef\MR\MultiRules\eden人名.nrr</RepacleRulesFile>
+	</MultiReplace>
+	<Other>
+		<DefaultEditer>notepad.exe</DefaultEditer>
+	</Other>
+</str>

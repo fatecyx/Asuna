@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="MoleBoxExt"
+	ProjectGUID="{74BD84CC-141F-45B9-98BC-5675C7E869CD}"
+	VCNestedProjectGUID="{28445160-4604-4CF4-8F62-F4A8F5F4CCDA}"
+	VCNestedProjectFileName="MoleBoxExt.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+				OptimizeForWindowsApplication="true"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

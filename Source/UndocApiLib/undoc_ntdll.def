@@ -1,0 +1,28 @@
+EXPORTS
+    RtlAddVectoredContinueHandler
+    RtlRemoveVectoredContinueHandler
+    KiFastSystemCall
+    NtGetTickCount
+    NtCreateKey
+    NtSetValueKey
+    A_SHAInit
+    A_SHAUpdate
+    A_SHAFinal
+    RtlWow64EnableFsRedirection
+    NtCreateUserProcess
+    NtCreateThreadEx
+    LdrInitializeThunk
+    MD5Init
+    MD5Update
+    MD5Final
+	memset = _memset
+	memcpy = _memcpy
+	_vsnwprintf
+    RtlQueryPerformanceCounter
+    RtlSetUnhandledExceptionFilter
+    DbgBreakPoint
+    RtlWow64EnableFsRedirectionEx
+    RtlDosPathNameToRelativeNtPathName_U
+    LdrRegisterDllNotification
+    LdrUnregisterDllNotification
+    NtInitializeNlsFiles

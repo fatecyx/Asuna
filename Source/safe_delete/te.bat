@@ -1,0 +1,10 @@
+cd/d "%~dp0"
+md 123
+md 123\321
+md 123\1234
+echo test>123\1.txt
+echo test>123\2.txt
+echo test>123\3.txt
+echo test>123\4.txt
+echo test>123\321\1.txt
+echo test>123\1234\1.txt

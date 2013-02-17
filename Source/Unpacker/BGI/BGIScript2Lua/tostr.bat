@@ -1,0 +1,1 @@
+E:\Python27\python.exe addenter.py -f %*

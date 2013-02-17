@@ -1,0 +1,1 @@
+copy/y J:\Falcom\ZWEI2P\ZWEI2P_JP.exe ZWEI2P_CN.exe

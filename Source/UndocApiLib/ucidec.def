@@ -1,0 +1,6 @@
+EXPORTS
+    UCIDecode
+    UCIFree
+    IsSupported
+    GetPluginInfo
+    GetPicture

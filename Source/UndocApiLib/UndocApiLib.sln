@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UndocApiLib", "UndocApiLib.vcxproj", "{FD66DCDA-1F24-49F1-A599-D95790F23522}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		apphelp|Win32 = apphelp|Win32
+		apphelp|x64 = apphelp|x64
+		kernel32|Win32 = kernel32|Win32
+		kernel32|x64 = kernel32|x64
+		ntdll|Win32 = ntdll|Win32
+		ntdll|x64 = ntdll|x64
+		ucidec|Win32 = ucidec|Win32
+		ucidec|x64 = ucidec|x64
+		ws2_32|Win32 = ws2_32|Win32
+		ws2_32|x64 = ws2_32|x64
+		zlib|Win32 = zlib|Win32
+		zlib|x64 = zlib|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.apphelp|Win32.ActiveCfg = apphelp|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.apphelp|Win32.Build.0 = apphelp|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.apphelp|x64.ActiveCfg = apphelp|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.apphelp|x64.Build.0 = apphelp|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.kernel32|Win32.ActiveCfg = kernel32|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.kernel32|Win32.Build.0 = kernel32|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.kernel32|x64.ActiveCfg = kernel32|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.kernel32|x64.Build.0 = kernel32|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ntdll|Win32.ActiveCfg = ntdll|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ntdll|Win32.Build.0 = ntdll|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ntdll|x64.ActiveCfg = ntdll|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ntdll|x64.Build.0 = ntdll|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ucidec|Win32.ActiveCfg = ucidec|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ucidec|Win32.Build.0 = ucidec|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ucidec|x64.ActiveCfg = ucidec|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ucidec|x64.Build.0 = ucidec|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ws2_32|Win32.ActiveCfg = ws2_32|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ws2_32|Win32.Build.0 = ws2_32|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ws2_32|x64.ActiveCfg = ws2_32|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.ws2_32|x64.Build.0 = ws2_32|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.zlib|Win32.ActiveCfg = zlib|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.zlib|Win32.Build.0 = zlib|Win32
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.zlib|x64.ActiveCfg = zlib|x64
+		{FD66DCDA-1F24-49F1-A599-D95790F23522}.zlib|x64.Build.0 = zlib|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

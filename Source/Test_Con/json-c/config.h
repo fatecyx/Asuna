@@ -1,0 +1,1 @@
+#define HAVE_STDARG_H 1

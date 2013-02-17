@@ -1,0 +1,11 @@
+EXPORTS
+    unzOpen64
+    unzClose
+    unzGetGlobalInfo64
+    unzGoToNextFile
+    unzGetCurrentFileInfo64
+    unzGetFilePos64
+    unzGoToFilePos64
+    unzOpenCurrentFile
+    unzReadCurrentFile
+    unzCloseCurrentFile

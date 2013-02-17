@@ -1,0 +1,50 @@
+time:
+¥ê¥¢¥ëÃÃ¤¬¤¤¤ë´óÈª¤¯¤ó¤Î¤Ð¤¢¤¤: 8h
+Fate£¯hollow ataraxia: 2h
+ÏÄ¿Õ¥«¥Ê¥¿: 30 min
+Cross days: 6h
+77 ¡«And, two stars meet again¡«: 1h
+ÌìÉñÂÒÂþ: 25 min
+
+
+ÌáÑÇÀ­Ö®Àá(Tears to Tiara) PC¼òÌåÖÐÎÄ°æ
+
+Ô´Âë:TTTExtract\TTTExtract.cpp
+
+°üºó×º:PAK
+
+ÎÄ¼þÍ·:KCAP
+ÀàÐÍ:Ñ¹Ëõ¹ýµÄÊý¾Ý
+ËµÃ÷:0x08¿ªÊ¼,Ã¿0x24×Ö½ÚÃèÊöÒ»¸öÎÄ¼þµÄÐÅÏ¢,½á¹¹ÈçÏÂ:
+
+typedef struct _tagPakFileInfo
+{
+	BOOL		bIsCompressed;
+	TCHAR	szFileName[0x18];
+	DWORD	dwFileOffset;
+	DWORD	dwFileSize;
+} PakFileInfo;
+
+
+ÎÄ¼þÍ·:LAC
+ÀàÐÍ:Î´Ñ¹ËõÊý¾Ý,ÓÃÓÚBGMºÍSE
+ËµÃ÷:0x08¿ªÊ¼,Ã¿0x28×Ö½ÚÃèÊöÒ»¸öÎÄ¼þµÄÐÅÏ¢,½á¹¹ÈçÏÂ:
+
+typedef struct _tagSeFileInfo
+{
+	CHAR		szUnknown[0x20];
+	DWORD	dwFileSize;
+	DWORD	dwFileOffset;
+} SeFileInfo;
+
+¸÷ÎÄ¼þ×÷ÓÃ:
+bak.pak	±³¾°(BackGround)
+BGM.PAK	±³¾°ÒôÀÖ(BackGround Music)
+btl.pak		Õ½¶·ËØ²Ä(Battle)
+fnt.pak		×ÖÌå(Font)
+grp.pak		CG,»­Ïñ(Graph)
+map.pak	µØÍ¼(Map)
+patch.pak	ºº»¯²¹¶¡
+sdt.pak		¶Ô»°½Å±¾
+SE.PAK		ÒôÐ§(Sound Effect)
+VOICE.PAK	ÓïÒô

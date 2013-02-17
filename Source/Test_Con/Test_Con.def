@@ -1,0 +1,10 @@
+EXPORTS
+    ??0CDXUTStatic@@QAE@PAPAX@Z @8 NONAME
+    ??4CDXUTStatic@@QAEAAV0@ABV0@@Z @7 NONAME
+    ??_FCDXUTStatic@@QAEXXZ @6 NONAME
+    ?ContainsPoint@CDXUTStatic@@QAEHUtagPOINT@@@Z @5 NONAME
+    ?GetText@CDXUTStatic@@QAEPB_WXZ @4 NONAME
+    ?GetTextCopy@CDXUTStatic@@QAEJPA_WI@Z @3 NONAME
+    ?Render@CDXUTStatic@@QAEXM@Z @2 NONAME
+    ?SetText@CDXUTStatic@@QAEJPB_W@Z @1 NONAME
+    Stub
