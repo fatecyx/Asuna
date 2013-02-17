@@ -1,0 +1,34 @@
+#ifndef BASSAAC_H
+#define BASSAAC_H
+
+#include "bass.h"
+#include "my_common.h"
+#pragma comment(lib, "bass_aac.lib")
+
+_MY_C_HEAD_
+
+#ifndef BASSAACDEF
+#define BASSAACDEF(f) WINAPI f
+#endif
+
+// Additional BASS_SetConfig options
+#define BASS_CONFIG_MP4_VIDEO	0x10700 // play the audio from MP4 videos
+
+// Additional tags available from BASS_StreamGetTags (for MP4 files)
+#define BASS_TAG_MP4 		7	// MP4/iTunes metadata
+
+#define BASS_AAC_STEREO			0x400000 // downmatrix to stereo
+
+// BASS_CHANNELINFO type
+#define BASS_CTYPE_STREAM_AAC	0x10b00 // AAC
+#define BASS_CTYPE_STREAM_MP4	0x10b01 // MP4
+
+EXTC_IMPORT HSTREAM BASSAACDEF(BASS_AAC_StreamCreateFile)(BOOL mem, const void *file, QWORD offset, QWORD length, DWORD flags);
+EXTC_IMPORT HSTREAM BASSAACDEF(BASS_AAC_StreamCreateURL)(const char *url, DWORD offset, DWORD flags, DOWNLOADPROC *proc, void *user);
+EXTC_IMPORT HSTREAM BASSAACDEF(BASS_AAC_StreamCreateFileUser)(DWORD system, DWORD flags, const BASS_FILEPROCS *procs, void *user);
+EXTC_IMPORT HSTREAM BASSAACDEF(BASS_MP4_StreamCreateFile)(BOOL mem, const void *file, QWORD offset, QWORD length, DWORD flags);
+EXTC_IMPORT HSTREAM BASSAACDEF(BASS_MP4_StreamCreateFileUser)(DWORD system, DWORD flags, const BASS_FILEPROCS *procs, void *user);
+
+_MY_C_TAIL_
+
+#endif

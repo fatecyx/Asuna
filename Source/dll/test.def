@@ -1,0 +1,6 @@
+EXPORTS
+;    set
+;    get
+;    t
+;    GetAdaptersInfo = IPHLPAPI.GetAdaptersInfo
+;    DirectDrawCreateEx = ddraw.DirectDrawCreateEx

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="QLIE"
+	ProjectGUID="{DB72439D-E9F9-4D11-9558-B825A6E8FBD2}"
+	VCNestedProjectGUID="{E40DB6CC-2F6E-4A94-9403-4B521704C457}"
+	VCNestedProjectFileName="QLIE.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				EnableEnhancedInstructionSet="1001"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

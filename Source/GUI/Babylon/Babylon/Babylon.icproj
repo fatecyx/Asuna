@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="Babylon"
+	ProjectGUID="{29594814-9BA6-4D27-ADCC-6C9890984D92}"
+	VCNestedProjectGUID="{8A9A2FD7-7704-4969-A3C8-A20027146E5F}"
+	VCNestedProjectFileName="Babylon.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+				OptimizeForWindowsApplication="true"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

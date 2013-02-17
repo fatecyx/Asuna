@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="dshow2wav"
+	ProjectGUID="{4F466DFF-01E8-4A39-89A7-F7F571268F4B}"
+	VCNestedProjectGUID="{71BD4E0F-A2B8-4A93-8DCE-9CAE3484C085}"
+	VCNestedProjectFileName="dshow2wav.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="CppCmplrTool"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

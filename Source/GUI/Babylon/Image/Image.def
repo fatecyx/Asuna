@@ -1,0 +1,4 @@
+EXPORTS
+	ImageEncode
+    ImageDecode
+    ImageDestroy

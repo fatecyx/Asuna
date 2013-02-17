@@ -1,0 +1,10 @@
+EXPORTS
+    XmlParseA
+    XmlParseW
+    XmlMultiByteToUnicode
+    XmlUnicodeToMultiByte
+    XmlDestroy
+    XmlFindNodeA
+    XmlFindNodeW
+    XmlFindAttributeA
+    XmlFindAttributeW

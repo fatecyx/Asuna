@@ -1,0 +1,147 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+1                       RT_MANIFEST             "XPStyle.manifest"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MERGE               BITMAP                  "Merge.bmp"
+IDB_OPTION              BITMAP                  "Option.bmp"
+IDB_SPLIT               BITMAP                  "Split.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SPLIT DIALOGEX 0, 0, 266, 177
+STYLE DS_SETFONT | WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_SPLIT_EDIT_INPUT,7,17,198,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPLIT_EDIT_OUTPUT,7,43,198,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_SPLIT_COMBO_SLICE_SIZE,7,75,128,73,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "保存原文件名(&O)",IDC_SPLIT_CHECK_ORIGNAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,149,75,98,10
+    CONTROL         "压缩(&C)",IDC_SPLIT_CHECK_COMPRESS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,149,89,98,10
+    CONTROL         "加密(&E)",IDC_SPLIT_CHECK_ENCRYPT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,149,104,98,10
+    EDITTEXT        IDC_SPLIT_EDIT_PASSWORD,149,118,101,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览(&B)...",IDC_SPLIT_BUTTON_INPUT_BROWSE,210,16,50,14
+    PUSHBUTTON      "浏览(&R)...",IDC_SPLIT_BUTTON_OUTPUT_BROWSE,210,42,50,14
+    PUSHBUTTON      "分割(&S)",IDC_SPLIT_BUTTON_SPLIT,189,151,71,20
+    LTEXT           "分卷大小, KB",IDC_SPLIT_STATIC_VOLUME,7,60,119,12
+    GROUPBOX        "Options",IDC_STATIC,139,60,121,86
+    CONTROL         "Progress1",IDC_SPLIT_PROGRESS,"msctls_progress32",WS_BORDER,7,115,128,19
+    LTEXT           "输入",IDC_SPLIT_STATIC_INPUT,7,5,59,9
+    LTEXT           "输出",IDC_SPLIT_STATIC_OUTPUT,7,32,86,9
+END
+
+IDD_MERGE DIALOGEX 0, 0, 266, 177
+STYLE DS_SETFONT | WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_MERGE_EDIT_INPUT,7,17,198,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MERGE_EDIT_OUTPUT,7,43,198,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MERGE_EDIT_PASSWORD,7,75,126,12,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "恢复原文件名(&O)",IDC_MERGE_CHECK_ORIGNAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,149,75,98,10
+    PUSHBUTTON      "打开(&M)",IDC_MERGE_BUTTON_OPEN,189,151,71,20
+    PUSHBUTTON      "浏览(&B)...",IDC_MERGE_BUTTON_INPUT_BROWSE,210,16,50,14
+    PUSHBUTTON      "浏览(&R)...",IDC_MERGE_BUTTON_OUTPUT_BROWSE,210,42,50,14
+    GROUPBOX        "Options",IDC_STATIC,139,60,121,86
+    CONTROL         "Progress1",IDC_MERGE_PROGRESS,"msctls_progress32",WS_BORDER,7,115,128,19
+    LTEXT           "输入",IDC_SPLIT_STATIC_INPUT,7,5,59,9
+    LTEXT           "输出",IDC_SPLIT_STATIC_OUTPUT,7,32,86,9
+    LTEXT           "请输入密码",IDC_MERGE_PWDTIP,7,60,41,8
+END
+
+IDD_ABOUT DIALOGEX 0, 0, 266, 177
+STYLE DS_SETFONT | WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    LTEXT           "Static",IDC_STATIC,26,21,185,119
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_MERGE, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

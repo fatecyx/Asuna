@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="yu-ris"
+	ProjectGUID="{FEEBCEDF-50A5-4AB3-A784-94575DFE9999}"
+	VCNestedProjectGUID="{07DB5CB0-1B47-4C0F-A86F-DF88F6533498}"
+	VCNestedProjectFileName="yu-ris.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				UseProcessorExtensions="0"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

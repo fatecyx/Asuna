@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="XMLParser"
+	ProjectGUID="{BCB31417-5E4D-4B94-A8BA-DCE8D3D5FD42}"
+	VCNestedProjectGUID="{2A57FFEC-5005-4AB0-AA6D-5F96673C6D7E}"
+	VCNestedProjectFileName="XMLParser.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+				InterproceduralOptimization="2"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

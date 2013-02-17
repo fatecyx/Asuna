@@ -1,0 +1,14 @@
+ALLOC 2000
+MOV addr, $RESULT
+MOV base, addr
+
+LOOP:
+
+MOV [addr], eax, 4
+MOV [addr + 4], [ebp + C], 4
+ADD addr, 8
+ERUN
+IFEQ eip, 1006D29
+    GOTO LOOP
+ENDIF
+RET

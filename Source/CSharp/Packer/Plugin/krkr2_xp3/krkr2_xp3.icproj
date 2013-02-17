@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="12.0"
+	Name="krkr2_xp3"
+	ProjectGUID="{C67C14EA-1260-4CD1-A4A6-02620F0541C9}"
+	VCNestedProjectGUID="{83C1C8C9-3348-4A0E-AE54-6A88846C5E2A}"
+	VCNestedProjectFileName="krkr2_xp3.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				Optimization="1000"
+				GlobalOptimizations="true"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

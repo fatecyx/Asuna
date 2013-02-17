@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="11.1"
+	Name="Packer2"
+	ProjectGUID="{70E0458F-7A7A-455A-BCB0-7FF272A498E5}"
+	VCNestedProjectGUID="{B436D492-864A-4D7E-BD32-E740201F307A}"
+	VCNestedProjectFileName="Packer2.vcproj">
+	<Configurations>
+		<Configuration
+			Name="Release|Win32">
+			<Tool
+				Name="GeneralTool"
+				InterproceduralOptimization="true"/>
+			<Tool
+				Name="CppCmplrTool"
+				GlobalOptimizations="false"/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>

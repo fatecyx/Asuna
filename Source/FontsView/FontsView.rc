@@ -1,0 +1,193 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\FontsView.rc2""  // 非 Microsoft Visual C++ 编辑过的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于字模提取"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            128,IDC_STATIC,11,17,20,20
+    LTEXT           "FontsView Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2004  darnshong,ioe,cas  保留所有权利",
+                    IDC_STATIC,40,25,180,12
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_FONTSVIEW_DIALOG DIALOGEX 0, 0, 374, 199
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "FontsView"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "输入文字",IDC_STATIC,10,8,40,12
+    EDITTEXT        IDC_EENTERED,41,7,31,15,ES_WANTRETURN
+    LTEXT           "字体列表",IDC_STATIC,10,22,37,14
+    LISTBOX         IDC_LFONTS,41,22,111,60,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "退出",IDC_BEXIT,97,177,52,15
+    LTEXT           "高度",IDC_STATIC,7,87,15,8
+    CONTROL         "",IDC_SLIDER_HEIGHT,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,20,85,117,15
+    LTEXT           "粗细",IDC_STATIC,7,104,15,8
+    CONTROL         "",IDC_SLIDER_BOLD,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,20,101,117,15
+    LTEXT           "角度",IDC_STATIC,8,120,15,8
+    CONTROL         "",IDC_SLIDER_ANGLE,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,20,117,117,15
+    CONTROL         "斜体",IDC_CHECK_ITALIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,132,30,10
+    EDITTEXT        IDC_EDIT_ANGLE,136,118,21,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_BOLD,136,101,21,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HEIGHT,136,85,21,14,ES_AUTOHSCROLL
+    LTEXT           "字体实际占用的像素",IDC_STATIC,8,145,64,9
+    LTEXT           "X",IDC_STATIC,14,158,8,8
+    EDITTEXT        IDC_EDIT_PIXX,22,156,29,14,ES_READONLY
+    LTEXT           "Y",IDC_STATIC,60,157,8,8
+    EDITTEXT        IDC_EDIT_PIXY,70,156,27,14,ES_READONLY
+    PUSHBUTTON      "保存为位图",IDC_BUTTON_SAVE,18,178,50,14
+    CONTROL         "",IDC_STATIC_PIC,"Static",SS_BLACKFRAME,167,7,188,173
+    CONTROL         "反色",IDC_CHECK_REVERSE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,38,133,30,10
+    LTEXT           "（第一个字符有效）",IDC_STATIC,75,9,63,8
+    SCROLLBAR       IDC_SCROLLBAR_H,167,180,188,11
+    SCROLLBAR       IDC_SCROLLBAR_V,355,7,10,174,SBS_VERT
+    COMBOBOX        IDC_COMBO_NBITS,117,133,39,39,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "灰度级数",IDC_STATIC,87,135,28,8
+    LTEXT           "",IDC_STATIC_STATUS,104,156,67,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_FONTSVIEW_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 367
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FONTSVIEW_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_NBITS, 0x403, 2, 0
+0x0032, 
+    IDC_COMBO_NBITS, 0x403, 2, 0
+0x0035, 
+    IDC_COMBO_NBITS, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_COMBO_NBITS, 0x403, 3, 0
+0x3536, "\000" 
+    0
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\FontsView.rc2"  // 非 Microsoft Visual C++ 编辑过的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
