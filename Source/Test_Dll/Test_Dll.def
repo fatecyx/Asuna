@@ -1,0 +1,3 @@
+EXPORTS
+    DnsQuery_W  = GitDnsQuery_W
+    DnsFree     = GitDnsFree

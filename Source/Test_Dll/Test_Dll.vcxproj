@@ -123,12 +123,11 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkDLL>true</LinkDLL>
       <SubSystem>Console</SubSystem>
-      <OutputFile>Test_Dll.dll</OutputFile>
+      <OutputFile>dnsapi.dll</OutputFile>
       <ImportLibrary>.\Release\Test_Dll.lib</ImportLibrary>
-      <AdditionalDependencies>undoc_ntdll.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>undoc_ntdll.lib;ntdll.lib;ntdllp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions> /ltcg</AdditionalOptions>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\Test_Dll.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
