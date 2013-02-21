@@ -9,14 +9,18 @@ def main():
     git = sys.argv[1]
     if os.path.isdir(git):
         git += '\\git.exe'
+
+    hookdll = b'gitfuck.dll\x00'
+
     git = open(git, 'rb+')
+
     offset = git.read().find(b'libiconv-2.dll\x00')
     if offset == -1:
         print("can't find libiconv-2.dll from imported dll")
         return
 
     git.seek(offset)
-    git.write(b'gitfuck.dll\x00')
+    git.write(hookdll)
     git.close()
 
     print('patch %s @ %08X success' % (git.name, offset))
