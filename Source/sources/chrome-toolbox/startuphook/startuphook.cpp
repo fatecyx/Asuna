@@ -3,6 +3,8 @@
 #pragma comment(linker,"/SECTION:.Amano,ERW /MERGE:.text=.Amano")
 #pragma comment(linker, "/EXPORT:WTSFreeMemory=_PWTSFreeMemory@4")
 #pragma comment(linker, "/EXPORT:WTSQuerySessionInformationW=_PWTSQuerySessionInformationW@0")
+#pragma comment(linker, "/EXPORT:WTSUnRegisterSessionNotification=_PWTSUnRegisterSessionNotification@4")
+#pragma comment(linker, "/EXPORT:WTSRegisterSessionNotification=_PWTSRegisterSessionNotification@8")
 
 #include "MyLibrary.cpp"
 #include "WtsApi32.h"
@@ -11,8 +13,11 @@
 LPWSTR g_pCmdLineW;
 LPSTR  g_pCmdLineA;
 
-TYPE_OF(WTSFreeMemory)                  *StubWTSFreeMemory;
-TYPE_OF(WTSQuerySessionInformationW)    *StubWTSQuerySessionInformationW;
+TYPE_OF(WTSFreeMemory)*                     StubWTSFreeMemory;
+TYPE_OF(WTSQuerySessionInformationW)*       StubWTSQuerySessionInformationW;
+TYPE_OF(WTSRegisterSessionNotification)*    StubWTSRegisterSessionNotification;
+TYPE_OF(WTSUnRegisterSessionNotification)*  StubWTSUnRegisterSessionNotification;
+TYPE_OF(LoadAcceleratorsW)*                 StubLoadAcceleratorsW;
 
 EXTC VOID WINAPI PWTSFreeMemory(PVOID Memory)
 {
@@ -22,6 +27,16 @@ EXTC VOID WINAPI PWTSFreeMemory(PVOID Memory)
 EXTC BOOL WINAPI PWTSQuerySessionInformationW()
 {
     return ((TYPE_OF(PWTSQuerySessionInformationW) *)StubWTSQuerySessionInformationW)();
+}
+
+EXTC LONG WINAPI PWTSRegisterSessionNotification(HWND hWnd, DWORD Flags)
+{
+    return StubWTSRegisterSessionNotification(hWnd, Flags);
+}
+
+EXTC LONG WINAPI PWTSUnRegisterSessionNotification(HWND hWnd)
+{
+    return StubWTSUnRegisterSessionNotification(hWnd);
 }
 
 LPCWSTR MyGetCommandLineW()
@@ -34,11 +49,6 @@ LPCSTR MyGetCommandLineA()
     return g_pCmdLineA;
 }
 
-ASM HACCEL WINAPI OldLoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTableName)
-{
-    ASM_DUMMY_AUTO();
-}
-
 HACCEL WINAPI MyLoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTableName)
 {
     if (lpTableName == MAKEINTRESOURCEW(0x65) && hInstance == Nt_GetModuleHandle(L"chrome.dll"))
@@ -47,7 +57,7 @@ HACCEL WINAPI MyLoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTableName)
         lpTableName = MAKEINTRESOURCEW(IDR_ACCELERATOR);
     }
 
-    return OldLoadAcceleratorsW(hInstance, lpTableName);
+    return StubLoadAcceleratorsW(hInstance, lpTableName);
 }
 
 BOOL UnInitialize(PVOID BaseAddress)
@@ -69,12 +79,14 @@ BOOL Initialize(PVOID BaseAddress)
 
     Length = Nt_GetSystemDirectory(szCmdLine, countof(szCmdLine));
     CopyStruct(szCmdLine + Length, L"wtsapi32.dll", sizeof(L"wtsapi32.dll"));
-    hModule = Nt_LoadLibrary(szCmdLine);
+    hModule = Ldr::LoadDll(szCmdLine);
 
-    *(PVOID *)&StubWTSFreeMemory = Nt_GetProcAddress(hModule, "WTSFreeMemory");
-    *(PVOID *)&StubWTSQuerySessionInformationW = Nt_GetProcAddress(hModule, "WTSQuerySessionInformationW");
+    *(PVOID *)&StubWTSFreeMemory                    = GetRoutineAddress(hModule, "WTSFreeMemory");
+    *(PVOID *)&StubWTSQuerySessionInformationW      = GetRoutineAddress(hModule, "WTSQuerySessionInformationW");
+    *(PVOID *)&StubWTSUnRegisterSessionNotification = GetRoutineAddress(hModule, "WTSUnRegisterSessionNotification");
+    *(PVOID *)&StubWTSRegisterSessionNotification   = GetRoutineAddress(hModule, "WTSRegisterSessionNotification");
 
-    lpCmdLineW = Nt_GetCommandLine();
+    lpCmdLineW = Ps::GetCommandLine();
 
     Length = StrLengthW(lpCmdLineW);
 
@@ -111,15 +123,16 @@ BOOL Initialize(PVOID BaseAddress)
     Length = StrLengthW(g_pCmdLineW);
     g_pCmdLineA = (PChar)AllocateMemory(Length * 2);
 //    WideCharToMultiByte(CP_ACP, 0, g_pCmdLineW, -1, g_pCmdLineA, Length * 2, NULL, NULL);
-    Nt_UnicodeToAnsi(g_pCmdLineA, Length * 2, g_pCmdLineW, -1);
+    UnicodeToAnsi(g_pCmdLineA, Length * 2, g_pCmdLineW, -1);
 
     hModule = Nt_GetModuleHandle(L"chrome.dll");
 
     MEMORY_FUNCTION_PATCH f[] =
     {
-        PATCH_FUNCTION(JUMP, 0, GetCommandLineW, MyGetCommandLineW),
-        PATCH_FUNCTION(JUMP, 0, GetCommandLineA, MyGetCommandLineA),
-        PATCH_FUNCTION(JUMP, AUTO_DISASM, LoadAcceleratorsW, MyLoadAcceleratorsW, 0, OldLoadAcceleratorsW),
+        INLINE_HOOK_JUMP_NULL(::GetCommandLineW, MyGetCommandLineW),
+        INLINE_HOOK_JUMP_NULL(::GetCommandLineA, MyGetCommandLineA),
+
+        INLINE_HOOK_JUMP(LoadAcceleratorsW, MyLoadAcceleratorsW, StubLoadAcceleratorsW),
     };
 
     Nt_PatchMemory(0, 0, f, countof(f), 0);    

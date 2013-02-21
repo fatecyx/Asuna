@@ -792,7 +792,7 @@ PVOID FindNtUserMessageCall(PVOID User32)
     PVOID SendNotifyMessageW = EATLookupRoutineByHashPNoFix(User32, USER32_SendNotifyMessageW);
 
     NtUserMessageCall = WalkOpCodeT(SendNotifyMessageW, 0x40,
-        WalkOpCodeM(Buffer, Ret)
+        WalkOpCodeM(Buffer, OpLength, Ret)
         {
             switch (Buffer[0])
             {
@@ -854,7 +854,7 @@ PVOID FindNtUserMessageCall2(PVOID User32)
             End   = (PBYTE)fnCOPYGLOBALDATA[1] + sizeof(*VA);
 
             WalkOpCodeT(Begin, End - Begin,
-                WalkOpCodeM(Buffer, Ret)
+                WalkOpCodeM(Buffer, OpLength, Ret)
                 {
                     switch (Buffer[0])
                     {
@@ -915,7 +915,7 @@ PVOID FindNtUserCreateWindowEx(PVOID User32)
                 return 0;
 
             WalkOpCodeT(VA, 0x150,
-                WalkOpCodeM(Buffer, Ret)
+                WalkOpCodeM(Buffer, OpLength, Ret)
                 {
                     switch (Buffer[0])
                     {
@@ -991,7 +991,7 @@ PVOID FindNtUserDefSetText(PVOID User32)
             return NULL;
 
         WalkOpCodeT(push_EVENT_OBJECT_NAMECHANGE, 0x10,
-            WalkOpCodeM(Buffer, Ret)
+            WalkOpCodeM(Buffer, OpLength, Ret)
             {
                 if (Buffer[0] != CALL)
                     return STATUS_NOT_FOUND;
@@ -1042,7 +1042,7 @@ PVOID FindNtUserDefSetText(PVOID User32)
         return NULL;
 
     WalkOpCodeT(DefSetText, 0x50,
-        WalkOpCodeM(Buffer, Ret)
+        WalkOpCodeM(Buffer, OpLength, Ret)
         {
             switch (Buffer[0])
             {
