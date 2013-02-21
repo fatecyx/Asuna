@@ -706,7 +706,7 @@ int __cdecl main(Long_Ptr argc, wchar_t **argv)
     getargsW(&argc, &argv);
     main2(argc, argv);
     ReleaseArgv(argv);
-    Nt_ExitProcess(0);
+    Ps::ExitProcess(0);
 }
 a:DriverEntry:#drvm:
 #pragma comment(linker, "/ENTRY:DriverEntry")

@@ -121,10 +121,11 @@ BOOL Initialize(PVOID BaseAddress)
 {
     ml::MlInitialize();
 
-    PVOID       Dnsapi;
-    PLDR_MODULE ntdll;
-    PWSTR       FullPath;
-    ULONG_PTR   Length;
+    PVOID           Dnsapi;
+    PLDR_MODULE     ntdll, exe;
+    PWSTR           FullPath;
+    ULONG_PTR       Length;
+    UNICODE_STRING  Home, ExePath;
 
 #if ML_AMD64
 
@@ -148,6 +149,14 @@ BOOL Initialize(PVOID BaseAddress)
     }
 
 #endif
+
+    exe = FindLdrModuleByHandle(NULL);
+
+    RTL_CONST_STRING(Home, L"HOME");
+    ExePath = exe->FullDllName;
+    ExePath.Length -= exe->BaseDllName.Length;
+
+    RtlSetEnvironmentVariable(NULL, &Home, &ExePath);
 
     MEMORY_FUNCTION_PATCH f[] =
     {

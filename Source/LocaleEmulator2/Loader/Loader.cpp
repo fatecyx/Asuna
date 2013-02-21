@@ -125,5 +125,5 @@ int __cdecl main(Long_Ptr argc, wchar_t **argv)
     getargsW(&argc, &argv);
     main2(argc, argv);
     ReleaseArgv(argv);
-    return Nt_ExitProcess(0);
+    Ps::ExitProcess(0);
 }
