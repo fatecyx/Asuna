@@ -150,7 +150,7 @@ BOOL Initialize(PVOID BaseAddress)
 
 #endif
 
-    exe = FindLdrModuleByHandle(NULL);
+    exe = FindLdrModuleByHandle(BaseAddress);
 
     RTL_CONST_STRING(Home, L"HOME");
     ExePath = exe->FullDllName;
