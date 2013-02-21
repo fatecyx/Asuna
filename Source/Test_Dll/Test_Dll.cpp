@@ -1,9 +1,7 @@
 #pragma comment(linker, "/ENTRY:DllMain")
 #pragma comment(linker, "/SECTION:.text,ERW /MERGE:.rdata=.text /MERGE:.data=.text")
 #pragma comment(linker, "/SECTION:.Amano,ERW /MERGE:.text=.Amano")
-#pragma comment(linker, "/EXPORT:libiconv=libiconv-2.libiconv")
-#pragma comment(linker, "/EXPORT:libiconv_close=libiconv-2.libiconv_close")
-#pragma comment(linker, "/EXPORT:libiconv_open=libiconv-2.libiconv_open")
+#pragma comment(linker, "/EXPORT:__strdup=msvcrt._strdup")
 
 #include "MyLibrary.cpp"
 #include <Windns.h>
