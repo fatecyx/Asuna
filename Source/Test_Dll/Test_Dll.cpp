@@ -127,6 +127,25 @@ BOOL Initialize(PVOID BaseAddress)
     ULONG_PTR       Length;
     UNICODE_STRING  Home, ExePath;
 
+    GetWorkingDirectory(&Home);
+
+    FullPath = PtrAdd(Home.Buffer, Home.Length);
+    if (FullPath[-1] == '\\')
+        --FullPath;
+
+    while (FullPath[-1] != '\\' && FullPath > Home.Buffer)
+        --FullPath;
+
+    if (FullPath != Home.Buffer)
+    {
+        Home.Length = PtrOffset(FullPath, Home.Buffer);
+        SetWorkingDirectory(&Home);
+    }
+
+    RtlFreeUnicodeString(&Home);
+
+    return TRUE;
+
 #if ML_AMD64
 
     static WCHAR DnsapiDll[] = L"DNSAPI.dll";

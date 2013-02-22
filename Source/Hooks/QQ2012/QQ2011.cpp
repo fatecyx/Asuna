@@ -345,14 +345,14 @@ BOOL Initialize(PVOID BaseAddress)
         --*/
         PATCH_MEMORY(0x81,     0x01, 0x099C2A),  // 离线图片大小限制   Util::Contact::IsOnline
     };
-
+/*
     MEMORY_FUNCTION_PATCH func_appframe[] =
     {
         // wURLTipsID
         // ShowWindow
         PATCH_FUNCTION(CALL, FIRST_CALL_TO_JUMP | AUTO_DISASM2, 0x8B4F6, CheckSecurityUrl, 0, &StubCheckSecurityUrl),
     };
-
+*/
     MEMORY_PATCH patch_kernelutil[] =
     {
         /************************************************************************
