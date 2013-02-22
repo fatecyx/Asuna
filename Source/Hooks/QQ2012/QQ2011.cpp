@@ -3,7 +3,7 @@
 #pragma comment(linker, "/SECTION:.Amano,ERW /MERGE:.text=.Amano")
 
 #include "QQ2011.h"
-#include "MyLibraryUser.cpp"
+#include "MyLibrary.cpp"
 
 WCHAR szRegistryDB[0x10] = L"Registry.db";
 WCHAR szRegistryDB_IM[0x20] = L"%lu\\QQ\\Registry.db";
@@ -54,10 +54,16 @@ HookSetWindowPos(
     LONG BuddyHeight    = 520;
     LONG GroupWidth     = 600;
     LONG GroupHeight    = 521;
-
+    LONG DiscussWidth   = 556;
+    LONG DiscussHeight  = 520;
+/*
+    AllocConsole();
+    PrintConsoleW(L"%d, %d\n", cx, cy);
+*/
     if (
         (cx == BuddyWidth && cy == BuddyHeight) ||
-        (cx == GroupWidth && cy == GroupHeight)
+        (cx == GroupWidth && cy == GroupHeight) ||
+        (cx == DiscussWidth && cy == DiscussHeight)
        )
     {
         RECT WorkArea;
@@ -102,13 +108,6 @@ BOOL CDECL UtilCoreCenterAddPlugin(PWSTR PluginPath)
     return StubUtilCoreCenterAddPlugin(PluginPath);
 }
 
-typedef struct
-{
-    ULONG Length;
-    ULONG MaximumLength;
-    PWSTR Buffer;
-} LARGE_UNICODE_STRING, *PLARGE_UNICODE_STRING;
-
 VOID (FASTCALL *StubCheckSecurityUrl)(PVOID This, PVOID, BOOL IsUrlString, PWSTR Url);
 
 VOID FASTCALL CheckSecurityUrl(PVOID This, PVOID, BOOL IsUrlString, PWSTR Url)
@@ -133,7 +132,7 @@ VOID FASTCALL CheckSecurityUrl(PVOID This, PVOID, BOOL IsUrlString, PWSTR Url)
 
     PWSTR PrevUrlBuffer;
 
-    UrlBuffer = (TYPE_OF(UrlBuffer))FIELD_BASE(Url, TYPE_OF(*UrlBuffer), Buffer);
+    UrlBuffer = (TYPE_OF(UrlBuffer))FIELD_BASE(Url, TYPE_OF(PrevUrl), Buffer);
 
     PrevUrl                     = *UrlBuffer;
     UrlBuffer->Length           = CONST_STRLEN(SafeUrl) * sizeof(WCHAR);
