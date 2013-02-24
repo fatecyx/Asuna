@@ -565,17 +565,7 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    LARGE_INTEGER Interval;
-
-    FormatTimeOut(&Interval, 1);
-
-    LOOP_FOREVER
-    {
-        if (CurrentPeb()->BeingDebugged)
-            Ps::ExitProcess(0);
-
-        NtDelayExecution(FALSE, &Interval);
-    }
+    DeleteFileW(L"E:\\Desktop\\Source\\Test_Con\\LoadDriver.exe");
 
     return;
 

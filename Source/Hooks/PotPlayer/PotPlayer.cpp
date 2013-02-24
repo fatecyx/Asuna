@@ -40,10 +40,10 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, ULONG ulReason, LPVOID lpReserved)
             MEMORY_FUNCTION_PATCH f[] = 
             {
                 //   const:7006
-    //            { CALL , 0x0C6657, MyUpdateWindow,    1 },  // 29490 9
+    //            { CALL , 0x0C6657, MyUpdateWindow,    1 },  // 29490 9th ref
     //            { CALL , 0x50AA57, SetChooseFontFlag, 1 },  // 29490  const:7006
-                PATCH_FUNCTION(CALL, AUTO_DISASM, 0x5456AC, SetChooseFontFlag),
-                PATCH_FUNCTION(CALL, AUTO_DISASM, 0x0D18E7, MyUpdateWindow),
+                PATCH_FUNCTION(CALL, AUTO_DISASM, 0x5643E8, SetChooseFontFlag),
+                PATCH_FUNCTION(CALL, AUTO_DISASM, 0x0D6BC7, MyUpdateWindow),
             };
 
             LdrDisableThreadCalloutsForDll(hInstance);
