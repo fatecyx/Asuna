@@ -565,7 +565,7 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    DeleteFileW(L"E:\\Desktop\\Source\\Test_Con\\LoadDriver.exe");
+    *(PBYTE)0 = argc;
 
     return;
 
