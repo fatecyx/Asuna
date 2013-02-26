@@ -565,7 +565,8 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    *(PBYTE)0 = argc;
+    _asm fld1;
+    printf("%#.20Lg\n", 1.0);
 
     return;
 
