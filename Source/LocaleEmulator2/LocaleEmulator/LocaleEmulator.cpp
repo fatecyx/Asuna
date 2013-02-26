@@ -326,7 +326,9 @@ NTSTATUS LeGlobalData::UnInitialize()
         DllNotificationCookie = NULL;
     }
 
+    UnHookGdi32Routines();
     UnHookUser32Routines();
+    UnHookNtdllRoutines();
 
     UnInstallHookPort();
 
