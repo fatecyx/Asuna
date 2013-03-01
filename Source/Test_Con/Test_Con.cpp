@@ -565,7 +565,9 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    LoadPeImage(L"E:\\Desktop\\malie_upk.exe", (PVOID*)&argc, 0, LOAD_PE_IGNORE_IAT);
+    BYTE buf[0x10000];
+
+    NtQuerySystemInformation(SystemModuleInformation, buf, sizeof(buf), NULL);
 
     return;
 
