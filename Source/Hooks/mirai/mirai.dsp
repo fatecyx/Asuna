@@ -18,6 +18,7 @@ CFG=mirai - Win32 Release
 !MESSAGE Possible choices for configuration are:
 !MESSAGE 
 !MESSAGE "mirai - Win32 Release" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "mirai - Win32 HAPIMEA" (based on "Win32 (x86) Dynamic-Link Library")
 !MESSAGE 
 
 # Begin Project
@@ -27,6 +28,9 @@ CFG=mirai - Win32 Release
 CPP=cl.exe
 MTL=midl.exe
 RSC=rc.exe
+
+!IF  "$(CFG)" == "mirai - Win32 Release"
+
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 0
 # PROP BASE Output_Dir "Release"
@@ -39,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "MY_EXPORTS" /YX /FD /c
-# ADD CPP /nologo /Gr /MD /W4 /GR- /Z7 /O2 /Ob1 /D "WIN32" /D "NDEBUG" /D USE_NT_VER=1 /FD /GL /MP /arch:SSE /GS- /c
+# ADD CPP /nologo /Gr /MD /W4 /GR- /Z7 /O2 /Ob1 /D "WIN32" /D "NDEBUG" /D USE_NT_VER=1 /D MIRAI=1 /FD /GL /MP /arch:SSE /GS- /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "NDEBUG"
@@ -51,9 +55,42 @@ LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /machine:I386
 # ADD LINK32 mylib_nt.lib undoc_ntdll.lib ntdll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /machine:I386 /out:"K:\galgame\帤懂用旦正伙斥失\cm32.dll" /ltcg
 # SUBTRACT LINK32 /pdb:none /debug
+
+!ELSEIF  "$(CFG)" == "mirai - Win32 HAPIMEA"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "mirai___Win32_HAPIMEA"
+# PROP BASE Intermediate_Dir "mirai___Win32_HAPIMEA"
+# PROP BASE Ignore_Export_Lib 0
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "Release"
+# PROP Intermediate_Dir "Release"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /Gr /MD /W4 /GR- /Z7 /O2 /Ob1 /D "WIN32" /D "NDEBUG" /D USE_NT_VER=1 /FD /GL /MP /arch:SSE /GS- /c
+# ADD CPP /nologo /Gr /MD /W4 /GR- /Z7 /O2 /Ob1 /D "WIN32" /D "NDEBUG" /D USE_NT_VER=1 /D HAPIMEA=1 /FD /GL /MP /arch:SSE /GS- /c
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
+# ADD BASE RSC /l 0x804 /d "NDEBUG"
+# ADD RSC /l 0x804 /d "NDEBUG"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 mylib_nt.lib undoc_ntdll.lib ntdll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /machine:I386 /out:"K:\galgame\帤懂用旦正伙斥失\cm32.dll" /ltcg
+# SUBTRACT BASE LINK32 /pdb:none /debug
+# ADD LINK32 mylib_nt.lib undoc_ntdll.lib ntdll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /machine:I386 /out:"cm32.dll" /ltcg
+# SUBTRACT LINK32 /pdb:none /debug
+
+!ENDIF 
+
 # Begin Target
 
 # Name "mirai - Win32 Release"
+# Name "mirai - Win32 HAPIMEA"
 # Begin Source File
 
 SOURCE=.\cmvs.cpp

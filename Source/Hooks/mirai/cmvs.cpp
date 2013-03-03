@@ -40,6 +40,16 @@ VOID DropFiles(HWND hWnd, HDROP hDrop)
     DragFinish(hDrop);
 }
 
+int WINAPI HMessageBoxA(_In_opt_ HWND hWnd, _In_opt_ LPCSTR lpText, _In_opt_ LPCSTR lpCaption, _In_ UINT uType)
+{
+    AllocConsole();
+
+    CmvsUnpackerX cpz(g_CmvsObject->ImageManager);
+    cpz.Auto(L"E:\\Desktop\\ハピメア\\data\\pack\\script.cpz");
+
+    Ps::ExitProcess(0);
+}
+
 LRESULT CALLBACK CMVS_MainWindowProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
 {
     switch (Message)
@@ -61,11 +71,11 @@ HWND WINAPI HookCreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWi
 
     Length = StrLengthA(lpClassName) + 1;
     ClassName = (LPWSTR)AllocStack(Length * sizeof(WCHAR));
-    Nt_AnsiToUnicode(ClassName, Length * sizeof(WCHAR), lpClassName, Length);
+    AnsiToUnicode(ClassName, Length * sizeof(WCHAR), lpClassName, Length);
 
     Length = StrLengthA(lpWindowName) + 1;
     WindowName = (LPWSTR)AllocStack(Length * sizeof(WCHAR));
-    Nt_AnsiToUnicode(WindowName, Length * sizeof(WCHAR), lpWindowName, Length);
+    AnsiToUnicode(WindowName, Length * sizeof(WCHAR), lpWindowName, Length);
 
     hWnd = CreateWindowExW(dwExStyle, ClassName, WindowName, dwStyle, X, Y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
     if (hWnd == NULL)
@@ -101,7 +111,7 @@ HFONT WINAPI HookCreateFontA(int cHeight, int cWidth, int cEscapement, int cOrie
     }
     else
     {
-        Nt_AnsiToUnicode(lf.lfFaceName, countof(lf.lfFaceName), pszFaceName);
+        AnsiToUnicode(lf.lfFaceName, countof(lf.lfFaceName), pszFaceName);
     }
 
     lf.lfCharSet = (BYTE)iCharSet;
@@ -298,9 +308,11 @@ BOOL Initialize(PVOID BaseAddress)
     ml::MlInitialize();
 
     LdrDisableThreadCalloutsForDll(BaseAddress);
-
+/*
     if (NT_FAILED(InitTextBin()))
         return TRUE;
+*/
+#if MIRAI
 
     MEMORY_PATCH p[] =
     {
@@ -322,7 +334,24 @@ BOOL Initialize(PVOID BaseAddress)
         INLINE_HOOK_CALL_RVA(0x01054, CreateCmvsObject, StubCreateCmvsObject),
     };
 
-    BaseAddress = Nt_GetExeModuleHandle();
+#elif HAPIMEA
+
+    MEMORY_PATCH p[] =
+    {
+        PATCH_MEMORY(0, 0, IMAGE_INVALID_RVA),
+    };
+
+    MEMORY_FUNCTION_PATCH f[] =
+    {
+        INLINE_HOOK_CALL_RVA_NULL(0x04AD1, HookCreateWindowExA),
+        INLINE_HOOK_JUMP_NULL(MessageBoxA, HMessageBoxA),
+
+        INLINE_HOOK_CALL_RVA(0x01055, CreateCmvsObject, StubCreateCmvsObject),
+    };
+
+#endif
+
+    BaseAddress = GetExeModuleHandle();
     Nt_PatchMemory(p, countof(p), f, countof(f), BaseAddress);
 
     return TRUE;

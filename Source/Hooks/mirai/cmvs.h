@@ -57,9 +57,19 @@ public:
 
 #if ML_X86
 
+#if MIRAI
+
 #define MIRAI_LOAD_CPZ_RVA  0x4A650
 #define MIRAI_LOAD_PS2_RVA  0x4A820
 #define MIRAI_LOAD_PB3_RVA  0x25E50
+
+#elif HAPIMEA
+
+#define MIRAI_LOAD_CPZ_RVA  0x1FD80
+#define MIRAI_LOAD_PS2_RVA  0x52200
+#define MIRAI_LOAD_PB3_RVA  0x29F30
+
+#endif
 
 #elif ML_AMD64
 
@@ -182,7 +192,7 @@ public:
             WCHAR CpzPathW[MAX_NTPATH];
         };
 
-        Nt_UnicodeToAnsi(CpzPathA, countof(CpzPathA), FileName);
+        UnicodeToAnsi(CpzPathA, countof(CpzPathA), FileName);
         if (!cpz.LoadCpz(0, CpzPathA))
             return STATUS_UNSUCCESSFUL;
 
@@ -250,7 +260,7 @@ public:
         Entry = (PUNPACKER_CPZ_ENTRY)BaseEntry;
 
         Extension = findextw(Entry->GetFileName());
-        if (!StrICompareW(Extension, L".ps2"))
+        if (!StrICompareW(Extension, L".ps2") || !StrICompareW(Extension, L".ps3"))
         {
             Buffer = cpz.LoadPs2(Entry->CpzFile->Name, &FileSize);
         }
