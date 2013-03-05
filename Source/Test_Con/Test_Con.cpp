@@ -565,9 +565,6 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    BYTE buf[0x10000];
-
-    NtQuerySystemInformation(SystemModuleInformation, buf, sizeof(buf), NULL);
 
     return;
 

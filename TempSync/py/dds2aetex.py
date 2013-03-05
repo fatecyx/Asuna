@@ -1,4 +1,4 @@
-from MyLibrary import *
+from ml import *
 
 def main():
     aetexfile = os.path.splitext(sys.argv[1])[0] + '.aetex'
