@@ -565,9 +565,11 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    argc = 233;
+    const volatile int x = 3;
 
-    CreateThreadT([=] (ULONG) { return printf("%d\n", argc); }, 0);
+    *(int *)&x = 2;
+
+    printf("%d\n", x == x);
 
     return;
 
