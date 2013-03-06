@@ -184,6 +184,8 @@ public:
         API_POINTER(SetWindowLongA)             StubSetWindowLongA;
         API_POINTER(GetWindowLongA)             StubGetWindowLongA;
         API_POINTER(IsWindowUnicode)            StubIsWindowUnicode;
+        API_POINTER(GetClipboardData)           StubGetClipboardData;
+        API_POINTER(SetClipboardData)           StubSetClipboardData;
 
         union
         {
@@ -293,6 +295,16 @@ public:
     BOOL IsWindowUnicode(HWND hWnd)
     {
         return HookStub.StubIsWindowUnicode(hWnd);
+    }
+
+    HANDLE SetClipboardData(UINT Format, HANDLE Memory)
+    {
+        return HookStub.StubSetClipboardData(Format, Memory);
+    }
+
+    HANDLE GetClipboardData(UINT Format)
+    {
+        return HookStub.StubGetClipboardData(Format);
     }
 
     LRESULT NtUserMessageCall(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam, ULONG_PTR xParam, DWORD xpfnProc, ULONG Flags)

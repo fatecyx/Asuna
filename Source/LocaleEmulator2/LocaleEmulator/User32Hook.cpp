@@ -782,6 +782,100 @@ BOOL NTAPI LeIsWindowUnicode(HWND hWnd)
     return GlobalData->GetWindowDataA(hWnd) == NULL ? GlobalData->IsWindowUnicode(hWnd) : FALSE;
 }
 
+HANDLE NTAPI LeSetClipboardData(UINT Format, HANDLE Memory)
+{
+    HGLOBAL             Data;
+    PWSTR               Unicode;
+    PSTR                Ansi;
+    ULONG_PTR           Length;
+    PLeGlobalData       GlobalData = LeGetGlobalData();
+
+    Ansi = NULL;
+    switch (Format)
+    {
+        case CF_TEXT:
+
+            Ansi = (PSTR)GlobalLock(Memory);
+            if (Ansi == NULL)
+                break;
+
+            Length = StrLengthA(Ansi);
+            if (Length == 0)
+                break;
+
+            ++Length;
+            Data = GlobalAlloc(GHND, Length * sizeof(WCHAR));
+            if (Data == NULL)
+                break;
+
+            Unicode = (PWSTR)GlobalLock(Data);
+            AnsiToUnicode(Unicode, Length, Ansi, Length - 1);
+            GlobalUnlock(Data);
+
+            if (GlobalData->SetClipboardData(CF_UNICODETEXT, Data) == NULL)
+            {
+                GlobalFree(Data);
+            }
+
+            break;
+    }
+
+    if (Ansi != NULL)
+        GlobalUnlock(Memory);
+
+    return GlobalData->SetClipboardData(Format, Memory);
+}
+
+HANDLE NTAPI LeGetClipboardData(UINT Format)
+{
+    HGLOBAL             Data, AnsiData;
+    ULONG_PTR           Length, Flags;
+    PWSTR               Unicode;
+    PSTR                Ansi;
+    PLeGlobalData       GlobalData = LeGetGlobalData();
+
+    switch (Format)
+    {
+        case CF_TEXT:
+            Data = GlobalData->GetClipboardData(CF_UNICODETEXT);
+            if (Data == NULL)
+                break;
+
+            Flags = GlobalFlags(Data);
+            if (FLAG_ON(Flags, GMEM_INVALID_HANDLE))
+                break;
+
+            Unicode = (PWSTR)GlobalLock(Data);
+            if (Unicode == NULL)
+                break;
+
+            Length = StrLengthW(Unicode);
+            AnsiData = GlobalAlloc(GHND, Length * 2);
+            if (AnsiData == NULL)
+            {
+                GlobalUnlock(Data);
+                break;
+            }
+
+            Ansi = (PSTR)GlobalLock(AnsiData);
+
+            UnicodeToAnsi(Ansi, Length * 2, Unicode, Length);
+
+            GlobalUnlock(AnsiData);
+            GlobalUnlock(Data);
+
+            Data = SetClipboardData(CF_TEXT, AnsiData);
+            if (Data == NULL)
+            {
+                GlobalFree(AnsiData);
+            }
+
+            break;
+    }
+
+    return GlobalData->GetClipboardData(Format);
+}
+
 /************************************************************************
   init
 ************************************************************************/
@@ -1158,6 +1252,8 @@ NTSTATUS LeGlobalData::HookUser32Routines(PVOID User32)
         EAT_HOOK_JUMP_HASH(User32, USER32_SetWindowLongA,   LeSetWindowLongA,   HookStub.StubSetWindowLongA),
         EAT_HOOK_JUMP_HASH(User32, USER32_GetWindowLongA,   LeGetWindowLongA,   HookStub.StubGetWindowLongA),
         EAT_HOOK_JUMP_HASH(User32, USER32_IsWindowUnicode,  LeIsWindowUnicode,  HookStub.StubIsWindowUnicode),
+        EAT_HOOK_JUMP_HASH(User32, USER32_GetClipboardData, LeGetClipboardData, HookStub.StubGetClipboardData),
+        EAT_HOOK_JUMP_HASH(User32, USER32_SetClipboardData, LeSetClipboardData, HookStub.StubSetClipboardData),
     };
 
     return Nt_PatchMemory(NULL, 0, f, countof(f), User32);
@@ -1172,6 +1268,9 @@ NTSTATUS LeGlobalData::UnHookUser32Routines()
     Nt_RestoreMemory(&HookStub.StubSetWindowLongA);
     Nt_RestoreMemory(&HookStub.StubGetWindowLongA);
     Nt_RestoreMemory(&HookStub.StubIsWindowUnicode);
+
+    Nt_RestoreMemory(&HookStub.StubGetClipboardData);
+    Nt_RestoreMemory(&HookStub.StubSetClipboardData);
 
     if (AtomAnsiProc != NULL)
     {
