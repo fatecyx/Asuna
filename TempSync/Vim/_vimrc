@@ -31,6 +31,12 @@ endfunction
 
 " add by asuna
 
+set tabstop=4
+set expandtab
+
+set nobackup
+set nowritebackup
+
 set viminfo="NONE"
 set nu
 set guifont=Consolas:h14
