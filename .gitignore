@@ -1,6 +1,7 @@
 .hg
 .hgignore
 *.pyc
+TempSync
 Library/qt-wdk-4.8.0
 Library/qt-win-sym-4.7.0
 Library/boost
