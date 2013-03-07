@@ -565,11 +565,13 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    const volatile int x = 3;
+    InterProcessLpcServer Listening;
+    InterProcessLpcServer Connected;
+    IPC_MESSAGE conn;
 
-    *(int *)&x = 2;
-
-    printf("%d\n", x == x);
+    Listening.Create(L"\\FUCK");
+    Listening.Listen(&conn, INFINITE);
+    Listening.Accept(Connected, &conn);
 
     return;
 
