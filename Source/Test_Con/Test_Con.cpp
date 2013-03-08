@@ -565,13 +565,13 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    InterProcessLpcServer Listening;
-    InterProcessLpcServer Connected;
-    IPC_MESSAGE conn;
+    PVOID v = AllocateMemory(0x100);
 
-    Listening.Create(L"\\FUCK");
-    Listening.Listen(&conn, INFINITE);
-    Listening.Accept(Connected, &conn);
+    FillMemory(v, 0x100, -1);
+
+    BYTE buf[0x100];
+
+    ReadMemory(CurrentProcess, v, buf, 0x100);
 
     return;
 

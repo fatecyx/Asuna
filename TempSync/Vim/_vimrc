@@ -31,6 +31,27 @@ endfunction
 
 " add by asuna
 
+let g:fontfile = $VIM.'\_font'
+
+function! GetSettingsFile()
+    if filereadable(g:fontfile)
+        return $VIM.'\_vimsize2'
+    else
+        if has('amiga')
+            return "s:.vimsize"
+        elseif has('win32')
+            return $VIM.'\_vimsize'
+        else
+            return $VIM.'/.vimsize'
+        endif
+    endif
+endfunction
+
+set langmenu=en_US
+let $LANG = 'en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
 set tabstop=4
 set expandtab
 
@@ -39,7 +60,12 @@ set nowritebackup
 
 set viminfo="NONE"
 set nu
-set guifont=Consolas:h14
+
+if filereadable(fontfile)
+  set guifont=Consolas:h13
+else
+  set guifont=Consolas:h14
+endif
 
 colorscheme desert
 
@@ -53,13 +79,7 @@ let g:screen_size_by_vim_instance = 1
 
 if has("gui_running")
   function! ScreenFilename()
-    if has('amiga')
-      return "s:.vimsize"
-    elseif has('win32')
-      return $VIM.'\_vimsize'
-    else
-      return $VIM.'/.vimsize'
-    endif
+    return GetSettingsFile()
   endfunction
 
   function! ScreenRestore()
