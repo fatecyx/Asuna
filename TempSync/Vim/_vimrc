@@ -47,6 +47,9 @@ function! GetSettingsFile()
     endif
 endfunction
 
+let g:fencview_autodetect = 1
+let g:fencview_checklines = 10
+
 set langmenu=en_US
 let $LANG = 'en_US'
 source $VIMRUNTIME/delmenu.vim
