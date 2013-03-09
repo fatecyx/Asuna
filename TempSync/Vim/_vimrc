@@ -3,66 +3,133 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
 
-
-" add by asuna
-
-let g:fontfile = $VIM.'\_font'
-
-function! GetSettingsFile()
-    if filereadable(g:fontfile)
-        return $VIM.'\_vimsize2'
-    else
-        if has('amiga')
-            return "s:.vimsize"
-        elseif has('win32')
-            return $VIM.'\_vimsize'
-        else
-            return $VIM.'/.vimsize'
-        endif
-    endif
-endfunction
-
-let g:fencview_autodetect = 1
-let g:fencview_checklines = 10
+" english
 
 set langmenu=en_US
 let $LANG = 'en_US'
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
+if has("gui_running")
+    set guioptions-=T " hide toolbar
+endif
+
+
+syntax enable
+syntax on
+
+set mouse=a
+
+set nowrap
+set cursorline
 set tabstop=4
 set expandtab
+set shiftwidth=4
+set cindent shiftwidth=4
+set autoindent shiftwidth=4
+set cindent
+set autoindent smartindent
+set smarttab
+set backspace=eol,start,indent
+
+" 设定文件浏览器目录为当前目录
+set bsdir=buffer
+set autochdir
+
+set tabpagemax=9999
 
 set nobackup
 set nowritebackup
 
-set viminfo="NONE"
+set viminfo=
 set nu
+
+set fencs=utf-8,ucs-bom,gb18030,cp936
+
+colorscheme dongfang
+
+" set tags search path
+if has("win32")
+    set tags+=E:\MyLib\MyLibrary\
+    set tags+=E:\MyLib\MyLibrary\Include
+    set tags+=E:\MyLib\MyLibrary\Source
+    set tags+=E:\MyLib\MyLibrary\Class
+    set tags+=E:\MYLIB
+    "set tags+=E:\Windows Kits\8.0\Include\shared
+    "set tags+=E:\Windows Kits\8.0\Include\km
+    "set tags+=E:\Windows Kits\8.0\Include\um
+    set tags+=E:\WINDDK\7600.16385.1\INC\API
+    set tags+=E:\WINDDK\7600.16385.1\INC\CRT
+    set tags+=E:\WINDDK\7600.16385.1\INC\DDK
+    set tags+=E:\WINDDK\7600.16385.1\INC\MFC42
+    set tags+=E:\WINDDK\7600.16385.1\INC\ATL71
+    set tags+=E:\WINDDK\7600.16385.1\INC\API\CRT\STL60
+    set tags+=E:\Library\DXSDK\Include
+    set tags+=E:\Library\dx9c\Include
+    set tags+=E:\Library\DXSDK\Samples\C++\DXUT\Core
+    set tags+=E:\Library\DXSDK\Samples\C++\DXUT\Optional
+    set tags+=E:\LIBRARY\WTL\INCLUDE
+    set tags+=E:\LIBRARY
+endif
+
+" ACP配置 - 具体参考acp.vim说明
+let g:acp_behaviorSnipmateLength=1
+let g:acp_enableAtStartup = 1
+let g:acp_behaviorKeywordIgnores = ['if','for', 'do']
+
+"Cscope配置
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+let Cscope_OpenQuickfixWindow = 1
+
+" 自动补全配置 -C-Y 选中当前项目
+set completeopt=longest,menu				"关闭全能补全详细信息
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 			" show function parameters
+let OmniCpp_MayCompleteDot = 1 				" autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 			" autocomplete after ->
+
+" 设置Taglist插件
+let Tlist_Show_One_File = 1      			"只显示当前文件的tag
+let Tlist_Use_Right_Window = 1      			"在右侧窗口中显示taglist窗口
+let Tlist_GainFocus_On_ToggleOpen = 0
+let Tlist_Show_Menu=0
+let Tlist_Enable_Fold_Column = 0
+let Tlist_Auto_Update = 1
+
+" SuperTab
+let g:SuperTabCrMapping = 0				"可以使用回车选中
+let g:SuperTabLongestEnhanced = 1
+set completeopt=menu,longest
+let g:SuperTabRetainCompletionType = 2
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+"let g:winManagerWindowLayout = "FileExplorer|BufExplorer|TagList"
+"let g:winManagerWindowLayout = "FileExplorer,BufExplorer|TagList"
+let g:winManagerWindowLayout='TagList|BufExplorer'
+let g:winManagerWidth = 35
+
+" NERDTree只显示后缀名为.c .h .cpp的文件
+let NERDTreeIgnore=['\.\w*[^chp]$', '\..[^p]p$', '\.[^c]pp$']
+"let NERDTreeWinPos = "right"
+let NERDTreeWinSize=g:winManagerWidth
+
+let g:bufExplorerSortBy='number' 
+
+" 代码折叠
+"set foldmethod=syntax
+" 用空格键来开关折叠
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+
+" 不希望每次回到normal mode都退1格
+inoremap <Esc> <C-O>mp<Esc>`p
+
+" std_c语法着色插件配置
+let c_syntax_for_h = 1
+
+
+
+let g:fontfile = $VIM.'\_font'
 
 if filereadable(fontfile)
   set guifont=Consolas:h13
@@ -70,7 +137,42 @@ else
   set guifont=Consolas:h14
 endif
 
-colorscheme desert
+
+" auto complete
+
+
+:inoremap ( ()<ESC>i
+:inoremap ) <c-r>=ClosePair(')')<CR>
+:inoremap { {<CR>}<ESC>O<Tab>
+:inoremap } <c-r>=ClosePair('}')<CR>
+:inoremap [ []<ESC>i
+:inoremap ] <c-r>=ClosePair(']')<CR>
+:inoremap " ""<ESC>i
+:inoremap ' ''<ESC>i
+
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endfunction
+
+
+"multiple tabs
+
+au BufAdd,BufNewFile * nested tab sball
+
+map <silent> <F1> :tabprevious<CR>
+map <silent> <F2> :tabnext<CR>
+map <silent> <C-t> :tabnew<CR>
+map <silent> <C-w> :bdelete<CR>
+map <silent> <F4> :bdelete<CR>
+imap <silent> <F1> <ESC>:tabprevious<CR>i
+imap <silent> <F2> <ESC>:tabnext<CR>i
+imap <silent> <C-t> <ESC>:tabnew<CR>i
+imap <silent> <C-w> <ESC>:bdelete<CR>i
+imap <silent> <F4> <ESC>:bdelete<CR>i
 
 " To enable the saving and restoring of screen positions.
 let g:screen_size_restore_pos = 1
@@ -81,9 +183,20 @@ let g:screen_size_restore_pos = 1
 let g:screen_size_by_vim_instance = 1
 
 if has("gui_running")
-  function! ScreenFilename()
-    return GetSettingsFile()
-  endfunction
+
+    function! ScreenFilename()
+        if filereadable(g:fontfile)
+            return $VIM.'\_vimsize2'
+        else
+            if has('amiga')
+                return "s:.vimsize"
+            elseif has('win32')
+                return $VIM.'\_vimsize'
+            else
+                return $VIM.'/.vimsize'
+            endif
+        endif
+    endfunction
 
   function! ScreenRestore()
     " Restore window size (columns and lines) and position
@@ -132,4 +245,34 @@ if has("gui_running")
   autocmd VimLeavePre * if g:screen_size_restore_pos == 1 | call ScreenSave() | endif
 endif
 
+
+
+" custom end
+
+
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
 
