@@ -565,13 +565,11 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    PVOID v = AllocateMemory(0x100);
+    UNICODE_STRING ooxx;
 
-    FillMemory(v, 0x100, -1);
-
-    BYTE buf[0x100];
-
-    ReadMemory(CurrentProcess, v, buf, 0x100);
+    RtlDosPathNameToNtPathName_U(L".\\fuck.kula", &ooxx, NULL, NULL);
+    PrintConsoleW(L"%wZ\n", &ooxx);
+    RtlFreeUnicodeString(&ooxx);
 
     return;
 

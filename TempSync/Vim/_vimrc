@@ -21,6 +21,7 @@ syntax on
 
 set mouse=a
 
+set guioptions+=b
 set nowrap
 set cursorline
 set tabstop=4
@@ -41,6 +42,8 @@ set tabpagemax=9999
 
 set nobackup
 set nowritebackup
+set ignorecase
+set nomagic
 
 set viminfo=
 set nu
@@ -143,7 +146,7 @@ endif
 
 :inoremap ( ()<ESC>i
 :inoremap ) <c-r>=ClosePair(')')<CR>
-:inoremap { {<CR>}<ESC>O<Tab>
+:inoremap { {<CR>}<ESC>O
 :inoremap } <c-r>=ClosePair('}')<CR>
 :inoremap [ []<ESC>i
 :inoremap ] <c-r>=ClosePair(']')<CR>

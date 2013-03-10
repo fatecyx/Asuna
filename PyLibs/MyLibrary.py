@@ -1,6 +1,8 @@
 import os, sys, struct, traceback
+from io import *
+from pdb import set_trace as bp
 
-def InvokeSafe(method, values = None):
+def TryInvoke(method, values = None):
     try:
         return method(*values) if values != None else method()
     except Exception as e:
