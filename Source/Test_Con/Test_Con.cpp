@@ -565,11 +565,9 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    UNICODE_STRING ooxx;
-
-    RtlDosPathNameToNtPathName_U(L".\\fuck.kula", &ooxx, NULL, NULL);
-    PrintConsoleW(L"%wZ\n", &ooxx);
-    RtlFreeUnicodeString(&ooxx);
+    OpenClipboard(NULL);
+    GetClipboardData(CF_TEXT);
+    CloseClipboard();
 
     return;
 
