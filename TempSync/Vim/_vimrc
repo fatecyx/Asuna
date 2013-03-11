@@ -1,4 +1,4 @@
-set nocompatible
+ï»¿set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
@@ -34,7 +34,7 @@ set autoindent smartindent
 set smarttab
 set backspace=eol,start,indent
 
-" Éè¶¨ÎÄ¼şä¯ÀÀÆ÷Ä¿Â¼Îªµ±Ç°Ä¿Â¼
+" è®¾å®šæ–‡ä»¶æµè§ˆå™¨ç›®å½•ä¸ºå½“å‰ç›®å½•
 set bsdir=buffer
 set autochdir
 
@@ -76,32 +76,32 @@ if has("win32")
     set tags+=E:\LIBRARY
 endif
 
-" ACPÅäÖÃ - ¾ßÌå²Î¿¼acp.vimËµÃ÷
+" ACPé…ç½® - å…·ä½“å‚è€ƒacp.vimè¯´æ˜
 let g:acp_behaviorSnipmateLength=1
 let g:acp_enableAtStartup = 1
 let g:acp_behaviorKeywordIgnores = ['if','for', 'do']
 
-"CscopeÅäÖÃ
+"Cscopeé…ç½®
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 let Cscope_OpenQuickfixWindow = 1
 
-" ×Ô¶¯²¹È«ÅäÖÃ -C-Y Ñ¡ÖĞµ±Ç°ÏîÄ¿
-set completeopt=longest,menu				"¹Ø±ÕÈ«ÄÜ²¹È«ÏêÏ¸ĞÅÏ¢
+" è‡ªåŠ¨è¡¥å…¨é…ç½® -C-Y é€‰ä¸­å½“å‰é¡¹ç›®
+set completeopt=longest,menu				"å…³é—­å…¨èƒ½è¡¥å…¨è¯¦ç»†ä¿¡æ¯
 let OmniCpp_ShowAccess = 1
 let OmniCpp_ShowPrototypeInAbbr = 1 			" show function parameters
 let OmniCpp_MayCompleteDot = 1 				" autocomplete after .
 let OmniCpp_MayCompleteArrow = 1 			" autocomplete after ->
 
-" ÉèÖÃTaglist²å¼ş
-let Tlist_Show_One_File = 1      			"Ö»ÏÔÊ¾µ±Ç°ÎÄ¼şµÄtag
-let Tlist_Use_Right_Window = 1      			"ÔÚÓÒ²à´°¿ÚÖĞÏÔÊ¾taglist´°¿Ú
+" è®¾ç½®Taglistæ’ä»¶
+let Tlist_Show_One_File = 1      			"åªæ˜¾ç¤ºå½“å‰æ–‡ä»¶çš„tag
+let Tlist_Use_Right_Window = 1      			"åœ¨å³ä¾§çª—å£ä¸­æ˜¾ç¤ºtaglistçª—å£
 let Tlist_GainFocus_On_ToggleOpen = 0
 let Tlist_Show_Menu=0
 let Tlist_Enable_Fold_Column = 0
 let Tlist_Auto_Update = 1
 
 " SuperTab
-let g:SuperTabCrMapping = 0				"¿ÉÒÔÊ¹ÓÃ»Ø³µÑ¡ÖĞ
+let g:SuperTabCrMapping = 0				"å¯ä»¥ä½¿ç”¨å›è½¦é€‰ä¸­
 let g:SuperTabLongestEnhanced = 1
 set completeopt=menu,longest
 let g:SuperTabRetainCompletionType = 2
@@ -112,22 +112,22 @@ let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 let g:winManagerWindowLayout='TagList|BufExplorer'
 let g:winManagerWidth = 35
 
-" NERDTreeÖ»ÏÔÊ¾ºó×ºÃûÎª.c .h .cppµÄÎÄ¼ş
+" NERDTreeåªæ˜¾ç¤ºåç¼€åä¸º.c .h .cppçš„æ–‡ä»¶
 let NERDTreeIgnore=['\.\w*[^chp]$', '\..[^p]p$', '\.[^c]pp$']
 "let NERDTreeWinPos = "right"
 let NERDTreeWinSize=g:winManagerWidth
 
 let g:bufExplorerSortBy='number' 
 
-" ´úÂëÕÛµş
+" ä»£ç æŠ˜å 
 "set foldmethod=syntax
-" ÓÃ¿Õ¸ñ¼üÀ´¿ª¹ØÕÛµş
+" ç”¨ç©ºæ ¼é”®æ¥å¼€å…³æŠ˜å 
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
-" ²»Ï£ÍûÃ¿´Î»Øµ½normal mode¶¼ÍË1¸ñ
+" ä¸å¸Œæœ›æ¯æ¬¡å›åˆ°normal modeéƒ½é€€1æ ¼
 inoremap <Esc> <C-O>mp<Esc>`p
 
-" std_cÓï·¨×ÅÉ«²å¼şÅäÖÃ
+" std_cè¯­æ³•ç€è‰²æ’ä»¶é…ç½®
 let c_syntax_for_h = 1
 
 
