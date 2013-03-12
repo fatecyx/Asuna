@@ -129,7 +129,7 @@ NTSTATUS LeGlobalData::InjectSelfToChildProcess(HANDLE Process, PCLIENT_ID Cid)
 
     // Process = CurrentProcess;
 
-    if (Wow64 && !Nt_IsWow64Process(Process))
+    if (Wow64 && !Ps::IsWow64Process(Process))
         return STATUS_NOT_SUPPORTED;
 
     if (GetLePeb()->ooxxAddress == NULL)
