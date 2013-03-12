@@ -115,7 +115,7 @@ ForceInline Void main2(Long_Ptr argc, WChar **argv)
     ZwClose(ProcessInfo.hProcess);
     ZwClose(ProcessInfo.hThread);
 
-    Nt_Sleep(1000);
+    Ps::Sleep(1000);
 
     return;
 }

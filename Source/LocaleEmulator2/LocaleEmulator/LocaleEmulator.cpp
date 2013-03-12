@@ -90,7 +90,7 @@ NTSTATUS LeGlobalData::Initialize()
     UNICODE_STRING  SystemDirectory, NlsFileName, OemNlsFileName, LangFileName;
     PKEY_VALUE_PARTIAL_INFORMATION IndexValue;
 
-    Wow64 = Nt_IsWow64Process(CurrentProcess);
+    Wow64 = Ps::IsWow64Process();
 
     LePeb = OpenOrCreateLePeb();
     if (LePeb == NULL)
@@ -210,6 +210,14 @@ NTSTATUS LeGlobalData::Initialize()
 
     HookNtdllRoutines(Ntdll->DllBase);
 
+    PLDR_MODULE Kernel32Ldr;
+
+    Kernel32Ldr = GetKernel32Ldr();
+    if (Kernel32Ldr != NULL)
+    {
+        HookKernel32Routines(Kernel32Ldr->DllBase);
+    }
+
     return Status;
 }
 
@@ -246,13 +254,18 @@ BOOL NTAPI DelayInitDllEntry(PVOID BaseAddress, ULONG Reason, PVOID Reserved)
 
 VOID LeGlobalData::HookModule(PVOID DllBase, PCUNICODE_STRING DllName, BOOL DllLoad)
 {
+    TYPE_OF(&LeGlobalData::HookNtdllRoutines)     HookRoutine;
+    TYPE_OF(&LeGlobalData::UnHookNtdllRoutines)   UnHookRoutine;
+
     if (DLL_IS(L"USER32.dll"))
     {
-        DllLoad ? HookUser32Routines(DllBase) : UnHookUser32Routines();
+        HookRoutine     = &LeGlobalData::HookUser32Routines;
+        UnHookRoutine   = &LeGlobalData::UnHookUser32Routines;
     }
     else if (DLL_IS(L"GDI32.dll"))
     {
-        DllLoad ? HookGdi32Routines(DllBase) : UnHookGdi32Routines();
+        HookRoutine     = &LeGlobalData::HookGdi32Routines;
+        UnHookRoutine   = &LeGlobalData::UnHookGdi32Routines;
     }
     else if (DLL_IS(L"KERNEL32.dll"))
     {
@@ -260,7 +273,16 @@ VOID LeGlobalData::HookModule(PVOID DllBase, PCUNICODE_STRING DllName, BOOL DllL
         {
             Mm::FreeVirtualMemory(GetLePeb()->SelfShadowToFree);
         }
+
+        HookRoutine     = &LeGlobalData::HookKernel32Routines;
+        UnHookRoutine   = &LeGlobalData::UnHookKernel32Routines;
     }
+    else
+    {
+        return;
+    }
+
+    DllLoad ? (this->*HookRoutine)(DllBase) : (this->*UnHookRoutine)();
 }
 
 VOID LeGlobalData::DllNotification(ULONG NotificationReason, PCLDR_DLL_NOTIFICATION_DATA NotificationData)
@@ -328,6 +350,7 @@ NTSTATUS LeGlobalData::UnInitialize()
 
     UnHookGdi32Routines();
     UnHookUser32Routines();
+    UnHookKernel32Routines();
     UnHookNtdllRoutines();
 
     UnInstallHookPort();

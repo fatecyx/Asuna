@@ -565,6 +565,11 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
+    WCHAR buf[16];
+
+    GetLocaleInfoW(GetUserDefaultLCID(), LOCALE_IDEFAULTANSICODEPAGE, buf, sizeof(buf));
+    PrintConsoleW(L"%X\n", StringToInt32W(buf));
+
     OpenClipboard(NULL);
     GetClipboardData(CF_TEXT);
     CloseClipboard();

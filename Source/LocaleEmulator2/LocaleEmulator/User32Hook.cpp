@@ -850,7 +850,7 @@ HANDLE NTAPI LeGetClipboardData(UINT Format)
                 break;
 
             Length = StrLengthW(Unicode);
-            AnsiData = GlobalAlloc(GHND, Length * 2);
+            AnsiData = GlobalAlloc(GHND, Length * sizeof(WCHAR) + 1);
             if (AnsiData == NULL)
             {
                 GlobalUnlock(Data);
@@ -859,7 +859,7 @@ HANDLE NTAPI LeGetClipboardData(UINT Format)
 
             Ansi = (PSTR)GlobalLock(AnsiData);
 
-            UnicodeToAnsi(Ansi, Length * 2, Unicode, Length);
+            UnicodeToAnsi(Ansi, Length * sizeof(WCHAR) + 1, Unicode, Length);
 
             GlobalUnlock(AnsiData);
             GlobalUnlock(Data);

@@ -61,6 +61,10 @@ SOURCE=.\Gdi32Hook.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Kernel32Hook.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\LocaleEmulator.cpp
 # ADD CPP /Yu"stdafx.h"
 # End Source File

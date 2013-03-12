@@ -179,6 +179,8 @@ public:
 
     struct
     {
+        PVOID (*StubGetCurrentNlsCache)();
+
         API_POINTER(NtUserMessageCall)          StubNtUserMessageCall;
         API_POINTER(NtUserDefSetText)           StubNtUserDefSetText;
         API_POINTER(SetWindowLongA)             StubSetWindowLongA;
@@ -252,11 +254,23 @@ public:
     NTSTATUS HookNtdllRoutines(PVOID Ntdll);
     NTSTATUS UnHookNtdllRoutines();
 
+    NTSTATUS HookKernel32Routines(PVOID Kernel32);
+    NTSTATUS UnHookKernel32Routines();
+
     NTSTATUS InjectSelfToChildProcess(HANDLE Process, PCLIENT_ID Cid);
 
     /************************************************************************
       helper func
     ************************************************************************/
+
+    /************************************************************************
+      kernelbase
+    ************************************************************************/
+
+    PVOID GetCurrentNlsCache()
+    {
+        return HookStub.StubGetCurrentNlsCache();
+    }
 
     /************************************************************************
       user32
