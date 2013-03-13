@@ -62,7 +62,7 @@ ForceInline Void main2(Long_Ptr argc, WChar **argv)
     PrintConsoleW(L"%p\n", Status);
     if (NT_FAILED(Status))
     {
-        Nt_Sleep(1000);
+        Ps::Sleep(1000);
         return;
     }
 

@@ -2,7 +2,6 @@
 #define _LOCALEEMULATOR_H_cd444a0d_c7f9_44b2_aac8_8107e9a07ca2_
 
 #include "MyLibrary.h"
-#include "mlns.h"
 
 #define ROOTDIR_SYSTEM32            L"\\SystemRoot\\system32\\"
 
