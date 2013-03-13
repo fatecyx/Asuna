@@ -38,21 +38,7 @@ ForceInline Void main2(Long_Ptr argc, WChar **argv)
 
     LEB Leb;
 
-    static WCHAR FaceName[]     = L"MS Gothic";
-    static WCHAR StandardName[] = L"@tzres.dll,-572";
-    static WCHAR DaylightName[] = L"@tzres.dll,-572";
-
-    Leb.AnsiCodePage    = CP_SHIFTJIS;
-    Leb.OemCodePage     = CP_SHIFTJIS;
-    Leb.LocaleID        = 0x411;
-    Leb.DefaultCharset  = SHIFTJIS_CHARSET;
-
-    CopyStruct(Leb.DefaultFaceName, FaceName, sizeof(FaceName));
-
-    Leb.Timezone.Bias = -480;
-    Leb.Timezone.DaylightBias = 0;
-    CopyStruct(Leb.Timezone.StandardName, StandardName, sizeof(StandardName));
-    CopyStruct(Leb.Timezone.DaylightName, DaylightName, sizeof(DaylightName));
+    InitDefaultLeb(&Leb);
 
     Status = LeCreateProcess(&Leb, argv[1], CommandLine, CurrentDirectory);
 

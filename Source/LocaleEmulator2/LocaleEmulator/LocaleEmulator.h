@@ -59,6 +59,25 @@ inline NTSTATUS CloseLePeb(PLEPEB LePeb)
     return LePeb == NULL ? STATUS_INVALID_PARAMETER : ZwUnmapViewOfSection(CurrentProcess, LePeb);
 }
 
+inline VOID InitDefaultLeb(PLEB Leb)
+{
+    static WCHAR FaceName[]     = L"MS Gothic";
+    static WCHAR StandardName[] = L"@tzres.dll,-632";
+    static WCHAR DaylightName[] = L"@tzres.dll,-631";
+
+    Leb->AnsiCodePage    = CP_SHIFTJIS;
+    Leb->OemCodePage     = CP_SHIFTJIS;
+    Leb->LocaleID        = 0x411;
+    Leb->DefaultCharset  = SHIFTJIS_CHARSET;
+
+    CopyStruct(Leb->DefaultFaceName, FaceName, sizeof(FaceName));
+
+    Leb->Timezone.Bias = -540;
+    Leb->Timezone.DaylightBias = 0;
+    CopyStruct(Leb->Timezone.StandardName, StandardName, sizeof(StandardName));
+    CopyStruct(Leb->Timezone.DaylightName, DaylightName, sizeof(DaylightName));
+}
+
 inline
 PLEPEB
 OpenOrCreateLePeb(

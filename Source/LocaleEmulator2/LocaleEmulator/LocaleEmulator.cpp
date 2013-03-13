@@ -95,25 +95,11 @@ NTSTATUS LeGlobalData::Initialize()
     LePeb = OpenOrCreateLePeb();
     if (LePeb == NULL)
     {
-        static WCHAR FaceName[]     = L"MS Gothic";
-        static WCHAR StandardName[] = L"@tzres.dll,-572";
-        static WCHAR DaylightName[] = L"@tzres.dll,-572";
-
         PUNICODE_STRING FullDllName;
 
         LePeb = GetLePeb();
 
-        LePeb->Leb.AnsiCodePage    = CP_SHIFTJIS;
-        LePeb->Leb.OemCodePage     = CP_SHIFTJIS;
-        LePeb->Leb.LocaleID        = 0x411;
-        LePeb->Leb.DefaultCharset  = SHIFTJIS_CHARSET;
-
-        CopyStruct(LePeb->Leb.DefaultFaceName, FaceName, sizeof(FaceName));
-
-        LePeb->Leb.Timezone.Bias = -480;
-        LePeb->Leb.Timezone.DaylightBias = 0;
-        CopyStruct(LePeb->Leb.Timezone.StandardName, StandardName, sizeof(StandardName));
-        CopyStruct(LePeb->Leb.Timezone.DaylightName, DaylightName, sizeof(DaylightName));
+        InitDefaultLeb(&LePeb->Leb);
 
         FullDllName = &FindLdrModuleByHandle(&__ImageBase)->FullDllName;
         CopyMemory(LePeb->LeDllFullPath, FullDllName->Buffer, FullDllName->Length + sizeof(WCHAR));
