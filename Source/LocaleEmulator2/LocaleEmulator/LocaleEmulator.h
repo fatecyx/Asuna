@@ -147,6 +147,7 @@ OpenOrCreateLePeb(
         }
 
         Status = ZwDuplicateObject(CurrentProcess, SectionHandle, ProcessHandle, &LePeb->Section, 0, 0, DUPLICATE_SAME_ACCESS);
+        ZwClose(ProcessHandle);
         FAIL_BREAK(Status);
     }
 

@@ -1,17 +1,17 @@
 //#pragma comment(linker, "/ENTRY:DllMain")
 #pragma comment(linker, "/SECTION:.text,ERW /MERGE:.rdata=.text /MERGE:.data=.text")
 #pragma comment(linker, "/SECTION:.Asuna,ERW /MERGE:.text=.Asuna")
-#pragma comment(linker, "/EXPORT:LeCreateProcess=_LeCreateProcess@44")
+//#pragma comment(linker, "/EXPORT:LeCreateProcess=_LeCreateProcess@44")
 
 #include "MyLibrary.cpp"
 #include "LoaderDll.h"
 
-LE_API
+EXTC
 NTSTATUS
 NTAPI
 LeCreateProcess(
-    PCWSTR                  ApplicationName,
     PLEB                    Leb,
+    PCWSTR                  ApplicationName,
     PWSTR                   CommandLine,
     PCWSTR                  CurrentDirectory,
     ULONG                   CreationFlags,
@@ -53,11 +53,14 @@ LeCreateProcess(
                 Token
             );
 
+    if (NT_FAILED(Status))
+        return Status;
+
     PLEPEB LePeb;
 
     LePeb = NULL;
 
-    if (NT_SUCCESS(Status)) LOOP_ONCE
+    LOOP_ONCE
     {
         LePeb = OpenOrCreateLePeb(ProcessInfo.dwProcessId, TRUE);
         if (LePeb == NULL)
@@ -69,7 +72,6 @@ LeCreateProcess(
         if (Leb != NULL)
         {
             LePeb->Leb = *Leb;
-            break;
         }
         else
         {
@@ -106,9 +108,10 @@ LeCreateProcess(
     if (NT_FAILED(Status))
     {
         ZwTerminateProcess(ProcessInfo.hProcess, Status);
+        ZwClose(ProcessInfo.hProcess);
+        ZwClose(ProcessInfo.hThread);
     }
-
-    if (ProcessInformation != NULL)
+    else if (ProcessInformation != NULL)
     {
         *ProcessInformation = ProcessInfo;
     }

@@ -15,8 +15,6 @@
         #define EXTC
     #endif //CPP_DEFINED
 
-    #define LE_API EXTC __declspec(dllimport)
-
     typedef struct ML_PROCESS_INFORMATION : public PROCESS_INFORMATION
     {
         PVOID FirstCallLdrLoadDll;
@@ -59,18 +57,22 @@
 
 #else
 
-#include "../LocaleEmulator/LocaleEmulator.h"
-
-#define LE_API EXTC
+    #include "../LocaleEmulator/LocaleEmulator.h"
+    #define LE_API EXTC
 
 #endif // ml
+
+#if !defined(LE_LOADER_DLL)
+    #undef LE_API
+    #define LE_API EXTC __declspec(dllimport)
+#endif
 
 LE_API
 NTSTATUS
 WINAPI
 LeCreateProcess(
+    PLEB                    Leb,
     PCWSTR                  ApplicationName,
-    PLEB                    DEF_VAL(Leb, NULL),
     PWSTR                   DEF_VAL(CommandLine, NULL),
     PCWSTR                  DEF_VAL(CurrentDirectory, NULL),
     ULONG                   DEF_VAL(CreationFlags, 0),
