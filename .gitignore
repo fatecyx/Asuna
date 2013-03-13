@@ -42,3 +42,4 @@ Source/LocaleEmulator2/LocaleEmulator/win32k_x64_win8.i64
 Source/LocaleEmulator2/LocaleEmulator/win32k_x64_win8.sys
 Source/LocaleEmulator2/LocaleEmulator/Loader.exe
 Source/LocaleEmulator2/LocaleEmulator/LocaleEmulator.dll
+Source/LocaleEmulator2/LocaleEmulator/LoaderDll.dll
