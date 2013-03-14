@@ -62,7 +62,7 @@
 
 #endif // ml
 
-#if !defined(LE_LOADER_DLL)
+#if !LE_LOADER_DLL
     #undef LE_API
     #define LE_API EXTC __declspec(dllimport)
 #endif

@@ -50,10 +50,22 @@ class Srsdatabase:
         for text in srsdb:
             index = int(text.attrib['Index'])
             sc = text.find('sc').text
+
             if text.attrib['Type'] == 'Name':
+
                 self.TranslatedBlock['name'][index] = sc
+
             elif text.attrib['Type'] == 'Message':
+
                 self.TranslatedBlock['msg'][index] = sc
+
+            else:
+
+                blockname = text.attrib['Name']
+                if not blockname in self.TranslatedBlock:
+                    self.TranslatedBlock[blockname] = {}
+
+                self.TranslatedBlock[blockname][index] = sc
 
     def AppendImageBlock(self, blockname, blockvalue):
         block = [BLOCK_NAME, BLOCK_VALUE]

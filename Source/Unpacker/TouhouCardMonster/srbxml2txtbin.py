@@ -19,8 +19,7 @@ def PeekText(textdata, srbxml):
         jp = text.find('jp').text
         sc = text.find('sc').text
 
-        if jp == sc:
-            continue
+        #if jp == sc: continue
 
         textlist.append([offset, sc])
 
@@ -56,4 +55,4 @@ for hash, textlist in textdata.items():
         buf += text
         buf += b'\x00' * (((length + 3) & ~3) - length)
 
-open(os.path.dirname(__file__) + '\\' + 'tcm.bin', 'wb').write(buf)
+open(os.path.dirname(sys.argv[1]) + '\\' + 'tcm.bin', 'wb').write(buf)

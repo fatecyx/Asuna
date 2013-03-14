@@ -355,7 +355,9 @@ inline BOOL UnInitialize(PVOID BaseAddress)
 
 BOOL Initialize(PVOID BaseAddress)
 {
-    PLDR_MODULE Kernel32;
+    NTSTATUS            Status;
+    PLDR_MODULE         Kernel32;
+    PLeGlobalData       GlobalData;
 
     LdrDisableThreadCalloutsForDll(BaseAddress);
 
@@ -365,9 +367,6 @@ BOOL Initialize(PVOID BaseAddress)
         return FALSE;
 
     ml::MlInitialize();
-
-    NTSTATUS Status;
-    PLeGlobalData GlobalData;
 
     GlobalData = new LeGlobalData;
     if (GlobalData == NULL)

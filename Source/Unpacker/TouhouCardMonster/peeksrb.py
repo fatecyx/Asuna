@@ -8,7 +8,7 @@ from ctypes import windll
 if len(sys.argv) < 2:
     sys.exit(0)
 
-txtpat = re.compile(b'\\\x2A...\x06', re.DOTALL)
+#txtpat = re.compile(b'\\\x2A...\x06', re.DOTALL)
 txtpat = re.compile(b'\x45.\x00\\\x2A.\x00\x06', re.DOTALL)
 
 def HashString(str):
@@ -36,10 +36,8 @@ textfilters = \
     'img\\'
 ]
 
-def PeekText(ps2):
+def PeekText(ps2, txtpatt):
     infile = ps2
-    outfile = os.path.splitext(infile)[0] + '.txt'
-    binfile = os.path.splitext(infile)[0] + '.xml'
 
     ps = open(infile, 'rb').read()
     offset = 0
@@ -69,7 +67,7 @@ def PeekText(ps2):
 
     while offset < size:
         tmp = ps[offset:]
-        mr = txtpat.search(tmp)
+        mr = txtpatt.search(tmp)
         if not mr:
             break
 
@@ -113,9 +111,6 @@ def PeekText(ps2):
 
     xml = []
 
-    xml.append('<?xml version="1.0" encoding="utf-8"?>')
-    xml.append('<SRB Hash = "%08X">' % HashString(os.path.basename(infile)))
-
     for text in texts:
         xml.append('    <Text Offset = "%08X">' % text[0])
 
@@ -127,18 +122,32 @@ def PeekText(ps2):
         xml.append('        <sc><![CDATA[%s]]></sc>' % text)
         xml.append('    </Text>')
 
-    xml.append('</SRB>')
-
-    open(binfile, 'wb').write('\r\n'.join(xml).encode('UTF8'))
+    return xml
 
 i = 1
 n = len(sys.argv) - 1
 while i <= n:
     print('({1:03} / {2:03}) {0}'.format(sys.argv[i], i, n))
     windll.kernel32.SetConsoleTitleW(sys.argv[i])
-    
+
     try:
-        PeekText(sys.argv[i])
+
+        infile = sys.argv[i]
+
+        txtpat = re.compile(b'\x45.\x00\\\x2A.\x00\x06', re.DOTALL)
+        xml = PeekText(infile, txtpat)
+
+        txtpat = re.compile(b'\\\x2A\x02..\x06', re.DOTALL)
+        xml += PeekText(infile, txtpat)
+
+        xml.insert(0, '<?xml version="1.0" encoding="utf-8"?>')
+        xml.insert(0, '<SRB Hash = "%08X">' % HashString(os.path.basename(infile)))
+        xml.append('</SRB>')
+
+        binfile = os.path.splitext(infile)[0] + '.xml'
+
+        open(binfile, 'wb').write('\r\n'.join(xml).encode('UTF8'))
+
     except Exception as e:
         traceback.print_exception(type(e), e, e.__traceback__)
         input()

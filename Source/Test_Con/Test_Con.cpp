@@ -565,7 +565,9 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    Ps::CreateThreadT([](PVOID){ return 0; }, (void*)0);
+    __asm __emit 0x0F
+    __asm __emit 0x5A
+    __asm __emit 0xDB
 
     return;
 

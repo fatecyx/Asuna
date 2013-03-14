@@ -289,6 +289,20 @@ NTSTATUS InitTextBin()
     return Status;
 }
 
+HFONT WINAPI ThCreateFontIndirectA(LOGFONTA *lplf)
+{
+    LOGFONTW lf;
+
+    CopyStruct(&lf, lplf, FIELD_OFFSET(LOGFONTA, lfFaceName));
+
+    lf.lfCharSet = GB2312_CHARSET;
+    lf.lfQuality = CLEARTYPE_QUALITY;
+    lf.lfHeight -= 2;
+    CopyStruct(lf.lfFaceName, L"ºÚÌå", sizeof(L"ºÚÌå"));
+
+    return CreateFontIndirectW(&lf);
+}
+
 #if DBG_ON
 
 NtFileDisk logfile;
@@ -351,8 +365,9 @@ EXTC VOID STDCALL RunEngine(PSTR CommandLine, HICON Icon)
 
         MEMORY_PATCH p[] =
         {
-            PATCH_MEMORY(GB2312_CHARSET,    1, 0x8E9EF),
-            PATCH_MEMORY("system_cn.ini",   4, 0x16C2C0),
+            PATCH_MEMORY(GB2312_CHARSET,        1, 0x08E9EF),
+            PATCH_MEMORY(ThCreateFontIndirectA, 4, 0x12803C),
+            PATCH_MEMORY("system_cn.ini",       4, 0x16C2C0),
 
             // PATCH_MEMORY(0x14,              1, 0x07A326),   // mem obj size add 4   compressed
             // PATCH_MEMORY(0x14,              1, 0x07A3AF),   // mem obj size add 4   uncompressed

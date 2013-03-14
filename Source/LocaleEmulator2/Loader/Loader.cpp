@@ -1,10 +1,12 @@
 #pragma comment(linker, "/ENTRY:main")
-#pragma comment(linker, "/SECTION:.text,ERW /MERGE:.rdata=.text /MERGE:.data=.text")
-#pragma comment(linker, "/SECTION:.Asuna,ERW /MERGE:.text=.Asuna")
-#pragma comment(lib, "../LoaderDll/LoaderDll.lib")
+//#pragma comment(linker, "/SECTION:.text,ERW /MERGE:.rdata=.text /MERGE:.data=.text")
+//#pragma comment(linker, "/SECTION:.Asuna,ERW /MERGE:.text=.Asuna")
+//#pragma comment(lib, "../LoaderDll/LoaderDll.lib")
 
-#include "MyLibrary.cpp"
-#include "../LoaderDll/LoaderDll.h"
+#define LE_LOADER_DLL 1
+
+//#include "MyLibrary.cpp"
+#include "../LoaderDll/LoaderDll.cpp"
 
 ForceInline Void main2(Long_Ptr argc, WChar **argv)
 {
