@@ -565,9 +565,9 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    __asm __emit 0x0F
-    __asm __emit 0x5A
-    __asm __emit 0xDB
+    BYTE buf[8];
+
+    NtQuerySystemInformation(SystemCodeIntegrityInformation, buf, 8, NULL);
 
     return;
 

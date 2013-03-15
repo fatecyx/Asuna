@@ -1,7 +1,7 @@
 #pragma comment(linker, "/ENTRY:DllMain")
 #pragma comment(linker, "/SECTION:.text,ERW /MERGE:.rdata=.text /MERGE:.data=.text")
 #pragma comment(linker, "/SECTION:.Amano,ERW /MERGE:.text=.Amano")
-#pragma comment(linker, "/EXPORT:__strdup=msvcrt._strdup")
+//#pragma comment(linker, "/EXPORT:__strdup=msvcrt._strdup")
 
 #include "MyLibrary.cpp"
 #include <Windns.h>
@@ -117,74 +117,84 @@ GitDnsFree(
 
 #endif
 
+#include "../Drivers/AntiAntiKernelDebug/ShadowSysCall.h"
+
+#pragma comment(linker, "/EXPORT:CEPlugin_GetVersion=_CEPlugin_GetVersion@8")
+#pragma comment(linker, "/EXPORT:CEPlugin_InitializePlugin=_CEPlugin_InitializePlugin@8")
+#pragma comment(linker, "/EXPORT:CEPlugin_DisablePlugin=_CEPlugin_DisablePlugin@0")
+
+EXTC BOOL __stdcall CEPlugin_GetVersion(PVOID pv , int sizeofpluginversion)
+{
+    ZeroMemory(pv, 8);
+    return TRUE;
+}
+
+EXTC BOOL __stdcall CEPlugin_InitializePlugin(PVOID ef , int pluginid)
+{
+    return TRUE;
+}
+
+EXTC BOOL __stdcall CEPlugin_DisablePlugin()
+{
+    return TRUE;
+}
+
+VOID SetThemesAccessAny(NtFileDisk &SsDevice)
+{
+    NTSTATUS    Status;
+    SC_HANDLE   ScManager, Themes;
+
+    ScManager = OpenSCManagerW(NULL, NULL, SC_MANAGER_CREATE_SERVICE);
+    if (ScManager == NULL)
+        return;
+
+    Themes = OpenServiceW(ScManager, L"Themes", SERVICE_ALL_ACCESS);
+    if (Themes == NULL)
+    {
+        CloseServiceHandle(ScManager);
+        return;
+    }
+
+    ULONG Needed;
+    SERVICE_STATUS_PROCESS ServiceProcess;
+
+    if (QueryServiceStatusEx(Themes, SC_STATUS_PROCESS_INFO, (PBYTE)&ServiceProcess, sizeof(ServiceProcess), &Needed))
+    {
+        SS_PROCESS_OBJECT obj;
+
+        obj.ProcessId   = ServiceProcess.dwProcessId;
+        obj.AccessAny   = TRUE;
+
+        ControlShadowDevice(SsDevice, IOCTL_SET_PROCESS_INFO, &obj, sizeof(obj));
+    }
+
+    CloseServiceHandle(Themes);
+    CloseServiceHandle(ScManager);
+}
+
 BOOL Initialize(PVOID BaseAddress)
 {
     ml::MlInitialize();
 
-    PVOID           Dnsapi;
-    PLDR_MODULE     ntdll, exe;
-    PWSTR           FullPath;
-    ULONG_PTR       Length;
-    UNICODE_STRING  Home, ExePath;
+    NTSTATUS Status;
 
-    GetWorkingDirectory(&Home);
-
-    FullPath = PtrAdd(Home.Buffer, Home.Length);
-    if (FullPath[-1] == '\\')
-        --FullPath;
-
-    while (FullPath[-1] != '\\' && FullPath > Home.Buffer)
-        --FullPath;
-
-    if (FullPath != Home.Buffer)
+    LOOP_ONCE
     {
-        Home.Length = PtrOffset(FullPath, Home.Buffer);
-        SetWorkingDirectory(&Home);
+        NtFileDisk SsDevice;
+
+        Status = SsDevice.OpenDevice(SHADOW_SYSCALL_DEVICE_SYMBOLIC);
+        FAIL_BREAK(Status);
+
+        SetThemesAccessAny(SsDevice);
+
+        SS_PROCESS_OBJECT obj;
+
+        obj.ProcessId = CurrentPid();
+        obj.ShadowSystemCall = TRUE;
+        obj.DenyAccess = TRUE;
+        obj.AccessAny = TRUE;
+        Status = ControlShadowDevice(SsDevice, IOCTL_SET_PROCESS_INFO, &obj, sizeof(obj));
     }
-
-    RtlFreeUnicodeString(&Home);
-
-    return TRUE;
-
-#if ML_AMD64
-
-    static WCHAR DnsapiDll[] = L"DNSAPI.dll";
-
-    ntdll = GetNtdllLdrModule();
-
-    Length = ntdll->FullDllName.Length - ntdll->BaseDllName.Length;
-    FullPath = (PWSTR)AllocateMemoryP(Length + sizeof(DnsapiDll));
-    if (FullPath == NULL)
-        return FALSE;
-
-    CopyMemory(FullPath, ntdll->FullDllName.Buffer, Length);
-    CopyStruct(PtrAdd(FullPath, Length), DnsapiDll, sizeof(DnsapiDll));
-
-    Dnsapi = Ldr::LoadDll(FullPath);
-    if (Dnsapi != NULL)
-    {
-        *(PVOID *)&StubDnsQuery_W   = GetRoutineAddress(Dnsapi, "DnsQuery_W");
-        *(PVOID *)&StubDnsFree      = GetRoutineAddress(Dnsapi, "DnsFree");
-    }
-
-#endif
-
-    exe = FindLdrModuleByHandle(BaseAddress);
-
-    RTL_CONST_STRING(Home, L"HOME");
-    ExePath = exe->FullDllName;
-    ExePath.Length -= exe->BaseDllName.Length;
-
-    RtlSetEnvironmentVariable(NULL, &Home, &ExePath);
-
-    MEMORY_FUNCTION_PATCH f[] =
-    {
-        INLINE_HOOK_JUMP(NtQueryDirectoryFile,      TGitNtQueryDirectoryFile,       StubNtQueryDirectoryFile),
-        INLINE_HOOK_JUMP(NtQueryAttributesFile,     TGitNtQueryAttributesFile,      StubNtQueryAttributesFile),
-        INLINE_HOOK_JUMP(NtQueryFullAttributesFile, TGitNtQueryFullAttributesFile,  StubNtQueryFullAttributesFile),
-    };
-
-    Nt_PatchMemory(NULL, 0, f, countof(f));
 
     return TRUE;
 }
