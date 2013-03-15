@@ -1,6 +1,7 @@
 .hg
 .hgignore
 *.pyc
+Source/sources/bluepillstudy
 /TempSync/Vim/_font
 /TempSync/Vim/_vimsize
 /TempSync/Vim/_vimsize2
