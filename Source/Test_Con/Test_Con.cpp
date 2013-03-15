@@ -565,9 +565,10 @@ BOOL IsRunningInVMWare()
 
 ForceInline Void main2(LongPtr argc, TChar **argv)
 {
-    BYTE buf[8];
+    UNICODE_STRING buf, buf2;
 
-    NtQuerySystemInformation(SystemCodeIntegrityInformation, buf, 8, NULL);
+    RtlInitEmptyString(&buf, 0, 100);
+    RtlDuplicateUnicodeString(3, &buf, &buf2);
 
     return;
 
