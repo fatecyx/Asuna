@@ -5,6 +5,7 @@
 #pragma comment(linker, "/EXPORT:WTSQuerySessionInformationW=_PWTSQuerySessionInformationW@0")
 #pragma comment(linker, "/EXPORT:WTSUnRegisterSessionNotification=_PWTSUnRegisterSessionNotification@4")
 #pragma comment(linker, "/EXPORT:WTSRegisterSessionNotification=_PWTSRegisterSessionNotification@8")
+#pragma comment(linker, "/EXPORT:WTSQueryUserToken=_PWTSQueryUserToken@8")
 
 #include "MyLibrary.cpp"
 #include "WtsApi32.h"
@@ -18,6 +19,12 @@ TYPE_OF(WTSQuerySessionInformationW)*       StubWTSQuerySessionInformationW;
 TYPE_OF(WTSRegisterSessionNotification)*    StubWTSRegisterSessionNotification;
 TYPE_OF(WTSUnRegisterSessionNotification)*  StubWTSUnRegisterSessionNotification;
 TYPE_OF(LoadAcceleratorsW)*                 StubLoadAcceleratorsW;
+TYPE_OF(WTSQueryUserToken)*                 StubWTSQueryUserToken;
+
+EXTC BOOL WINAPI PWTSQueryUserToken(ULONG SessionId, PHANDLE phToken)
+{
+    return StubWTSQueryUserToken(SessionId, phToken);
+}
 
 EXTC VOID WINAPI PWTSFreeMemory(PVOID Memory)
 {
@@ -85,6 +92,7 @@ BOOL Initialize(PVOID BaseAddress)
     *(PVOID *)&StubWTSQuerySessionInformationW      = GetRoutineAddress(hModule, "WTSQuerySessionInformationW");
     *(PVOID *)&StubWTSUnRegisterSessionNotification = GetRoutineAddress(hModule, "WTSUnRegisterSessionNotification");
     *(PVOID *)&StubWTSRegisterSessionNotification   = GetRoutineAddress(hModule, "WTSRegisterSessionNotification");
+    *(PVOID *)&StubWTSQueryUserToken                = GetRoutineAddress(hModule, "WTSQueryUserToken");
 
     lpCmdLineW = Ps::GetCommandLine();
 
