@@ -91,10 +91,12 @@ NTSTATUS LeGlobalData::Initialize()
     PKEY_VALUE_PARTIAL_INFORMATION IndexValue;
 
     Wow64 = Ps::IsWow64Process();
+    Ntdll = GetNtdllLdrModule();
 
     LePeb = OpenOrCreateLePeb();
     if (LePeb == NULL)
     {
+        PVOID           ReloadedNtdll;
         PUNICODE_STRING FullDllName;
 
         LePeb = GetLePeb();
@@ -103,16 +105,29 @@ NTSTATUS LeGlobalData::Initialize()
 
         FullDllName = &FindLdrModuleByHandle(&__ImageBase)->FullDllName;
         CopyMemory(LePeb->LeDllFullPath, FullDllName->Buffer, FullDllName->Length + sizeof(WCHAR));
+
+        Status = LoadPeImage(Ntdll->FullDllName.Buffer, &ReloadedNtdll, NULL, LOAD_PE_IGNORE_RELOC);
+        if (NT_SUCCESS(Status))
+        {
+            PVOID LdrLoadDllAddress;
+
+            LdrLoadDllAddress = EATLookupRoutineByHashPNoFix(ReloadedNtdll, NTDLL_LdrLoadDll);
+            LePeb->LdrLoadDllAddress = PtrAdd(LdrLoadDllAddress, PtrOffset(Ntdll->DllBase, ReloadedNtdll));
+            CopyMemory(LePeb->LdrLoadDllBackup, LdrLoadDllAddress, LDR_LOAD_DLL_BACKUP_SIZE);
+            LePeb->LdrLoadDllBackupSize = LDR_LOAD_DLL_BACKUP_SIZE;
+
+            UnloadPeImage(ReloadedNtdll);
+        }
     }
     else
     {
-        this->LePeb = *LePeb;
+        *GetLePeb() = *LePeb;
 
         ZwClose(LePeb->Section);
         CloseLePeb(LePeb);
     }
 
-    Ntdll = GetNtdllLdrModule();
+    WriteLog(L"init leb %s", GetLePeb()->LeDllFullPath);
 
     SystemDirectory = Ntdll->FullDllName;
     SystemDirectory.Length -= Ntdll->BaseDllName.Length;
@@ -174,6 +189,8 @@ NTSTATUS LeGlobalData::Initialize()
 
     RtlResetRtlTranslations(&NlsTableInfo);
 
+    WriteLog(L"reset nls");
+
     Peb = Ps::CurrentPeb();
 
     Peb->AnsiCodePageData       = (PUSHORT)PtrAdd(CodePageMapView, AnsiCodePageOffset);
@@ -194,7 +211,11 @@ NTSTATUS LeGlobalData::Initialize()
     Status = InstallHookPort();
     FAIL_RETURN(Status);
 
+    WriteLog(L"inst hp");
+
     HookNtdllRoutines(Ntdll->DllBase);
+
+    WriteLog(L"hook ntdll");
 
     PLDR_MODULE Kernel32Ldr;
 
@@ -203,6 +224,8 @@ NTSTATUS LeGlobalData::Initialize()
     {
         HookKernel32Routines(Kernel32Ldr->DllBase);
     }
+
+    WriteLog(L"init %p", Status);
 
     return Status;
 }
@@ -363,9 +386,6 @@ BOOL Initialize(PVOID BaseAddress)
 
     Kernel32 = GetKernel32Ldr();
 
-    if (Kernel32 != NULL && FLAG_ON(Kernel32->Flags, LDRP_PROCESS_ATTACH_CALLED))
-        return FALSE;
-
     ml::MlInitialize();
 
     GlobalData = new LeGlobalData;
@@ -374,6 +394,12 @@ BOOL Initialize(PVOID BaseAddress)
 
     LeSetGlobalData(GlobalData);
 
+    if (Kernel32 != NULL && FLAG_ON(Kernel32->Flags, LDRP_PROCESS_ATTACH_CALLED))
+    {
+        Exp::ExceptionBox(L"fuck");
+        return FALSE;
+    }
+
     Status = GlobalData->Initialize();
     if (NT_FAILED(Status))
         return FALSE;
@@ -381,11 +407,13 @@ BOOL Initialize(PVOID BaseAddress)
     RtlSetUnhandledExceptionFilter(
         [] (PEXCEPTION_POINTERS ExceptionPointers) -> LONG
         {
-            MessageBoxW(NULL, L"crashed", NULL, 64);
+            ExceptionBox(L"crashed");
             CreateMiniDump(ExceptionPointers);
             return ExceptionContinueSearch;
         }
     );
+
+    WriteLog(L"init ret");
 
     return TRUE;
 }
