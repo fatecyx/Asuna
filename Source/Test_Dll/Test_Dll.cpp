@@ -117,59 +117,35 @@ GitDnsFree(
 
 #endif
 
-#include "../Drivers/AntiAntiKernelDebug/ShadowSysCall.h"
-
-#pragma comment(linker, "/EXPORT:CEPlugin_GetVersion=_CEPlugin_GetVersion@8")
-#pragma comment(linker, "/EXPORT:CEPlugin_InitializePlugin=_CEPlugin_InitializePlugin@8")
-#pragma comment(linker, "/EXPORT:CEPlugin_DisablePlugin=_CEPlugin_DisablePlugin@0")
-
-EXTC BOOL __stdcall CEPlugin_GetVersion(PVOID pv , int sizeofpluginversion)
+struct LolPacket
 {
-    ZeroMemory(pv, 8);
-    return TRUE;
-}
+    BOOL THISCALL RecvPacket(ULONG unk, ULONG type1, ULONG type2, ULONG len, PBYTE buf);
+};
 
-EXTC BOOL __stdcall CEPlugin_InitializePlugin(PVOID ef , int pluginid)
+TYPE_OF(&LolPacket::RecvPacket) StubRecvPacket;
+
+BOOL THISCALL LolPacket::RecvPacket(ULONG unk, ULONG type1, ULONG type2, ULONG len, PBYTE buf)
 {
-    return TRUE;
-}
-
-EXTC BOOL __stdcall CEPlugin_DisablePlugin()
-{
-    return TRUE;
-}
-
-VOID SetThemesAccessAny(NtFileDisk &SsDevice)
-{
-    NTSTATUS    Status;
-    SC_HANDLE   ScManager, Themes;
-
-    ScManager = OpenSCManagerW(NULL, NULL, SC_MANAGER_CREATE_SERVICE);
-    if (ScManager == NULL)
-        return;
-
-    Themes = OpenServiceW(ScManager, L"Themes", SERVICE_ALL_ACCESS);
-    if (Themes == NULL)
+    LOOP_ONCE
     {
-        CloseServiceHandle(ScManager);
-        return;
+        WCHAR file[MAX_NTPATH];
+        NTSTATUS st;
+        LARGE_INTEGER cnt;
+        NtFileDisk bin;
+
+        if (buf == NULL || len == 0)
+            break;
+
+        RtlQueryPerformanceCounter(&cnt);
+        swprintf(file, L"C:\\lelog\\ts=%I64d_op=%X_len=%X_t1=%d_t2=%d", cnt.QuadPart, buf[0], len, type1, type2);
+
+        st = bin.Create(file);
+        FAIL_BREAK(st);
+
+        bin.Write(buf, len);
     }
 
-    ULONG Needed;
-    SERVICE_STATUS_PROCESS ServiceProcess;
-
-    if (QueryServiceStatusEx(Themes, SC_STATUS_PROCESS_INFO, (PBYTE)&ServiceProcess, sizeof(ServiceProcess), &Needed))
-    {
-        SS_PROCESS_OBJECT obj;
-
-        obj.ProcessId   = ServiceProcess.dwProcessId;
-        obj.AccessAny   = TRUE;
-
-        ControlShadowDevice(SsDevice, IOCTL_SET_PROCESS_INFO, &obj, sizeof(obj));
-    }
-
-    CloseServiceHandle(Themes);
-    CloseServiceHandle(ScManager);
+    return (this->*StubRecvPacket)(unk, type1, type2, len, buf);
 }
 
 BOOL Initialize(PVOID BaseAddress)
@@ -178,30 +154,22 @@ BOOL Initialize(PVOID BaseAddress)
 
     NTSTATUS Status;
 
-    LOOP_ONCE
+    if (BaseAddress != NULL)
+        return TRUE;
+
+    MEMORY_FUNCTION_PATCH f[] =
     {
-        NtFileDisk SsDevice;
+        INLINE_HOOK_JUMP(0xABFDA0, (PVOID)PtrAdd(NULL, &LolPacket::RecvPacket), StubRecvPacket),
+    };
 
-        Status = SsDevice.OpenDevice(SHADOW_SYSCALL_DEVICE_SYMBOLIC);
-        FAIL_BREAK(Status);
-
-        SetThemesAccessAny(SsDevice);
-
-        SS_PROCESS_OBJECT obj;
-
-        obj.ProcessId = CurrentPid();
-        obj.ShadowSystemCall = TRUE;
-        obj.DenyAccess = TRUE;
-        obj.AccessAny = TRUE;
-        Status = ControlShadowDevice(SsDevice, IOCTL_SET_PROCESS_INFO, &obj, sizeof(obj));
-    }
+    Nt_PatchMemory(NULL, 0, f, countof(f));
 
     return TRUE;
 }
 
 BOOL CDECL UnInitialize(PVOID BaseAddress)
 {
-    // ml::MlUnInitialize();
+    ml::MlUnInitialize();
 
     return FALSE;
 }
@@ -219,4 +187,89 @@ BOOL WINAPI DllMain(PVOID BaseAddress, ULONG Reason, PVOID Reserved)
     }
 
     return TRUE;
+}
+
+#pragma comment(linker, "/EXPORT:Direct3DCreate9=_Direct3DCreate9@4")
+#pragma comment(linker, "/EXPORT:D3DPERF_SetMarker=_D3DPERF_SetMarker@8")
+#pragma comment(linker, "/EXPORT:D3DPERF_BeginEvent=_D3DPERF_BeginEvent@8")
+#pragma comment(linker, "/EXPORT:D3DPERF_EndEvent=_D3DPERF_EndEvent@0")
+
+#include <d3d9.h>
+
+PVOID GetD3DRoutine(PCSTR Name)
+{
+    ULONG           Length;
+    NTSTATUS        Status;
+    PVOID           hModule;
+    WCHAR           szPath[MAX_NTPATH];
+    UNICODE_STRING  DllPath;
+
+    static WCHAR D3d9Dll[] = L"d3d9.dll";
+
+    Length = Nt_GetSystemDirectory(szPath, countof(szPath));
+
+    CopyStruct(szPath + Length, D3d9Dll, sizeof(D3d9Dll));
+    DllPath.Buffer = szPath;
+    DllPath.Length = (USHORT)((Length + CONST_STRLEN(D3d9Dll)) * sizeof(WCHAR));
+    DllPath.MaximumLength = DllPath.Length;
+
+    Status = LdrLoadDll(NULL, 0, &DllPath, &hModule);
+    if (!NT_SUCCESS(Status))
+        return NULL;
+
+    LdrAddRefDll(LDR_ADDREF_DLL_PIN, hModule);
+
+    return Nt_GetProcAddress(hModule, Name);
+}
+
+EXTC IDirect3D9* STDCALL Direct3DCreate9(UINT SDKVersion)
+{
+    static IDirect3D9* (STDCALL *pfDirect3DCreate9)(UINT SDKVersion);
+
+    if (pfDirect3DCreate9 == NULL)
+    {
+        *(PVOID *)&pfDirect3DCreate9 = GetD3DRoutine("Direct3DCreate9");
+        if (pfDirect3DCreate9 == NULL)
+            return NULL;
+
+        Initialize(NULL);
+    }
+
+    return pfDirect3DCreate9(SDKVersion);
+}
+
+EXTC VOID WINAPI D3DPERF_SetMarker(D3DCOLOR Color, PCWSTR Name)
+{
+    static VOID (STDCALL *pfD3DPERF_SetMarker)(D3DCOLOR Color, PCWSTR Name);
+
+    if (pfD3DPERF_SetMarker == NULL)
+    {
+        *(PVOID *)&pfD3DPERF_SetMarker = GetD3DRoutine("D3DPERF_SetMarker");
+    }
+
+    pfD3DPERF_SetMarker(Color, Name);
+}
+
+EXTC int WINAPI D3DPERF_BeginEvent( D3DCOLOR col, LPCWSTR wszName )
+{
+    static TYPE_OF(D3DPERF_BeginEvent)* BeginEvent;
+
+    if (BeginEvent == NULL)
+    {
+        *(PVOID *)&BeginEvent = GetD3DRoutine("D3DPERF_BeginEvent");
+    }
+
+    return BeginEvent(col, wszName);
+}
+
+EXTC int WINAPI D3DPERF_EndEvent( void )
+{
+    static TYPE_OF(D3DPERF_EndEvent)* EndEvent;
+
+    if (EndEvent == NULL)
+    {
+        *(PVOID *)&EndEvent = GetD3DRoutine("D3DPERF_EndEvent");
+    }
+
+    return EndEvent();
 }

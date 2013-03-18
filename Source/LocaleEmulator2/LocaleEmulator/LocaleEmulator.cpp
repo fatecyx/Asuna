@@ -382,10 +382,15 @@ BOOL Initialize(PVOID BaseAddress)
     PLDR_MODULE         Kernel32;
     PLeGlobalData       GlobalData;
 
-    LdrDisableThreadCalloutsForDll(BaseAddress);
-
     Kernel32 = GetKernel32Ldr();
 
+    if (Kernel32 != NULL && FLAG_ON(Kernel32->Flags, LDRP_PROCESS_ATTACH_CALLED))
+    {
+        ExceptionBox(L"fuck");
+        return FALSE;
+    }
+
+    LdrDisableThreadCalloutsForDll(BaseAddress);
     ml::MlInitialize();
 
     GlobalData = new LeGlobalData;
@@ -393,12 +398,6 @@ BOOL Initialize(PVOID BaseAddress)
         return FALSE;
 
     LeSetGlobalData(GlobalData);
-
-    if (Kernel32 != NULL && FLAG_ON(Kernel32->Flags, LDRP_PROCESS_ATTACH_CALLED))
-    {
-        Exp::ExceptionBox(L"fuck");
-        return FALSE;
-    }
 
     Status = GlobalData->Initialize();
     if (NT_FAILED(Status))
