@@ -78,12 +78,11 @@ LeCreateProcess(
             InitDefaultLeb(&LePeb->Leb);
         }
 
-        LePeb->ooxxAddress = ProcessInfo.FirstCallLdrLoadDll;
+        LePeb->LdrLoadDllAddress = GetCallDestination(ProcessInfo.FirstCallLdrLoadDll);
+        LePeb->LdrLoadDllBackupSize = LDR_LOAD_DLL_BACKUP_SIZE;
+        ReadMemory(ProcessInfo.hProcess, LePeb->LdrLoadDllAddress, LePeb->LdrLoadDllBackup, LDR_LOAD_DLL_BACKUP_SIZE);
 
         StrCopyW(LePeb->LeDllFullPath, DllFullPath);
-
-        Status = ReadMemory(ProcessInfo.hProcess, PtrAdd(LePeb->ooxxAddress, 1), &LePeb->ooxxValue, 4);
-        FAIL_BREAK(Status);
 
         if (!FLAG_ON(CreationFlags, CREATE_SUSPENDED))
             Status = ZwResumeProcess(ProcessInfo.hProcess);

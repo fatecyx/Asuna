@@ -31,16 +31,18 @@ typedef struct
 
 } LOCALE_ENUMLATOR_ENVIRONMENT_BLOCK, *PLOCALE_ENUMLATOR_ENVIRONMENT_BLOCK, LEB, *PLEB;
 
+#define LDR_LOAD_DLL_BACKUP_SIZE 5
+
 typedef struct
 {
     LEB Leb;
 
-    HANDLE  Section;
-    PVOID   ooxxAddress;
-    ULONG   ooxxValue;
-    PVOID   SelfShadowToFree;
-
-    WCHAR   LeDllFullPath[MAX_NTPATH];
+    HANDLE      Section;
+    PVOID       LdrLoadDllAddress;
+    ULONG_PTR   LdrLoadDllBackupSize;
+    BYTE        LdrLoadDllBackup[16];
+    PVOID       SelfShadowToFree;
+    WCHAR       LeDllFullPath[MAX_NTPATH];
 
 } LOCALE_ENUMLATOR_PROCESS_ENVIRONMENT_BLOCK, *PLOCALE_ENUMLATOR_PROCESS_ENVIRONMENT_BLOCK, LEPEB, *PLEPEB;
 
@@ -180,6 +182,20 @@ OpenOrCreateLePeb(
     return LePeb;
 }
 
+#define ENABLE_LOG 0
+
+#if ENABLE_LOG
+
+#define InitLog() { WCHAR LogFilePath[MAX_NTPATH]; swprintf(LogFilePath, L"C:\\lelog\\%p_log.txt", CurrentPid()); ULONG BOM = BOM_UTF16_LE; LogFile.Create(LogFilePath); LogFile.Write(&BOM, 2); PROCESS_IMAGE_FILE_NAME2 proc; NtQueryInformationProcess(CurrentProcess, ProcessImageFileName, &proc, sizeof(proc), NULL); LogFile.Print(NULL, L"%wZ", &proc.ImageFileName); }
+#define WriteLog(...) { LeGetGlobalData()->LogFile.Print(NULL, __VA_ARGS__); LeGetGlobalData()->LogFile.Print(NULL, L"\r\n"); }
+
+#else
+
+#define InitLog()
+#define WriteLog(...)
+
+#endif // ENABLE_LOG
+
 class LeGlobalData
 {
 protected:
@@ -193,6 +209,13 @@ protected:
     PVOID DllNotificationCookie;
 
     UNICODE_STRING SystemDirectory;
+
+#if ENABLE_LOG
+
+public:
+    NtFileDisk LogFile;
+
+#endif // log
 
 public:
 
@@ -241,6 +264,7 @@ public:
     LeGlobalData()
     {
         ZeroMemory(this, sizeof(*this));
+        InitLog();
     }
 
     ~LeGlobalData()

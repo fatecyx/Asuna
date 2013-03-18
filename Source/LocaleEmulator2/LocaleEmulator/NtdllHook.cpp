@@ -50,7 +50,7 @@ NoInline NTSTATUS FASTCALL LoadSelfAsFirstDll(PVOID ReturnAddress)
 
         LePeb->SelfShadowToFree = &__ImageBase;
 
-        WriteProtectMemory(CurrentProcess, PtrSub(ReturnAddress, 4), &LePeb->ooxxValue, sizeof(LePeb->ooxxValue));
+        WriteProtectMemory(CurrentProcess, LePeb->LdrLoadDllAddress, LePeb->LdrLoadDllBackup, LePeb->LdrLoadDllBackupSize);
 
         UNICODE_STRING DllPath;
 
@@ -79,6 +79,7 @@ LoadFirstDll(
     PVOID*              DllHandle
 )
 {
+    //ExceptionBox(L"inject");
     LoadSelfAsFirstDll(_ReturnAddress());
     return LdrLoadDll(PathToFile, DllCharacteristics, ModuleFileName, DllHandle);
 }
@@ -124,16 +125,13 @@ NTSTATUS LeGlobalData::InjectSelfToChildProcess(HANDLE Process, PCLIENT_ID Cid)
     PVOID       SelfShadow, LocalSelfShadow, ShadowLoadFirstDll;
     ULONG_PTR   SizeOfImage;
     LONG        Offset;
-    PLEPEB      TargetLePeb;
+    PLEPEB      TargetLePeb, LePeb;
     HANDLE      Section;
 
     // Process = CurrentProcess;
 
     if (Wow64 && !Ps::IsWow64Process(Process))
         return STATUS_NOT_SUPPORTED;
-
-    if (GetLePeb()->ooxxAddress == NULL)
-        return STATUS_UNSUCCESSFUL;
 
     SizeOfImage = FindLdrModuleByHandle(&__ImageBase)->SizeOfImage;
 
@@ -161,10 +159,27 @@ NTSTATUS LeGlobalData::InjectSelfToChildProcess(HANDLE Process, PCLIENT_ID Cid)
         return Status;
     }
 
-    ShadowLoadFirstDll = PtrAdd(LoadFirstDll, PtrOffset(SelfShadow, &__ImageBase));
-    Offset = PtrOffset(ShadowLoadFirstDll, PtrAdd(GetLePeb()->ooxxAddress, 5));
+    LePeb = GetLePeb();
 
-    Status = WriteProtectMemory(Process, PtrAdd(GetLePeb()->ooxxAddress, 1), &Offset, sizeof(Offset));
+    PVOID ooxxAddress = LePeb->LdrLoadDllAddress;
+    BYTE ooxxBuffer[16];
+
+    Status = ReadMemory(Process, ooxxAddress, LePeb->LdrLoadDllBackup, LDR_LOAD_DLL_BACKUP_SIZE);
+    if (NT_FAILED(Status))
+    {
+        Mm::FreeVirtualMemory(SelfShadow, Process);
+        return Status;
+    }
+
+    LePeb->LdrLoadDllBackupSize = LDR_LOAD_DLL_BACKUP_SIZE;
+
+    ShadowLoadFirstDll = PtrAdd(LoadFirstDll, PtrOffset(SelfShadow, &__ImageBase));
+    Offset = PtrOffset(ShadowLoadFirstDll, PtrAdd(ooxxAddress, 5));
+
+    ooxxBuffer[0] = JUMP;
+    *(PULONG)&ooxxBuffer[1] = Offset;
+
+    Status = WriteProtectMemory(Process, ooxxAddress, ooxxBuffer, 5);
     if (NT_FAILED(Status))
     {
         Mm::FreeVirtualMemory(SelfShadow, Process);
@@ -176,7 +191,7 @@ NTSTATUS LeGlobalData::InjectSelfToChildProcess(HANDLE Process, PCLIENT_ID Cid)
         return STATUS_UNSUCCESSFUL;
 
     Section = TargetLePeb->Section;
-    *TargetLePeb = *GetLePeb();
+    *TargetLePeb = *LePeb;
     TargetLePeb->Section = Section;
 
     CloseLePeb(TargetLePeb);
@@ -212,6 +227,8 @@ LeNtCreateUserProcess(
     PVOID               SelfShadow;
 
     HPARG_FLTINFO->Action = BlockSystemCall;
+
+    WriteLog(L"create proc");
 
     LocalAttributeList = NULL;
     Attribute = NULL;
@@ -275,12 +292,16 @@ LeNtCreateUserProcess(
                 AttributeList
             );
 
+    WriteLog(L"create proc %p", Status);
+
     if (NT_FAILED(Status))
         return Status;
 
     GlobalData = (PLeGlobalData)HPARG_FLTINFO->FilterContext;
 
-    GlobalData->InjectSelfToChildProcess(*ProcessHandle, Cid);
+    Status2 = GlobalData->InjectSelfToChildProcess(*ProcessHandle, Cid);
+
+    WriteLog(L"inject %p", Status2);
 
     return Status;
 }

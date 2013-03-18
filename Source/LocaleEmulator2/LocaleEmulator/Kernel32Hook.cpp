@@ -21,6 +21,8 @@ NTSTATUS LeGlobalData::HookKernel32Routines(PVOID Kernel32)
 {
     PVOID KernelBase, GetUserDefaultLCID, GetCurrentNlsCache;
 
+    WriteLog(L"hook k32");
+
     KernelBase = FindLdrModuleByName(&WCS2US(L"KERNELBASE.dll"))->DllBase;
 
     GetUserDefaultLCID = EATLookupRoutineByHashPNoFix(KernelBase, KERNEL32_GetUserDefaultLCID);
