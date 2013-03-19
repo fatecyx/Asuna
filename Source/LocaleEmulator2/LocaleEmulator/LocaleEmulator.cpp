@@ -278,11 +278,12 @@ VOID LeGlobalData::HookModule(PVOID DllBase, PCUNICODE_STRING DllName, BOOL DllL
     }
     else if (DLL_IS(L"KERNEL32.dll"))
     {
+/*
         if (GetLePeb()->SelfShadowToFree != NULL)
         {
             Mm::FreeVirtualMemory(GetLePeb()->SelfShadowToFree);
         }
-
+*/
         HookRoutine     = &LeGlobalData::HookKernel32Routines;
         UnHookRoutine   = &LeGlobalData::UnHookKernel32Routines;
     }
